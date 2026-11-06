@@ -1,0 +1,91 @@
+{
+  "run_signature": "8ebd2ffd93ae78478e95f25847041f2a2adb3b52280ab7bbc897fd31621986db",
+  "case": {
+    "case_id": "2022-03-21-cloudbed2:053:1647873906",
+    "subset": "2022-03-21-cloudbed2",
+    "timestamp": 1647873906,
+    "root_cause": {
+      "type": "service",
+      "key": "frontend",
+      "failure_type": "k8s容器网络资源包损坏"
+    },
+    "failure_type": "k8s容器网络资源包损坏",
+    "seconds_from_previous": 3194,
+    "seconds_to_next": 2908,
+    "scored_metrics": 755,
+    "arms": {
+      "Mapping-only": {
+        "level": {
+          "rank": 1.0,
+          "mrr": 1.0,
+          "top1": 1.0,
+          "top3": 1.0,
+          "top5": 1.0,
+          "tie_size": 1
+        },
+        "global": {
+          "rank": 2.0,
+          "mrr": 0.5,
+          "top1": 0.0,
+          "top3": 1.0,
+          "top5": 1.0,
+          "tie_size": 1
+        }
+      },
+      "Containment-only": {
+        "level": {
+          "rank": 2.0,
+          "mrr": 0.5,
+          "top1": 0.0,
+          "top3": 1.0,
+          "top5": 1.0,
+          "tie_size": 1
+        },
+        "global": {
+          "rank": 4.0,
+          "mrr": 0.25,
+          "top1": 0.0,
+          "top3": 0.0,
+          "top5": 1.0,
+          "tie_size": 1
+        }
+      },
+      "Dependency-only": {
+        "level": {
+          "rank": 1.0,
+          "mrr": 1.0,
+          "top1": 1.0,
+          "top3": 1.0,
+          "top5": 1.0,
+          "tie_size": 1
+        },
+        "global": {
+          "rank": 2.0,
+          "mrr": 0.5,
+          "top1": 0.0,
+          "top3": 1.0,
+          "top5": 1.0,
+          "tie_size": 1
+        }
+      },
+      "Full": {
+        "level": {
+          "rank": 2.0,
+          "mrr": 0.5,
+          "top1": 0.0,
+          "top3": 1.0,
+          "top5": 1.0,
+          "tie_size": 1
+        },
+        "global": {
+          "rank": 4.0,
+          "mrr": 0.25,
+          "top1": 0.0,
+          "top3": 0.0,
+          "top5": 1.0,
+          "tie_size": 1
+        }
+      }
+    }
+  }
+}

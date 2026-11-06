@@ -1,0 +1,69 @@
+{
+  "version": "nonzero-entity-mask-v1-followup",
+  "datasets": {
+    "lsdb": 88,
+    "aiops2025": 272
+  },
+  "structural_controls": [
+    "incident_edge_count",
+    "uniform_source_row_propagation"
+  ],
+  "degree_definition": "Incident selected original relations; count multiplicity, exclude self-loops; no metrics or labels",
+  "uniform_source_definition": "Unchanged source-row single-step propagation with every entity base=1; no telemetry",
+  "gradient_dataset": "lsdb",
+  "relation_arms": {
+    "mapping": [],
+    "deployment": [
+      "deployment"
+    ],
+    "ownership": [
+      "ownership"
+    ],
+    "containment": [
+      "deployment",
+      "ownership"
+    ],
+    "dependency": [
+      "dependency"
+    ],
+    "deployment_dependency": [
+      "deployment",
+      "dependency"
+    ],
+    "ownership_dependency": [
+      "ownership",
+      "dependency"
+    ],
+    "full": [
+      "deployment",
+      "ownership",
+      "dependency"
+    ]
+  },
+  "rates": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "mask": "Same as completed AIOps2025 experiment: each case/layer/rate/seed independently samples round(rate*n) originally nonzero entity bases uniformly without replacement; zero selected bases; keep graph/candidates fixed",
+  "seed": "SHA256('mask|case_id|layer|fraction|seed'), first 8 bytes big endian, numpy default_rng",
+  "primary_metrics": "Exact-score tie expectation; deterministic name-order results retained for compatibility",
+  "bootstrap": "5000 paired case resamples after averaging 10 mask seeds within case; nominal exploratory intervals without multiplicity correction",
+  "lambda_value": 0.1,
+  "propagation": "unchanged one step, bidirectional, source-row normalization",
+  "scope": "Direct entity evidence masking, not raw-channel missingness, medical-domain validation, or training-data scarcity"
+}

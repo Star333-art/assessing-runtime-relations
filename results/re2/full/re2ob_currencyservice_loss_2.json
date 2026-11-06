@@ -1,0 +1,3779 @@
+{
+  "variant": "route_b_deduplicated_baro",
+  "dataset_id": "re2ob_currencyservice_loss_2",
+  "ground_truth": "currencyservice",
+  "fault_type": "loss",
+  "direction": "forward",
+  "topology_lambda": 0.05,
+  "propagation_steps": 2,
+  "evidence_policy": {
+    "baro_service_initialization": "max aggregation of owned metrics",
+    "metric_nodes": "ranked context nodes with BARO scores",
+    "metric_to_service_scoring": false,
+    "log_and_trace_scoring": true
+  },
+  "service_ranking": [
+    {
+      "candidate": "redis",
+      "score": 1.0
+    },
+    {
+      "candidate": "frontend",
+      "score": 0.22443213602863743
+    },
+    {
+      "candidate": "recommendationservice",
+      "score": 0.11399146568215177
+    },
+    {
+      "candidate": "currencyservice",
+      "score": 0.054307367423943424
+    },
+    {
+      "candidate": "cartservice",
+      "score": 0.029687599682061076
+    },
+    {
+      "candidate": "adservice",
+      "score": 0.021980898714231777
+    },
+    {
+      "candidate": "checkoutservice",
+      "score": 0.02146680236111815
+    },
+    {
+      "candidate": "productcatalogservice",
+      "score": 0.01939817556626051
+    },
+    {
+      "candidate": "shippingservice",
+      "score": 0.00729751275551389
+    },
+    {
+      "candidate": "paymentservice",
+      "score": 0.0034399978316051404
+    },
+    {
+      "candidate": "emailservice",
+      "score": 0.0026444874169279887
+    },
+    {
+      "candidate": "frontend-external",
+      "score": 6.38671875e-05
+    }
+  ],
+  "rankings": {
+    "service": [
+      {
+        "entity": "redis",
+        "score": 1.0
+      },
+      {
+        "entity": "frontend",
+        "score": 0.22443213602863743
+      },
+      {
+        "entity": "recommendationservice",
+        "score": 0.11399146568215177
+      },
+      {
+        "entity": "currencyservice",
+        "score": 0.054307367423943424
+      },
+      {
+        "entity": "cartservice",
+        "score": 0.029687599682061076
+      },
+      {
+        "entity": "adservice",
+        "score": 0.021980898714231777
+      },
+      {
+        "entity": "checkoutservice",
+        "score": 0.02146680236111815
+      },
+      {
+        "entity": "productcatalogservice",
+        "score": 0.01939817556626051
+      },
+      {
+        "entity": "shippingservice",
+        "score": 0.00729751275551389
+      },
+      {
+        "entity": "paymentservice",
+        "score": 0.0034399978316051404
+      },
+      {
+        "entity": "emailservice",
+        "score": 0.0026444874169279887
+      },
+      {
+        "entity": "frontend-external",
+        "score": 6.38671875e-05
+      }
+    ],
+    "metric": [
+      {
+        "entity": "redis_diskio",
+        "node": "metric::redis_diskio",
+        "score": 1.0
+      },
+      {
+        "entity": "frontend_latency-90",
+        "node": "metric::frontend_latency-90",
+        "score": 0.14917824253432388
+      },
+      {
+        "entity": "recommendationservice_latency-90",
+        "node": "metric::recommendationservice_latency-90",
+        "score": 0.09987024682984401
+      },
+      {
+        "entity": "currencyservice_latency-50",
+        "node": "metric::currencyservice_latency-50",
+        "score": 0.04727662059142466
+      },
+      {
+        "entity": "currencyservice_latency-90",
+        "node": "metric::currencyservice_latency-90",
+        "score": 0.042577917243050045
+      },
+      {
+        "entity": "frontend_latency-50",
+        "node": "metric::frontend_latency-50",
+        "score": 0.023702277565143016
+      },
+      {
+        "entity": "checkoutservice_latency-50",
+        "node": "metric::checkoutservice_latency-50",
+        "score": 0.013727447517124593
+      },
+      {
+        "entity": "cartservice_latency-90",
+        "node": "metric::cartservice_latency-90",
+        "score": 0.011075171266700894
+      },
+      {
+        "entity": "checkoutservice_latency-90",
+        "node": "metric::checkoutservice_latency-90",
+        "score": 0.009699829101562502
+      },
+      {
+        "entity": "recommendationservice_latency-50",
+        "node": "metric::recommendationservice_latency-50",
+        "score": 0.0032312659211653975
+      },
+      {
+        "entity": "cartservice_latency-50",
+        "node": "metric::cartservice_latency-50",
+        "score": 0.0028529905694188434
+      },
+      {
+        "entity": "redis_mem",
+        "node": "metric::redis_mem",
+        "score": 0.002474853515625
+      },
+      {
+        "entity": "recommendationservice_mem",
+        "node": "metric::recommendationservice_mem",
+        "score": 0.0012693603515625
+      },
+      {
+        "entity": "paymentservice_latency-90",
+        "node": "metric::paymentservice_latency-90",
+        "score": 0.0012377825502947382
+      },
+      {
+        "entity": "adservice_latency-90",
+        "node": "metric::adservice_latency-90",
+        "score": 0.0010196820491135353
+      },
+      {
+        "entity": "paymentservice_latency-50",
+        "node": "metric::paymentservice_latency-50",
+        "score": 0.0008028173053075369
+      },
+      {
+        "entity": "productcatalogservice_latency-90",
+        "node": "metric::productcatalogservice_latency-90",
+        "score": 0.0007858613926398879
+      },
+      {
+        "entity": "adservice_latency-50",
+        "node": "metric::adservice_latency-50",
+        "score": 0.0007503823974644118
+      },
+      {
+        "entity": "frontend_socket",
+        "node": "metric::frontend_socket",
+        "score": 0.000558837890625
+      },
+      {
+        "entity": "emailservice_latency-90",
+        "node": "metric::emailservice_latency-90",
+        "score": 0.000497299194335937
+      },
+      {
+        "entity": "currencyservice_cpu",
+        "node": "metric::currencyservice_cpu",
+        "score": 0.0004897709604424834
+      },
+      {
+        "entity": "shippingservice_latency-90",
+        "node": "metric::shippingservice_latency-90",
+        "score": 0.00045954048018417805
+      },
+      {
+        "entity": "adservice_mem",
+        "node": "metric::adservice_mem",
+        "score": 0.0004390869140625
+      },
+      {
+        "entity": "frontend_mem",
+        "node": "metric::frontend_mem",
+        "score": 0.00039047006460336543
+      },
+      {
+        "entity": "productcatalogservice_latency-50",
+        "node": "metric::productcatalogservice_latency-50",
+        "score": 0.0003613485211099073
+      },
+      {
+        "entity": "currencyservice_mem",
+        "node": "metric::currencyservice_mem",
+        "score": 0.00024008305155550112
+      },
+      {
+        "entity": "cartservice_mem",
+        "node": "metric::cartservice_mem",
+        "score": 0.00023700714111328126
+      },
+      {
+        "entity": "shippingservice_latency-50",
+        "node": "metric::shippingservice_latency-50",
+        "score": 0.00021003750425529127
+      },
+      {
+        "entity": "emailservice_latency-50",
+        "node": "metric::emailservice_latency-50",
+        "score": 0.00020756835937499817
+      },
+      {
+        "entity": "productcatalogservice_mem",
+        "node": "metric::productcatalogservice_mem",
+        "score": 0.00012364531726371953
+      },
+      {
+        "entity": "currencyservice_socket",
+        "node": "metric::currencyservice_socket",
+        "score": 0.0001197509765625
+      },
+      {
+        "entity": "checkoutservice_mem",
+        "node": "metric::checkoutservice_mem",
+        "score": 0.00010626550622888515
+      },
+      {
+        "entity": "shippingservice_mem",
+        "node": "metric::shippingservice_mem",
+        "score": 0.00010523570667613635
+      },
+      {
+        "entity": "emailservice_mem",
+        "node": "metric::emailservice_mem",
+        "score": 7.9833984375e-05
+      },
+      {
+        "entity": "frontend-external_error",
+        "node": "metric::frontend-external_error",
+        "score": 6.38671875e-05
+      },
+      {
+        "entity": "paymentservice_workload",
+        "node": "metric::paymentservice_workload",
+        "score": 5.70120637881424e-05
+      },
+      {
+        "entity": "checkoutservice_workload",
+        "node": "metric::checkoutservice_workload",
+        "score": 5.1370690159930404e-05
+      },
+      {
+        "entity": "adservice_diskio",
+        "node": "metric::adservice_diskio",
+        "score": 4.802484457087974e-05
+      },
+      {
+        "entity": "paymentservice_cpu",
+        "node": "metric::paymentservice_cpu",
+        "score": 4.6794150817455976e-05
+      },
+      {
+        "entity": "emailservice_workload",
+        "node": "metric::emailservice_workload",
+        "score": 3.9991883354831154e-05
+      },
+      {
+        "entity": "checkoutservice_cpu",
+        "node": "metric::checkoutservice_cpu",
+        "score": 3.896785462388223e-05
+      },
+      {
+        "entity": "emailservice_cpu",
+        "node": "metric::emailservice_cpu",
+        "score": 3.739269162425142e-05
+      },
+      {
+        "entity": "frontend_error",
+        "node": "metric::frontend_error",
+        "score": 3.46080322265625e-05
+      },
+      {
+        "entity": "frontend-external_workload",
+        "node": "metric::frontend-external_workload",
+        "score": 3.150512406274666e-05
+      },
+      {
+        "entity": "currencyservice_workload",
+        "node": "metric::currencyservice_workload",
+        "score": 2.986118286510219e-05
+      },
+      {
+        "entity": "cartservice_cpu",
+        "node": "metric::cartservice_cpu",
+        "score": 2.808528106179734e-05
+      },
+      {
+        "entity": "recommendationservice_cpu",
+        "node": "metric::recommendationservice_cpu",
+        "score": 2.7007350501037432e-05
+      },
+      {
+        "entity": "shippingservice_workload",
+        "node": "metric::shippingservice_workload",
+        "score": 2.2809709821428575e-05
+      },
+      {
+        "entity": "adservice_workload",
+        "node": "metric::adservice_workload",
+        "score": 2.112010168650792e-05
+      },
+      {
+        "entity": "cartservice_workload",
+        "node": "metric::cartservice_workload",
+        "score": 1.9958496093749977e-05
+      },
+      {
+        "entity": "productcatalogservice_cpu",
+        "node": "metric::productcatalogservice_cpu",
+        "score": 1.8272520244625473e-05
+      },
+      {
+        "entity": "redis_cpu",
+        "node": "metric::redis_cpu",
+        "score": 1.6417824977681077e-05
+      },
+      {
+        "entity": "productcatalogservice_workload",
+        "node": "metric::productcatalogservice_workload",
+        "score": 1.38848785900434e-05
+      },
+      {
+        "entity": "frontend_workload",
+        "node": "metric::frontend_workload",
+        "score": 1.2602049625098673e-05
+      },
+      {
+        "entity": "shippingservice_cpu",
+        "node": "metric::shippingservice_cpu",
+        "score": 8.806281092922486e-06
+      },
+      {
+        "entity": "adservice_cpu",
+        "node": "metric::adservice_cpu",
+        "score": 7.578426827202042e-06
+      },
+      {
+        "entity": "frontend_cpu",
+        "node": "metric::frontend_cpu",
+        "score": 5.653870143826064e-06
+      },
+      {
+        "entity": "paymentservice_mem",
+        "node": "metric::paymentservice_mem",
+        "score": 3.880818684895834e-06
+      },
+      {
+        "entity": "recommendationservice_workload",
+        "node": "metric::recommendationservice_workload",
+        "score": 1.8243100112977522e-06
+      },
+      {
+        "entity": "cartservice_diskio",
+        "node": "metric::cartservice_diskio",
+        "score": 0.0
+      },
+      {
+        "entity": "currencyservice_diskio",
+        "node": "metric::currencyservice_diskio",
+        "score": 0.0
+      },
+      {
+        "entity": "emailservice_diskio",
+        "node": "metric::emailservice_diskio",
+        "score": 0.0
+      },
+      {
+        "entity": "frontend_diskio",
+        "node": "metric::frontend_diskio",
+        "score": 0.0
+      },
+      {
+        "entity": "paymentservice_diskio",
+        "node": "metric::paymentservice_diskio",
+        "score": 0.0
+      },
+      {
+        "entity": "productcatalogservice_diskio",
+        "node": "metric::productcatalogservice_diskio",
+        "score": 0.0
+      },
+      {
+        "entity": "recommendationservice_diskio",
+        "node": "metric::recommendationservice_diskio",
+        "score": 0.0
+      },
+      {
+        "entity": "adservice_socket",
+        "node": "metric::adservice_socket",
+        "score": 0.0
+      },
+      {
+        "entity": "cartservice_socket",
+        "node": "metric::cartservice_socket",
+        "score": 0.0
+      },
+      {
+        "entity": "checkoutservice_socket",
+        "node": "metric::checkoutservice_socket",
+        "score": 0.0
+      },
+      {
+        "entity": "emailservice_socket",
+        "node": "metric::emailservice_socket",
+        "score": 0.0
+      },
+      {
+        "entity": "paymentservice_socket",
+        "node": "metric::paymentservice_socket",
+        "score": 0.0
+      },
+      {
+        "entity": "productcatalogservice_socket",
+        "node": "metric::productcatalogservice_socket",
+        "score": 0.0
+      },
+      {
+        "entity": "recommendationservice_socket",
+        "node": "metric::recommendationservice_socket",
+        "score": 0.0
+      },
+      {
+        "entity": "redis_socket",
+        "node": "metric::redis_socket",
+        "score": 0.0
+      },
+      {
+        "entity": "shippingservice_socket",
+        "node": "metric::shippingservice_socket",
+        "score": 0.0
+      },
+      {
+        "entity": "adservice_error",
+        "node": "metric::adservice_error",
+        "score": 0.0
+      }
+    ],
+    "log_source": [
+      {
+        "entity": "adservice",
+        "node": "log::adservice",
+        "score": 1.0
+      },
+      {
+        "entity": "frontend",
+        "node": "log::frontend",
+        "score": 0.8558201058201059
+      },
+      {
+        "entity": "cartservice",
+        "node": "log::cartservice",
+        "score": 0.8421052631578947
+      },
+      {
+        "entity": "recommendationservice",
+        "node": "log::recommendationservice",
+        "score": 0.6282051282051282
+      },
+      {
+        "entity": "shippingservice",
+        "node": "log::shippingservice",
+        "score": 0.3106060606060606
+      },
+      {
+        "entity": "checkoutservice",
+        "node": "log::checkoutservice",
+        "score": 0.10714285714285715
+      },
+      {
+        "entity": "emailservice",
+        "node": "log::emailservice",
+        "score": 0.09999999999999999
+      },
+      {
+        "entity": "paymentservice",
+        "node": "log::paymentservice",
+        "score": 0.09999999999999999
+      },
+      {
+        "entity": "currencyservice",
+        "node": "log::currencyservice",
+        "score": 0.0
+      },
+      {
+        "entity": "redis",
+        "node": "log::redis",
+        "score": 0.0
+      }
+    ],
+    "operation": [
+      {
+        "entity": "frontend/GetSupportedCurrencies",
+        "node": "operation::frontend::GetSupportedCurrencies",
+        "score": 1.0
+      },
+      {
+        "entity": "currencyservice/GetSupportedCurrencies",
+        "node": "operation::currencyservice::GetSupportedCurrencies",
+        "score": 0.10234409726709007
+      },
+      {
+        "entity": "frontend/frontend",
+        "node": "operation::frontend::frontend",
+        "score": 0.08317560955465791
+      },
+      {
+        "entity": "checkoutservice/GetCart",
+        "node": "operation::checkoutservice::GetCart",
+        "score": 0.06866059213569757
+      },
+      {
+        "entity": "frontend/Convert",
+        "node": "operation::frontend::Convert",
+        "score": 0.059781772757582244
+      },
+      {
+        "entity": "checkoutservice/Convert",
+        "node": "operation::checkoutservice::Convert",
+        "score": 0.021890745531147192
+      },
+      {
+        "entity": "checkoutservice/EmptyCart",
+        "node": "operation::checkoutservice::EmptyCart",
+        "score": 0.010463048764921143
+      },
+      {
+        "entity": "currencyservice/Convert",
+        "node": "operation::currencyservice::Convert",
+        "score": 0.009086086699003466
+      },
+      {
+        "entity": "checkoutservice/PlaceOrder",
+        "node": "operation::checkoutservice::PlaceOrder",
+        "score": 0.008888266626953113
+      },
+      {
+        "entity": "frontend/PlaceOrder",
+        "node": "operation::frontend::PlaceOrder",
+        "score": 0.007116649775832368
+      },
+      {
+        "entity": "frontend/GetCart",
+        "node": "operation::frontend::GetCart",
+        "score": 0.0054237287742197
+      },
+      {
+        "entity": "recommendationservice/ListProducts",
+        "node": "operation::recommendationservice::ListProducts",
+        "score": 0.003959672854333241
+      },
+      {
+        "entity": "recommendationservice/ListRecommendations",
+        "node": "operation::recommendationservice::ListRecommendations",
+        "score": 0.0034812505184993042
+      },
+      {
+        "entity": "productcatalogservice/ListProducts",
+        "node": "operation::productcatalogservice::ListProducts",
+        "score": 0.0027892156993580405
+      },
+      {
+        "entity": "frontend/AddItem",
+        "node": "operation::frontend::AddItem",
+        "score": 0.0027751613786129326
+      },
+      {
+        "entity": "frontend/ListRecommendations",
+        "node": "operation::frontend::ListRecommendations",
+        "score": 0.0017344261429289702
+      },
+      {
+        "entity": "currencyservice/Check",
+        "node": "operation::currencyservice::Check",
+        "score": 0.00168094097586463
+      },
+      {
+        "entity": "paymentservice/Check",
+        "node": "operation::paymentservice::Check",
+        "score": 0.0012291289958608251
+      },
+      {
+        "entity": "frontend/ListProducts",
+        "node": "operation::frontend::ListProducts",
+        "score": 0.0009146974810016068
+      },
+      {
+        "entity": "frontend/GetProduct",
+        "node": "operation::frontend::GetProduct",
+        "score": 0.0007635735749596985
+      },
+      {
+        "entity": "frontend/GetAds",
+        "node": "operation::frontend::GetAds",
+        "score": 0.000620969281366072
+      },
+      {
+        "entity": "checkoutservice/GetProduct",
+        "node": "operation::checkoutservice::GetProduct",
+        "score": 0.0004929269645989557
+      },
+      {
+        "entity": "checkoutservice/Charge",
+        "node": "operation::checkoutservice::Charge",
+        "score": 0.00044614840037353326
+      },
+      {
+        "entity": "frontend/GetQuote",
+        "node": "operation::frontend::GetQuote",
+        "score": 0.0003446499629510497
+      },
+      {
+        "entity": "checkoutservice/GetQuote",
+        "node": "operation::checkoutservice::GetQuote",
+        "score": 0.00033386801033148976
+      },
+      {
+        "entity": "productcatalogservice/Check",
+        "node": "operation::productcatalogservice::Check",
+        "score": 0.0003300102259596742
+      },
+      {
+        "entity": "checkoutservice/SendOrderConfirmation",
+        "node": "operation::checkoutservice::SendOrderConfirmation",
+        "score": 0.00026233852403710026
+      },
+      {
+        "entity": "checkoutservice/ShipOrder",
+        "node": "operation::checkoutservice::ShipOrder",
+        "score": 0.00022552311705904523
+      },
+      {
+        "entity": "productcatalogservice/GetProduct",
+        "node": "operation::productcatalogservice::GetProduct",
+        "score": 0.00018714739704353645
+      },
+      {
+        "entity": "emailservice/SendOrderConfirmation",
+        "node": "operation::emailservice::SendOrderConfirmation",
+        "score": 0.00018313113289732778
+      },
+      {
+        "entity": "paymentservice/Charge",
+        "node": "operation::paymentservice::Charge",
+        "score": 0.0001749990241561212
+      },
+      {
+        "entity": "checkoutservice/Export",
+        "node": "operation::checkoutservice::Export",
+        "score": 0.0001392070086943366
+      },
+      {
+        "entity": "emailservice/Check",
+        "node": "operation::emailservice::Check",
+        "score": 0.00010666997202736941
+      },
+      {
+        "entity": "frontend/Export",
+        "node": "operation::frontend::Export",
+        "score": 9.85888741168038e-05
+      },
+      {
+        "entity": "recommendationservice/Check",
+        "node": "operation::recommendationservice::Check",
+        "score": 8.933610157292191e-05
+      },
+      {
+        "entity": "productcatalogservice/Export",
+        "node": "operation::productcatalogservice::Export",
+        "score": 7.125016147247482e-05
+      },
+      {
+        "entity": "checkoutservice/Check",
+        "node": "operation::checkoutservice::Check",
+        "score": 3.3067691328484524e-05
+      }
+    ]
+  },
+  "graph": {
+    "nodes": [
+      {
+        "node": "log::adservice",
+        "label": "adservice",
+        "score": 1.0
+      },
+      {
+        "node": "log::cartservice",
+        "label": "cartservice",
+        "score": 0.8421052631578947
+      },
+      {
+        "node": "log::checkoutservice",
+        "label": "checkoutservice",
+        "score": 0.10714285714285715
+      },
+      {
+        "node": "log::currencyservice",
+        "label": "currencyservice",
+        "score": 0.0
+      },
+      {
+        "node": "log::emailservice",
+        "label": "emailservice",
+        "score": 0.09999999999999999
+      },
+      {
+        "node": "log::frontend",
+        "label": "frontend",
+        "score": 0.8558201058201059
+      },
+      {
+        "node": "log::paymentservice",
+        "label": "paymentservice",
+        "score": 0.09999999999999999
+      },
+      {
+        "node": "log::recommendationservice",
+        "label": "recommendationservice",
+        "score": 0.6282051282051282
+      },
+      {
+        "node": "log::redis",
+        "label": "redis",
+        "score": 0.0
+      },
+      {
+        "node": "log::shippingservice",
+        "label": "shippingservice",
+        "score": 0.3106060606060606
+      },
+      {
+        "node": "metric::adservice_cpu",
+        "label": "adservice_cpu",
+        "score": 7.578426827202042e-06
+      },
+      {
+        "node": "metric::adservice_diskio",
+        "label": "adservice_diskio",
+        "score": 4.802484457087974e-05
+      },
+      {
+        "node": "metric::adservice_error",
+        "label": "adservice_error",
+        "score": 0.0
+      },
+      {
+        "node": "metric::adservice_latency-50",
+        "label": "adservice_latency-50",
+        "score": 0.0007503823974644118
+      },
+      {
+        "node": "metric::adservice_latency-90",
+        "label": "adservice_latency-90",
+        "score": 0.0010196820491135353
+      },
+      {
+        "node": "metric::adservice_mem",
+        "label": "adservice_mem",
+        "score": 0.0004390869140625
+      },
+      {
+        "node": "metric::adservice_socket",
+        "label": "adservice_socket",
+        "score": 0.0
+      },
+      {
+        "node": "metric::adservice_workload",
+        "label": "adservice_workload",
+        "score": 2.112010168650792e-05
+      },
+      {
+        "node": "metric::cartservice_cpu",
+        "label": "cartservice_cpu",
+        "score": 2.808528106179734e-05
+      },
+      {
+        "node": "metric::cartservice_diskio",
+        "label": "cartservice_diskio",
+        "score": 0.0
+      },
+      {
+        "node": "metric::cartservice_latency-50",
+        "label": "cartservice_latency-50",
+        "score": 0.0028529905694188434
+      },
+      {
+        "node": "metric::cartservice_latency-90",
+        "label": "cartservice_latency-90",
+        "score": 0.011075171266700894
+      },
+      {
+        "node": "metric::cartservice_mem",
+        "label": "cartservice_mem",
+        "score": 0.00023700714111328126
+      },
+      {
+        "node": "metric::cartservice_socket",
+        "label": "cartservice_socket",
+        "score": 0.0
+      },
+      {
+        "node": "metric::cartservice_workload",
+        "label": "cartservice_workload",
+        "score": 1.9958496093749977e-05
+      },
+      {
+        "node": "metric::checkoutservice_cpu",
+        "label": "checkoutservice_cpu",
+        "score": 3.896785462388223e-05
+      },
+      {
+        "node": "metric::checkoutservice_latency-50",
+        "label": "checkoutservice_latency-50",
+        "score": 0.013727447517124593
+      },
+      {
+        "node": "metric::checkoutservice_latency-90",
+        "label": "checkoutservice_latency-90",
+        "score": 0.009699829101562502
+      },
+      {
+        "node": "metric::checkoutservice_mem",
+        "label": "checkoutservice_mem",
+        "score": 0.00010626550622888515
+      },
+      {
+        "node": "metric::checkoutservice_socket",
+        "label": "checkoutservice_socket",
+        "score": 0.0
+      },
+      {
+        "node": "metric::checkoutservice_workload",
+        "label": "checkoutservice_workload",
+        "score": 5.1370690159930404e-05
+      },
+      {
+        "node": "metric::currencyservice_cpu",
+        "label": "currencyservice_cpu",
+        "score": 0.0004897709604424834
+      },
+      {
+        "node": "metric::currencyservice_diskio",
+        "label": "currencyservice_diskio",
+        "score": 0.0
+      },
+      {
+        "node": "metric::currencyservice_latency-50",
+        "label": "currencyservice_latency-50",
+        "score": 0.04727662059142466
+      },
+      {
+        "node": "metric::currencyservice_latency-90",
+        "label": "currencyservice_latency-90",
+        "score": 0.042577917243050045
+      },
+      {
+        "node": "metric::currencyservice_mem",
+        "label": "currencyservice_mem",
+        "score": 0.00024008305155550112
+      },
+      {
+        "node": "metric::currencyservice_socket",
+        "label": "currencyservice_socket",
+        "score": 0.0001197509765625
+      },
+      {
+        "node": "metric::currencyservice_workload",
+        "label": "currencyservice_workload",
+        "score": 2.986118286510219e-05
+      },
+      {
+        "node": "metric::emailservice_cpu",
+        "label": "emailservice_cpu",
+        "score": 3.739269162425142e-05
+      },
+      {
+        "node": "metric::emailservice_diskio",
+        "label": "emailservice_diskio",
+        "score": 0.0
+      },
+      {
+        "node": "metric::emailservice_latency-50",
+        "label": "emailservice_latency-50",
+        "score": 0.00020756835937499817
+      },
+      {
+        "node": "metric::emailservice_latency-90",
+        "label": "emailservice_latency-90",
+        "score": 0.000497299194335937
+      },
+      {
+        "node": "metric::emailservice_mem",
+        "label": "emailservice_mem",
+        "score": 7.9833984375e-05
+      },
+      {
+        "node": "metric::emailservice_socket",
+        "label": "emailservice_socket",
+        "score": 0.0
+      },
+      {
+        "node": "metric::emailservice_workload",
+        "label": "emailservice_workload",
+        "score": 3.9991883354831154e-05
+      },
+      {
+        "node": "metric::frontend-external_error",
+        "label": "frontend-external_error",
+        "score": 6.38671875e-05
+      },
+      {
+        "node": "metric::frontend-external_workload",
+        "label": "frontend-external_workload",
+        "score": 3.150512406274666e-05
+      },
+      {
+        "node": "metric::frontend_cpu",
+        "label": "frontend_cpu",
+        "score": 5.653870143826064e-06
+      },
+      {
+        "node": "metric::frontend_diskio",
+        "label": "frontend_diskio",
+        "score": 0.0
+      },
+      {
+        "node": "metric::frontend_error",
+        "label": "frontend_error",
+        "score": 3.46080322265625e-05
+      },
+      {
+        "node": "metric::frontend_latency-50",
+        "label": "frontend_latency-50",
+        "score": 0.023702277565143016
+      },
+      {
+        "node": "metric::frontend_latency-90",
+        "label": "frontend_latency-90",
+        "score": 0.14917824253432388
+      },
+      {
+        "node": "metric::frontend_mem",
+        "label": "frontend_mem",
+        "score": 0.00039047006460336543
+      },
+      {
+        "node": "metric::frontend_socket",
+        "label": "frontend_socket",
+        "score": 0.000558837890625
+      },
+      {
+        "node": "metric::frontend_workload",
+        "label": "frontend_workload",
+        "score": 1.2602049625098673e-05
+      },
+      {
+        "node": "metric::paymentservice_cpu",
+        "label": "paymentservice_cpu",
+        "score": 4.6794150817455976e-05
+      },
+      {
+        "node": "metric::paymentservice_diskio",
+        "label": "paymentservice_diskio",
+        "score": 0.0
+      },
+      {
+        "node": "metric::paymentservice_latency-50",
+        "label": "paymentservice_latency-50",
+        "score": 0.0008028173053075369
+      },
+      {
+        "node": "metric::paymentservice_latency-90",
+        "label": "paymentservice_latency-90",
+        "score": 0.0012377825502947382
+      },
+      {
+        "node": "metric::paymentservice_mem",
+        "label": "paymentservice_mem",
+        "score": 3.880818684895834e-06
+      },
+      {
+        "node": "metric::paymentservice_socket",
+        "label": "paymentservice_socket",
+        "score": 0.0
+      },
+      {
+        "node": "metric::paymentservice_workload",
+        "label": "paymentservice_workload",
+        "score": 5.70120637881424e-05
+      },
+      {
+        "node": "metric::productcatalogservice_cpu",
+        "label": "productcatalogservice_cpu",
+        "score": 1.8272520244625473e-05
+      },
+      {
+        "node": "metric::productcatalogservice_diskio",
+        "label": "productcatalogservice_diskio",
+        "score": 0.0
+      },
+      {
+        "node": "metric::productcatalogservice_latency-50",
+        "label": "productcatalogservice_latency-50",
+        "score": 0.0003613485211099073
+      },
+      {
+        "node": "metric::productcatalogservice_latency-90",
+        "label": "productcatalogservice_latency-90",
+        "score": 0.0007858613926398879
+      },
+      {
+        "node": "metric::productcatalogservice_mem",
+        "label": "productcatalogservice_mem",
+        "score": 0.00012364531726371953
+      },
+      {
+        "node": "metric::productcatalogservice_socket",
+        "label": "productcatalogservice_socket",
+        "score": 0.0
+      },
+      {
+        "node": "metric::productcatalogservice_workload",
+        "label": "productcatalogservice_workload",
+        "score": 1.38848785900434e-05
+      },
+      {
+        "node": "metric::recommendationservice_cpu",
+        "label": "recommendationservice_cpu",
+        "score": 2.7007350501037432e-05
+      },
+      {
+        "node": "metric::recommendationservice_diskio",
+        "label": "recommendationservice_diskio",
+        "score": 0.0
+      },
+      {
+        "node": "metric::recommendationservice_latency-50",
+        "label": "recommendationservice_latency-50",
+        "score": 0.0032312659211653975
+      },
+      {
+        "node": "metric::recommendationservice_latency-90",
+        "label": "recommendationservice_latency-90",
+        "score": 0.09987024682984401
+      },
+      {
+        "node": "metric::recommendationservice_mem",
+        "label": "recommendationservice_mem",
+        "score": 0.0012693603515625
+      },
+      {
+        "node": "metric::recommendationservice_socket",
+        "label": "recommendationservice_socket",
+        "score": 0.0
+      },
+      {
+        "node": "metric::recommendationservice_workload",
+        "label": "recommendationservice_workload",
+        "score": 1.8243100112977522e-06
+      },
+      {
+        "node": "metric::redis_cpu",
+        "label": "redis_cpu",
+        "score": 1.6417824977681077e-05
+      },
+      {
+        "node": "metric::redis_diskio",
+        "label": "redis_diskio",
+        "score": 1.0
+      },
+      {
+        "node": "metric::redis_mem",
+        "label": "redis_mem",
+        "score": 0.002474853515625
+      },
+      {
+        "node": "metric::redis_socket",
+        "label": "redis_socket",
+        "score": 0.0
+      },
+      {
+        "node": "metric::shippingservice_cpu",
+        "label": "shippingservice_cpu",
+        "score": 8.806281092922486e-06
+      },
+      {
+        "node": "metric::shippingservice_latency-50",
+        "label": "shippingservice_latency-50",
+        "score": 0.00021003750425529127
+      },
+      {
+        "node": "metric::shippingservice_latency-90",
+        "label": "shippingservice_latency-90",
+        "score": 0.00045954048018417805
+      },
+      {
+        "node": "metric::shippingservice_mem",
+        "label": "shippingservice_mem",
+        "score": 0.00010523570667613635
+      },
+      {
+        "node": "metric::shippingservice_socket",
+        "label": "shippingservice_socket",
+        "score": 0.0
+      },
+      {
+        "node": "metric::shippingservice_workload",
+        "label": "shippingservice_workload",
+        "score": 2.2809709821428575e-05
+      },
+      {
+        "node": "operation::checkoutservice::Charge",
+        "label": "checkoutservice/Charge",
+        "score": 0.00044614840037353326
+      },
+      {
+        "node": "operation::checkoutservice::Check",
+        "label": "checkoutservice/Check",
+        "score": 3.3067691328484524e-05
+      },
+      {
+        "node": "operation::checkoutservice::Convert",
+        "label": "checkoutservice/Convert",
+        "score": 0.021890745531147192
+      },
+      {
+        "node": "operation::checkoutservice::EmptyCart",
+        "label": "checkoutservice/EmptyCart",
+        "score": 0.010463048764921143
+      },
+      {
+        "node": "operation::checkoutservice::Export",
+        "label": "checkoutservice/Export",
+        "score": 0.0001392070086943366
+      },
+      {
+        "node": "operation::checkoutservice::GetCart",
+        "label": "checkoutservice/GetCart",
+        "score": 0.06866059213569757
+      },
+      {
+        "node": "operation::checkoutservice::GetProduct",
+        "label": "checkoutservice/GetProduct",
+        "score": 0.0004929269645989557
+      },
+      {
+        "node": "operation::checkoutservice::GetQuote",
+        "label": "checkoutservice/GetQuote",
+        "score": 0.00033386801033148976
+      },
+      {
+        "node": "operation::checkoutservice::PlaceOrder",
+        "label": "checkoutservice/PlaceOrder",
+        "score": 0.008888266626953113
+      },
+      {
+        "node": "operation::checkoutservice::SendOrderConfirmation",
+        "label": "checkoutservice/SendOrderConfirmation",
+        "score": 0.00026233852403710026
+      },
+      {
+        "node": "operation::checkoutservice::ShipOrder",
+        "label": "checkoutservice/ShipOrder",
+        "score": 0.00022552311705904523
+      },
+      {
+        "node": "operation::currencyservice::Check",
+        "label": "currencyservice/Check",
+        "score": 0.00168094097586463
+      },
+      {
+        "node": "operation::currencyservice::Convert",
+        "label": "currencyservice/Convert",
+        "score": 0.009086086699003466
+      },
+      {
+        "node": "operation::currencyservice::GetSupportedCurrencies",
+        "label": "currencyservice/GetSupportedCurrencies",
+        "score": 0.10234409726709007
+      },
+      {
+        "node": "operation::emailservice::Check",
+        "label": "emailservice/Check",
+        "score": 0.00010666997202736941
+      },
+      {
+        "node": "operation::emailservice::SendOrderConfirmation",
+        "label": "emailservice/SendOrderConfirmation",
+        "score": 0.00018313113289732778
+      },
+      {
+        "node": "operation::frontend::AddItem",
+        "label": "frontend/AddItem",
+        "score": 0.0027751613786129326
+      },
+      {
+        "node": "operation::frontend::Convert",
+        "label": "frontend/Convert",
+        "score": 0.059781772757582244
+      },
+      {
+        "node": "operation::frontend::Export",
+        "label": "frontend/Export",
+        "score": 9.85888741168038e-05
+      },
+      {
+        "node": "operation::frontend::GetAds",
+        "label": "frontend/GetAds",
+        "score": 0.000620969281366072
+      },
+      {
+        "node": "operation::frontend::GetCart",
+        "label": "frontend/GetCart",
+        "score": 0.0054237287742197
+      },
+      {
+        "node": "operation::frontend::GetProduct",
+        "label": "frontend/GetProduct",
+        "score": 0.0007635735749596985
+      },
+      {
+        "node": "operation::frontend::GetQuote",
+        "label": "frontend/GetQuote",
+        "score": 0.0003446499629510497
+      },
+      {
+        "node": "operation::frontend::GetSupportedCurrencies",
+        "label": "frontend/GetSupportedCurrencies",
+        "score": 1.0
+      },
+      {
+        "node": "operation::frontend::ListProducts",
+        "label": "frontend/ListProducts",
+        "score": 0.0009146974810016068
+      },
+      {
+        "node": "operation::frontend::ListRecommendations",
+        "label": "frontend/ListRecommendations",
+        "score": 0.0017344261429289702
+      },
+      {
+        "node": "operation::frontend::PlaceOrder",
+        "label": "frontend/PlaceOrder",
+        "score": 0.007116649775832368
+      },
+      {
+        "node": "operation::frontend::frontend",
+        "label": "frontend/frontend",
+        "score": 0.08317560955465791
+      },
+      {
+        "node": "operation::paymentservice::Charge",
+        "label": "paymentservice/Charge",
+        "score": 0.0001749990241561212
+      },
+      {
+        "node": "operation::paymentservice::Check",
+        "label": "paymentservice/Check",
+        "score": 0.0012291289958608251
+      },
+      {
+        "node": "operation::productcatalogservice::Check",
+        "label": "productcatalogservice/Check",
+        "score": 0.0003300102259596742
+      },
+      {
+        "node": "operation::productcatalogservice::Export",
+        "label": "productcatalogservice/Export",
+        "score": 7.125016147247482e-05
+      },
+      {
+        "node": "operation::productcatalogservice::GetProduct",
+        "label": "productcatalogservice/GetProduct",
+        "score": 0.00018714739704353645
+      },
+      {
+        "node": "operation::productcatalogservice::ListProducts",
+        "label": "productcatalogservice/ListProducts",
+        "score": 0.0027892156993580405
+      },
+      {
+        "node": "operation::recommendationservice::Check",
+        "label": "recommendationservice/Check",
+        "score": 8.933610157292191e-05
+      },
+      {
+        "node": "operation::recommendationservice::ListProducts",
+        "label": "recommendationservice/ListProducts",
+        "score": 0.003959672854333241
+      },
+      {
+        "node": "operation::recommendationservice::ListRecommendations",
+        "label": "recommendationservice/ListRecommendations",
+        "score": 0.0034812505184993042
+      },
+      {
+        "node": "service::adservice",
+        "label": "adservice",
+        "score": 0.021980898714231777
+      },
+      {
+        "node": "service::cartservice",
+        "label": "cartservice",
+        "score": 0.029687599682061076
+      },
+      {
+        "node": "service::checkoutservice",
+        "label": "checkoutservice",
+        "score": 0.02146680236111815
+      },
+      {
+        "node": "service::currencyservice",
+        "label": "currencyservice",
+        "score": 0.054307367423943424
+      },
+      {
+        "node": "service::emailservice",
+        "label": "emailservice",
+        "score": 0.0026444874169279887
+      },
+      {
+        "node": "service::frontend",
+        "label": "frontend",
+        "score": 0.22443213602863743
+      },
+      {
+        "node": "service::frontend-external",
+        "label": "frontend-external",
+        "score": 6.38671875e-05
+      },
+      {
+        "node": "service::paymentservice",
+        "label": "paymentservice",
+        "score": 0.0034399978316051404
+      },
+      {
+        "node": "service::productcatalogservice",
+        "label": "productcatalogservice",
+        "score": 0.01939817556626051
+      },
+      {
+        "node": "service::recommendationservice",
+        "label": "recommendationservice",
+        "score": 0.11399146568215177
+      },
+      {
+        "node": "service::redis",
+        "label": "redis",
+        "score": 1.0
+      },
+      {
+        "node": "service::shippingservice",
+        "label": "shippingservice",
+        "score": 0.00729751275551389
+      }
+    ],
+    "edges": [
+      {
+        "source": "metric::redis_diskio",
+        "target": "service::redis",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend_latency-90",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::recommendationservice_latency-90",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::currencyservice_latency-50",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::currencyservice_latency-90",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend_latency-50",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::checkoutservice_latency-50",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::cartservice_latency-90",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::checkoutservice_latency-90",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::recommendationservice_latency-50",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::cartservice_latency-50",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::redis_mem",
+        "target": "service::redis",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::recommendationservice_mem",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::paymentservice_latency-90",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::adservice_latency-90",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::paymentservice_latency-50",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::productcatalogservice_latency-90",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::adservice_latency-50",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend_socket",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::emailservice_latency-90",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::currencyservice_cpu",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::shippingservice_latency-90",
+        "target": "service::shippingservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::adservice_mem",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend_mem",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::productcatalogservice_latency-50",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::currencyservice_mem",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::cartservice_mem",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::shippingservice_latency-50",
+        "target": "service::shippingservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::emailservice_latency-50",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::productcatalogservice_mem",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::currencyservice_socket",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::checkoutservice_mem",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::shippingservice_mem",
+        "target": "service::shippingservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::emailservice_mem",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend-external_error",
+        "target": "service::frontend-external",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::paymentservice_workload",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::checkoutservice_workload",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::adservice_diskio",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::paymentservice_cpu",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::emailservice_workload",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::checkoutservice_cpu",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::emailservice_cpu",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend_error",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend-external_workload",
+        "target": "service::frontend-external",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::currencyservice_workload",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::cartservice_cpu",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::recommendationservice_cpu",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::shippingservice_workload",
+        "target": "service::shippingservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::adservice_workload",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::cartservice_workload",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::productcatalogservice_cpu",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::redis_cpu",
+        "target": "service::redis",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::productcatalogservice_workload",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend_workload",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::shippingservice_cpu",
+        "target": "service::shippingservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::adservice_cpu",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend_cpu",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::paymentservice_mem",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::recommendationservice_workload",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::cartservice_diskio",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::currencyservice_diskio",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::emailservice_diskio",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::frontend_diskio",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::paymentservice_diskio",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::productcatalogservice_diskio",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::recommendationservice_diskio",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::adservice_socket",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::cartservice_socket",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::checkoutservice_socket",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::emailservice_socket",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::paymentservice_socket",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::productcatalogservice_socket",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::recommendationservice_socket",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::redis_socket",
+        "target": "service::redis",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::shippingservice_socket",
+        "target": "service::shippingservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "metric::adservice_error",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "metric_observes_service",
+        "observations": 1,
+        "active_in_scoring": false
+      },
+      {
+        "source": "log::adservice",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 9709,
+        "active_in_scoring": true
+      },
+      {
+        "source": "log::cartservice",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 16522,
+        "active_in_scoring": true
+      },
+      {
+        "source": "log::checkoutservice",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 1764,
+        "active_in_scoring": true
+      },
+      {
+        "source": "log::currencyservice",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 15710,
+        "active_in_scoring": true
+      },
+      {
+        "source": "log::emailservice",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "log::frontend",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 57746,
+        "active_in_scoring": true
+      },
+      {
+        "source": "log::paymentservice",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 1176,
+        "active_in_scoring": true
+      },
+      {
+        "source": "log::recommendationservice",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 11986,
+        "active_in_scoring": true
+      },
+      {
+        "source": "log::redis",
+        "target": "service::redis",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 25,
+        "active_in_scoring": true
+      },
+      {
+        "source": "log::shippingservice",
+        "target": "service::shippingservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 9492,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::Charge",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::Check",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 288,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::Convert",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 2004,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::EmptyCart",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::Export",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 288,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::GetCart",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::GetProduct",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 1416,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::GetQuote",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::SendOrderConfirmation",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::ShipOrder",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::currencyservice::Check",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 251,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::currencyservice::Convert",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 37808,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::currencyservice::GetSupportedCurrencies",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13866,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::emailservice::Check",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 576,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::emailservice::SendOrderConfirmation",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::AddItem",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 1780,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::Convert",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 35805,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::Export",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 382,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::GetAds",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 9709,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::GetCart",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13278,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::GetProduct",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 76344,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::GetQuote",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 3570,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::GetSupportedCurrencies",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13896,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::ListProducts",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 1880,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::ListRecommendations",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 11986,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::PlaceOrder",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::frontend",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 17263,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::paymentservice::Charge",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::paymentservice::Check",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 288,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::productcatalogservice::Check",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 288,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::productcatalogservice::Export",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 288,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::productcatalogservice::GetProduct",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 77761,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::productcatalogservice::ListProducts",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13866,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::recommendationservice::Check",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 576,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::recommendationservice::ListProducts",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 11986,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::recommendationservice::ListRecommendations",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 11986,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::Charge",
+        "target": "operation::paymentservice::Charge",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::GetProduct",
+        "target": "operation::productcatalogservice::GetProduct",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 852,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::Charge",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::EmptyCart",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::GetCart",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::GetProduct",
+        "weight": 0.28286852589641437,
+        "relation": "operation_calls_operation",
+        "observations": 852,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::GetQuote",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::SendOrderConfirmation",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::ShipOrder",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::checkoutservice::SendOrderConfirmation",
+        "target": "operation::emailservice::SendOrderConfirmation",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::Convert",
+        "target": "operation::currencyservice::Convert",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 20113,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::GetProduct",
+        "target": "operation::productcatalogservice::GetProduct",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 43631,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::GetSupportedCurrencies",
+        "target": "operation::currencyservice::GetSupportedCurrencies",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 7910,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::ListProducts",
+        "target": "operation::productcatalogservice::ListProducts",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 1048,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::ListRecommendations",
+        "target": "operation::recommendationservice::ListRecommendations",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 6861,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::frontend::PlaceOrder",
+        "target": "operation::checkoutservice::PlaceOrder",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::recommendationservice::ListProducts",
+        "target": "operation::productcatalogservice::ListProducts",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 6861,
+        "active_in_scoring": true
+      },
+      {
+        "source": "operation::recommendationservice::ListRecommendations",
+        "target": "operation::recommendationservice::ListProducts",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 6861,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::cartservice",
+        "weight": 0.17045454545454544,
+        "relation": "service_calls_service",
+        "observations": 720,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::currencyservice",
+        "weight": 0.2869318181818182,
+        "relation": "service_calls_service",
+        "observations": 1212,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::emailservice",
+        "weight": 0.08522727272727272,
+        "relation": "service_calls_service",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::paymentservice",
+        "weight": 0.08522727272727272,
+        "relation": "service_calls_service",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::productcatalogservice",
+        "weight": 0.20170454545454544,
+        "relation": "service_calls_service",
+        "observations": 852,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::shippingservice",
+        "weight": 0.17045454545454544,
+        "relation": "service_calls_service",
+        "observations": 720,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::adservice",
+        "weight": 0.05721809911419679,
+        "relation": "service_calls_service",
+        "observations": 5497,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::cartservice",
+        "weight": 0.08949631002071384,
+        "relation": "service_calls_service",
+        "observations": 8598,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::checkoutservice",
+        "weight": 0.003747228612172248,
+        "relation": "service_calls_service",
+        "observations": 360,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::currencyservice",
+        "weight": 0.29169052055250805,
+        "relation": "service_calls_service",
+        "observations": 28023,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::productcatalogservice",
+        "weight": 0.46506229767567736,
+        "relation": "service_calls_service",
+        "observations": 44679,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::recommendationservice",
+        "weight": 0.07141593196698275,
+        "relation": "service_calls_service",
+        "observations": 6861,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::shippingservice",
+        "weight": 0.021369612057748958,
+        "relation": "service_calls_service",
+        "observations": 2053,
+        "active_in_scoring": true
+      },
+      {
+        "source": "service::recommendationservice",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "service_calls_service",
+        "observations": 6861,
+        "active_in_scoring": true
+      }
+    ],
+    "contributions": [
+      {
+        "source": "operation::frontend::GetSupportedCurrencies",
+        "target": "operation::currencyservice::GetSupportedCurrencies",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 7910,
+        "step": 1,
+        "source_score": 1.0,
+        "relation_weight": 1.0,
+        "contribution": 0.05
+      },
+      {
+        "source": "operation::frontend::GetSupportedCurrencies",
+        "target": "operation::currencyservice::GetSupportedCurrencies",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 7910,
+        "step": 2,
+        "source_score": 1.0,
+        "relation_weight": 1.0,
+        "contribution": 0.05
+      },
+      {
+        "source": "operation::frontend::GetSupportedCurrencies",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13896,
+        "step": 1,
+        "source_score": 1.0,
+        "relation_weight": 0.5,
+        "contribution": 0.025
+      },
+      {
+        "source": "operation::frontend::GetSupportedCurrencies",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13896,
+        "step": 2,
+        "source_score": 1.0,
+        "relation_weight": 0.5,
+        "contribution": 0.025
+      },
+      {
+        "source": "log::adservice",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 9709,
+        "step": 1,
+        "source_score": 1.0,
+        "relation_weight": 0.2,
+        "contribution": 0.010000000000000002
+      },
+      {
+        "source": "log::adservice",
+        "target": "service::adservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 9709,
+        "step": 2,
+        "source_score": 1.0,
+        "relation_weight": 0.2,
+        "contribution": 0.010000000000000002
+      },
+      {
+        "source": "log::frontend",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 57746,
+        "step": 1,
+        "source_score": 0.8558201058201059,
+        "relation_weight": 0.2,
+        "contribution": 0.008558201058201062
+      },
+      {
+        "source": "log::frontend",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 57746,
+        "step": 2,
+        "source_score": 0.8558201058201059,
+        "relation_weight": 0.2,
+        "contribution": 0.008558201058201062
+      },
+      {
+        "source": "log::cartservice",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 16522,
+        "step": 1,
+        "source_score": 0.8421052631578947,
+        "relation_weight": 0.2,
+        "contribution": 0.008421052631578949
+      },
+      {
+        "source": "log::cartservice",
+        "target": "service::cartservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 16522,
+        "step": 2,
+        "source_score": 0.8421052631578947,
+        "relation_weight": 0.2,
+        "contribution": 0.008421052631578949
+      },
+      {
+        "source": "log::recommendationservice",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 11986,
+        "step": 1,
+        "source_score": 0.6282051282051282,
+        "relation_weight": 0.2,
+        "contribution": 0.006282051282051283
+      },
+      {
+        "source": "log::recommendationservice",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 11986,
+        "step": 2,
+        "source_score": 0.6282051282051282,
+        "relation_weight": 0.2,
+        "contribution": 0.006282051282051283
+      },
+      {
+        "source": "service::recommendationservice",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "service_calls_service",
+        "observations": 6861,
+        "step": 2,
+        "source_score": 0.10686052577299292,
+        "relation_weight": 1.0,
+        "contribution": 0.005343026288649647
+      },
+      {
+        "source": "service::recommendationservice",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "service_calls_service",
+        "observations": 6861,
+        "step": 1,
+        "source_score": 0.09987024682984401,
+        "relation_weight": 1.0,
+        "contribution": 0.004993512341492201
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::productcatalogservice",
+        "weight": 0.46506229767567736,
+        "relation": "service_calls_service",
+        "observations": 44679,
+        "step": 2,
+        "source_score": 0.18680518928148065,
+        "relation_weight": 1.0,
+        "contribution": 0.004343802527249261
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::productcatalogservice",
+        "weight": 0.46506229767567736,
+        "relation": "service_calls_service",
+        "observations": 44679,
+        "step": 1,
+        "source_score": 0.14917824253432388,
+        "relation_weight": 1.0,
+        "contribution": 0.0034688588118116067
+      },
+      {
+        "source": "log::shippingservice",
+        "target": "service::shippingservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 9492,
+        "step": 1,
+        "source_score": 0.3106060606060606,
+        "relation_weight": 0.2,
+        "contribution": 0.0031060606060606065
+      },
+      {
+        "source": "log::shippingservice",
+        "target": "service::shippingservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 9492,
+        "step": 2,
+        "source_score": 0.3106060606060606,
+        "relation_weight": 0.2,
+        "contribution": 0.0031060606060606065
+      },
+      {
+        "source": "operation::frontend::Convert",
+        "target": "operation::currencyservice::Convert",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 20113,
+        "step": 1,
+        "source_score": 0.059781772757582244,
+        "relation_weight": 1.0,
+        "contribution": 0.0029890886378791124
+      },
+      {
+        "source": "operation::frontend::Convert",
+        "target": "operation::currencyservice::Convert",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 20113,
+        "step": 2,
+        "source_score": 0.059781772757582244,
+        "relation_weight": 1.0,
+        "contribution": 0.0029890886378791124
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::currencyservice",
+        "weight": 0.29169052055250805,
+        "relation": "service_calls_service",
+        "observations": 28023,
+        "step": 2,
+        "source_score": 0.18680518928148065,
+        "relation_weight": 1.0,
+        "contribution": 0.0027244651451712445
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::currencyservice",
+        "weight": 0.29169052055250805,
+        "relation": "service_calls_service",
+        "observations": 28023,
+        "step": 1,
+        "source_score": 0.14917824253432388,
+        "relation_weight": 1.0,
+        "contribution": 0.0021756939609972616
+      },
+      {
+        "source": "operation::frontend::frontend",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 17263,
+        "step": 1,
+        "source_score": 0.08317560955465791,
+        "relation_weight": 0.5,
+        "contribution": 0.002079390238866448
+      },
+      {
+        "source": "operation::frontend::frontend",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 17263,
+        "step": 2,
+        "source_score": 0.08317560955465791,
+        "relation_weight": 0.5,
+        "contribution": 0.002079390238866448
+      },
+      {
+        "source": "operation::checkoutservice::GetCart",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "step": 2,
+        "source_score": 0.06860960149343764,
+        "relation_weight": 0.5,
+        "contribution": 0.0017152400373359412
+      },
+      {
+        "source": "operation::checkoutservice::GetCart",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "step": 1,
+        "source_score": 0.06856073734015455,
+        "relation_weight": 0.5,
+        "contribution": 0.001714018433503864
+      },
+      {
+        "source": "operation::frontend::Convert",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 35805,
+        "step": 1,
+        "source_score": 0.059781772757582244,
+        "relation_weight": 0.5,
+        "contribution": 0.0014945443189395562
+      },
+      {
+        "source": "operation::frontend::Convert",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 35805,
+        "step": 2,
+        "source_score": 0.059781772757582244,
+        "relation_weight": 0.5,
+        "contribution": 0.0014945443189395562
+      },
+      {
+        "source": "operation::currencyservice::GetSupportedCurrencies",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13866,
+        "step": 2,
+        "source_score": 0.05234409726709007,
+        "relation_weight": 0.5,
+        "contribution": 0.001308602431677252
+      },
+      {
+        "source": "log::checkoutservice",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 1764,
+        "step": 1,
+        "source_score": 0.10714285714285715,
+        "relation_weight": 0.2,
+        "contribution": 0.0010714285714285717
+      },
+      {
+        "source": "log::checkoutservice",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 1764,
+        "step": 2,
+        "source_score": 0.10714285714285715,
+        "relation_weight": 0.2,
+        "contribution": 0.0010714285714285717
+      },
+      {
+        "source": "log::emailservice",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 588,
+        "step": 1,
+        "source_score": 0.09999999999999999,
+        "relation_weight": 0.2,
+        "contribution": 0.001
+      },
+      {
+        "source": "log::paymentservice",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 1176,
+        "step": 1,
+        "source_score": 0.09999999999999999,
+        "relation_weight": 0.2,
+        "contribution": 0.001
+      },
+      {
+        "source": "log::emailservice",
+        "target": "service::emailservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 588,
+        "step": 2,
+        "source_score": 0.09999999999999999,
+        "relation_weight": 0.2,
+        "contribution": 0.001
+      },
+      {
+        "source": "log::paymentservice",
+        "target": "service::paymentservice",
+        "weight": 1.0,
+        "relation": "log_source_proxy_for_service",
+        "observations": 1176,
+        "step": 2,
+        "source_score": 0.09999999999999999,
+        "relation_weight": 0.2,
+        "contribution": 0.001
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::cartservice",
+        "weight": 0.08949631002071384,
+        "relation": "service_calls_service",
+        "observations": 8598,
+        "step": 2,
+        "source_score": 0.18680518928148065,
+        "relation_weight": 1.0,
+        "contribution": 0.0008359187566706762
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::cartservice",
+        "weight": 0.08949631002071384,
+        "relation": "service_calls_service",
+        "observations": 8598,
+        "step": 1,
+        "source_score": 0.14917824253432388,
+        "relation_weight": 1.0,
+        "contribution": 0.0006675451121098545
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::recommendationservice",
+        "weight": 0.07141593196698275,
+        "relation": "service_calls_service",
+        "observations": 6861,
+        "step": 2,
+        "source_score": 0.18680518928148065,
+        "relation_weight": 1.0,
+        "contribution": 0.0006670433344402779
+      },
+      {
+        "source": "operation::checkoutservice::Convert",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 2004,
+        "step": 1,
+        "source_score": 0.021890745531147192,
+        "relation_weight": 0.5,
+        "contribution": 0.0005472686382786799
+      },
+      {
+        "source": "operation::checkoutservice::Convert",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 2004,
+        "step": 2,
+        "source_score": 0.021890745531147192,
+        "relation_weight": 0.5,
+        "contribution": 0.0005472686382786799
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::adservice",
+        "weight": 0.05721809911419679,
+        "relation": "service_calls_service",
+        "observations": 5497,
+        "step": 2,
+        "source_score": 0.18680518928148065,
+        "relation_weight": 1.0,
+        "contribution": 0.0005344318917677027
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::recommendationservice",
+        "weight": 0.07141593196698275,
+        "relation": "service_calls_service",
+        "observations": 6861,
+        "step": 1,
+        "source_score": 0.14917824253432388,
+        "relation_weight": 1.0,
+        "contribution": 0.0005326851609892663
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::adservice",
+        "weight": 0.05721809911419679,
+        "relation": "service_calls_service",
+        "observations": 5497,
+        "step": 1,
+        "source_score": 0.14917824253432388,
+        "relation_weight": 1.0,
+        "contribution": 0.0004267847733505316
+      },
+      {
+        "source": "operation::frontend::PlaceOrder",
+        "target": "operation::checkoutservice::PlaceOrder",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 1,
+        "source_score": 0.007116649775832368,
+        "relation_weight": 1.0,
+        "contribution": 0.00035583248879161845
+      },
+      {
+        "source": "operation::frontend::PlaceOrder",
+        "target": "operation::checkoutservice::PlaceOrder",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 2,
+        "source_score": 0.007116649775832368,
+        "relation_weight": 1.0,
+        "contribution": 0.00035583248879161845
+      },
+      {
+        "source": "operation::checkoutservice::EmptyCart",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "step": 2,
+        "source_score": 0.010412058122661213,
+        "relation_weight": 0.5,
+        "contribution": 0.0002603014530665303
+      },
+      {
+        "source": "operation::checkoutservice::EmptyCart",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "step": 1,
+        "source_score": 0.010363193969378126,
+        "relation_weight": 0.5,
+        "contribution": 0.00025907984923445316
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::currencyservice",
+        "weight": 0.2869318181818182,
+        "relation": "service_calls_service",
+        "observations": 1212,
+        "step": 2,
+        "source_score": 0.01758404173769463,
+        "relation_weight": 1.0,
+        "contribution": 0.00025227105333908487
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "step": 2,
+        "source_score": 0.008532434138161495,
+        "relation_weight": 0.5,
+        "contribution": 0.00021331085345403737
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "service::checkoutservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "step": 1,
+        "source_score": 0.008176601649369876,
+        "relation_weight": 0.5,
+        "contribution": 0.00020441504123424692
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::shippingservice",
+        "weight": 0.021369612057748958,
+        "relation": "service_calls_service",
+        "observations": 2053,
+        "step": 2,
+        "source_score": 0.18680518928148065,
+        "relation_weight": 1.0,
+        "contribution": 0.0001995977212659803
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::currencyservice",
+        "weight": 0.2869318181818182,
+        "relation": "service_calls_service",
+        "observations": 1212,
+        "step": 1,
+        "source_score": 0.013727447517124593,
+        "relation_weight": 1.0,
+        "contribution": 0.00019694207375420226
+      },
+      {
+        "source": "operation::recommendationservice::ListProducts",
+        "target": "operation::productcatalogservice::ListProducts",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 6861,
+        "step": 2,
+        "source_score": 0.003789946393765599,
+        "relation_weight": 1.0,
+        "contribution": 0.00018949731968827995
+      },
+      {
+        "source": "operation::recommendationservice::ListProducts",
+        "target": "operation::productcatalogservice::ListProducts",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 6861,
+        "step": 1,
+        "source_score": 0.0036245559985552786,
+        "relation_weight": 1.0,
+        "contribution": 0.00018122779992776395
+      },
+      {
+        "source": "operation::frontend::PlaceOrder",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "step": 1,
+        "source_score": 0.007116649775832368,
+        "relation_weight": 0.5,
+        "contribution": 0.00017791624439580922
+      },
+      {
+        "source": "operation::frontend::PlaceOrder",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 588,
+        "step": 2,
+        "source_score": 0.007116649775832368,
+        "relation_weight": 0.5,
+        "contribution": 0.00017791624439580922
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::productcatalogservice",
+        "weight": 0.20170454545454544,
+        "relation": "service_calls_service",
+        "observations": 852,
+        "step": 2,
+        "source_score": 0.01758404173769463,
+        "relation_weight": 1.0,
+        "contribution": 0.00017733905729777256
+      },
+      {
+        "source": "operation::recommendationservice::ListRecommendations",
+        "target": "operation::recommendationservice::ListProducts",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 6861,
+        "step": 2,
+        "source_score": 0.0033945292113528557,
+        "relation_weight": 1.0,
+        "contribution": 0.0001697264605676428
+      },
+      {
+        "source": "operation::recommendationservice::ListRecommendations",
+        "target": "operation::recommendationservice::ListProducts",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 6861,
+        "step": 1,
+        "source_score": 0.003307807904206407,
+        "relation_weight": 1.0,
+        "contribution": 0.00016539039521032038
+      },
+      {
+        "source": "service::frontend",
+        "target": "service::shippingservice",
+        "weight": 0.021369612057748958,
+        "relation": "service_calls_service",
+        "observations": 2053,
+        "step": 1,
+        "source_score": 0.14917824253432388,
+        "relation_weight": 1.0,
+        "contribution": 0.0001593940585207643
+      },
+      {
+        "source": "operation::currencyservice::Convert",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 37808,
+        "step": 2,
+        "source_score": 0.006096998061124354,
+        "relation_weight": 0.5,
+        "contribution": 0.00015242495152810887
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::cartservice",
+        "weight": 0.17045454545454544,
+        "relation": "service_calls_service",
+        "observations": 720,
+        "step": 2,
+        "source_score": 0.01758404173769463,
+        "relation_weight": 1.0,
+        "contribution": 0.00014986399208262468
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::shippingservice",
+        "weight": 0.17045454545454544,
+        "relation": "service_calls_service",
+        "observations": 720,
+        "step": 2,
+        "source_score": 0.01758404173769463,
+        "relation_weight": 1.0,
+        "contribution": 0.00014986399208262468
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::productcatalogservice",
+        "weight": 0.20170454545454544,
+        "relation": "service_calls_service",
+        "observations": 852,
+        "step": 1,
+        "source_score": 0.013727447517124593,
+        "relation_weight": 1.0,
+        "contribution": 0.00013844442808463726
+      },
+      {
+        "source": "operation::frontend::GetCart",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13278,
+        "step": 1,
+        "source_score": 0.0054237287742197,
+        "relation_weight": 0.5,
+        "contribution": 0.0001355932193554925
+      },
+      {
+        "source": "operation::frontend::GetCart",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13278,
+        "step": 2,
+        "source_score": 0.0054237287742197,
+        "relation_weight": 0.5,
+        "contribution": 0.0001355932193554925
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::GetProduct",
+        "weight": 0.28286852589641437,
+        "relation": "operation_calls_operation",
+        "observations": 852,
+        "step": 2,
+        "source_score": 0.008532434138161495,
+        "relation_weight": 1.0,
+        "contribution": 0.00012067785334849924
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::cartservice",
+        "weight": 0.17045454545454544,
+        "relation": "service_calls_service",
+        "observations": 720,
+        "step": 1,
+        "source_score": 0.013727447517124593,
+        "relation_weight": 1.0,
+        "contribution": 0.00011699529133913005
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::shippingservice",
+        "weight": 0.17045454545454544,
+        "relation": "service_calls_service",
+        "observations": 720,
+        "step": 1,
+        "source_score": 0.013727447517124593,
+        "relation_weight": 1.0,
+        "contribution": 0.00011699529133913005
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::GetProduct",
+        "weight": 0.28286852589641437,
+        "relation": "operation_calls_operation",
+        "observations": 852,
+        "step": 1,
+        "source_score": 0.008176601649369876,
+        "relation_weight": 1.0,
+        "contribution": 0.00011564516276997237
+      },
+      {
+        "source": "operation::recommendationservice::ListProducts",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 11986,
+        "step": 2,
+        "source_score": 0.003789946393765599,
+        "relation_weight": 0.5,
+        "contribution": 9.474865984413997e-05
+      },
+      {
+        "source": "operation::recommendationservice::ListProducts",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 11986,
+        "step": 1,
+        "source_score": 0.0036245559985552786,
+        "relation_weight": 0.5,
+        "contribution": 9.061389996388198e-05
+      },
+      {
+        "source": "operation::frontend::ListRecommendations",
+        "target": "operation::recommendationservice::ListRecommendations",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 6861,
+        "step": 1,
+        "source_score": 0.0017344261429289702,
+        "relation_weight": 1.0,
+        "contribution": 8.672130714644852e-05
+      },
+      {
+        "source": "operation::frontend::ListRecommendations",
+        "target": "operation::recommendationservice::ListRecommendations",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 6861,
+        "step": 2,
+        "source_score": 0.0017344261429289702,
+        "relation_weight": 1.0,
+        "contribution": 8.672130714644852e-05
+      },
+      {
+        "source": "operation::recommendationservice::ListRecommendations",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 11986,
+        "step": 2,
+        "source_score": 0.0033945292113528557,
+        "relation_weight": 0.5,
+        "contribution": 8.48632302838214e-05
+      },
+      {
+        "source": "operation::recommendationservice::ListRecommendations",
+        "target": "service::recommendationservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 11986,
+        "step": 1,
+        "source_score": 0.003307807904206407,
+        "relation_weight": 0.5,
+        "contribution": 8.269519760516019e-05
+      },
+      {
+        "source": "operation::currencyservice::Convert",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 37808,
+        "step": 1,
+        "source_score": 0.0031079094232452417,
+        "relation_weight": 0.5,
+        "contribution": 7.769773558113105e-05
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::emailservice",
+        "weight": 0.08522727272727272,
+        "relation": "service_calls_service",
+        "observations": 360,
+        "step": 2,
+        "source_score": 0.01758404173769463,
+        "relation_weight": 1.0,
+        "contribution": 7.493199604131234e-05
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::paymentservice",
+        "weight": 0.08522727272727272,
+        "relation": "service_calls_service",
+        "observations": 360,
+        "step": 2,
+        "source_score": 0.01758404173769463,
+        "relation_weight": 1.0,
+        "contribution": 7.493199604131234e-05
+      },
+      {
+        "source": "operation::frontend::AddItem",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 1780,
+        "step": 1,
+        "source_score": 0.0027751613786129326,
+        "relation_weight": 0.5,
+        "contribution": 6.937903446532332e-05
+      },
+      {
+        "source": "operation::frontend::AddItem",
+        "target": "service::frontend",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 1780,
+        "step": 2,
+        "source_score": 0.0027751613786129326,
+        "relation_weight": 0.5,
+        "contribution": 6.937903446532332e-05
+      },
+      {
+        "source": "operation::productcatalogservice::ListProducts",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13866,
+        "step": 2,
+        "source_score": 0.0025539835056196804,
+        "relation_weight": 0.5,
+        "contribution": 6.384958764049202e-05
+      },
+      {
+        "source": "operation::currencyservice::GetSupportedCurrencies",
+        "target": "service::currencyservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13866,
+        "step": 1,
+        "source_score": 0.0023440972670900665,
+        "relation_weight": 0.5,
+        "contribution": 5.860243167725166e-05
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::emailservice",
+        "weight": 0.08522727272727272,
+        "relation": "service_calls_service",
+        "observations": 360,
+        "step": 1,
+        "source_score": 0.013727447517124593,
+        "relation_weight": 1.0,
+        "contribution": 5.849764566956503e-05
+      },
+      {
+        "source": "service::checkoutservice",
+        "target": "service::paymentservice",
+        "weight": 0.08522727272727272,
+        "relation": "service_calls_service",
+        "observations": 360,
+        "step": 1,
+        "source_score": 0.013727447517124593,
+        "relation_weight": 1.0,
+        "contribution": 5.849764566956503e-05
+      },
+      {
+        "source": "operation::productcatalogservice::ListProducts",
+        "target": "service::productcatalogservice",
+        "weight": 1.0,
+        "relation": "operation_belongs_to_service",
+        "observations": 13866,
+        "step": 1,
+        "source_score": 0.002327020831641836,
+        "relation_weight": 0.5,
+        "contribution": 5.8175520791045906e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::Charge",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 2,
+        "source_score": 0.008532434138161495,
+        "relation_weight": 1.0,
+        "contribution": 5.099064225992926e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::EmptyCart",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 2,
+        "source_score": 0.008532434138161495,
+        "relation_weight": 1.0,
+        "contribution": 5.099064225992926e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::GetCart",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 2,
+        "source_score": 0.008532434138161495,
+        "relation_weight": 1.0,
+        "contribution": 5.099064225992926e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::GetQuote",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 2,
+        "source_score": 0.008532434138161495,
+        "relation_weight": 1.0,
+        "contribution": 5.099064225992926e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::SendOrderConfirmation",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 2,
+        "source_score": 0.008532434138161495,
+        "relation_weight": 1.0,
+        "contribution": 5.099064225992926e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::ShipOrder",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 2,
+        "source_score": 0.008532434138161495,
+        "relation_weight": 1.0,
+        "contribution": 5.099064225992926e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::Charge",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 1,
+        "source_score": 0.008176601649369876,
+        "relation_weight": 1.0,
+        "contribution": 4.886415328308691e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::EmptyCart",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 1,
+        "source_score": 0.008176601649369876,
+        "relation_weight": 1.0,
+        "contribution": 4.886415328308691e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::GetCart",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 1,
+        "source_score": 0.008176601649369876,
+        "relation_weight": 1.0,
+        "contribution": 4.886415328308691e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::GetQuote",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 1,
+        "source_score": 0.008176601649369876,
+        "relation_weight": 1.0,
+        "contribution": 4.886415328308691e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::SendOrderConfirmation",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 1,
+        "source_score": 0.008176601649369876,
+        "relation_weight": 1.0,
+        "contribution": 4.886415328308691e-05
+      },
+      {
+        "source": "operation::checkoutservice::PlaceOrder",
+        "target": "operation::checkoutservice::ShipOrder",
+        "weight": 0.11952191235059761,
+        "relation": "operation_calls_operation",
+        "observations": 360,
+        "step": 1,
+        "source_score": 0.008176601649369876,
+        "relation_weight": 1.0,
+        "contribution": 4.886415328308691e-05
+      },
+      {
+        "source": "operation::frontend::ListProducts",
+        "target": "operation::productcatalogservice::ListProducts",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 1048,
+        "step": 1,
+        "source_score": 0.0009146974810016068,
+        "relation_weight": 1.0,
+        "contribution": 4.5734874050080346e-05
+      },
+      {
+        "source": "operation::frontend::ListProducts",
+        "target": "operation::productcatalogservice::ListProducts",
+        "weight": 1.0,
+        "relation": "operation_calls_operation",
+        "observations": 1048,
+        "step": 2,
+        "source_score": 0.0009146974810016068,
+        "relation_weight": 1.0,
+        "contribution": 4.5734874050080346e-05
+      }
+    ]
+  },
+  "metrics": {
+    "top1": 0.0,
+    "top3": 0.0,
+    "top5": 1.0,
+    "rank": 4,
+    "avg5": 0.25
+  },
+  "component_ablation_variant": "route_b_deduplicated_component_ablation",
+  "component": "full",
+  "relation_weights": {
+    "metric_observes_service": 0.0,
+    "log_source_proxy_for_service": 0.2,
+    "operation_belongs_to_service": 0.5,
+    "operation_calls_operation": 1.0,
+    "operation_called_by_operation": 1.0,
+    "service_calls_service": 1.0,
+    "service_called_by_service": 1.0
+  }
+}

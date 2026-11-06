@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "cases": 615,
+  "all_original_bases_exactly_reconstructed": true,
+  "maximum_original_base_reconstruction_error": 0.0,
+  "all_rewirings_preserve_degrees": true,
+  "all_rewirings_duplicate_free": true,
+  "source_sha256": {
+    "D:\\AIOps\\LS-baro\\tools\\evaluate_microcercl_shared_source_sensitivity.py": "52d45d29349f8e5e37acb227ba45a9baf97eb4629624e08fa72a7f7468b83f6a",
+    "D:\\AIOps\\LS-baro\\output\\microcercl_full\\results.jsonl": "bbc66e1b3cd61920f396c97324cc0513ce5e5af01cd6b5ce3b9cd96210e4863b",
+    "D:\\AIOps\\LS-baro\\output\\microcercl_layer_evaluation_20261023\\label_audit.csv": "b145955b142a56d063d5207fc837cc21d5dddab64bdd980d53c47754e26f2c9b",
+    "D:\\AIOps\\LS-baro\\output\\microcercl_relation_mechanisms_20261028\\mechanism_control_cases.csv": "2718bb010509108438e4f8ee1d55d8ee90445472c1a994c37151d755022ad86e",
+    "D:\\AIOps\\LS-baro\\src\\ls_baro\\microcercl_adapter.py": "ef3203da097c5b31ec0cd1348b224333bf1c6661ce672da4ff8a083ac38ac542",
+    "D:\\AIOps\\LS-baro\\tools\\evaluate_microcercl_relation_mechanisms.py": "95b22dadec3e7ad4eddab84595cf98e31af3d751fa42dd1874eed460c410a19e"
+  }
+}

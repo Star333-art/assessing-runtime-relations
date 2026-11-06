@@ -1,0 +1,9 @@
+dataset,relation,root_layer,replicates,minimum,median,maximum,changed
+aiops2025,deployment,host,1621,0,2858.0,3007,0.9679591117474414
+aiops2025,deployment,pod,1360,2693,2860.0,2949,0.9693133077094475
+aiops2025,ownership,pod,1246,0,1299.0,1439,0.9224694847688426
+aiops2025,ownership,service,2022,0,1227.0,1449,0.9128324918569726
+lsdb,deployment,host,240,0,845.0,1190,0.5670572916666666
+lsdb,deployment,pod,520,0,852.0,1184,0.59609375
+lsdb,ownership,pod,520,2962,3001.0,3044,0.9691706730769231
+lsdb,ownership,service,1000,2945,3000.0,3048,0.97096875

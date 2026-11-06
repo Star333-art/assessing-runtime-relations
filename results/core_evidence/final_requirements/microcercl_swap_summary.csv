@@ -1,0 +1,3 @@
+relation,replicates,swaps_min,swaps_median,swaps_max,mean_changed,mean_retained
+deployment,12300,1299,2385.0,3129,0.9727638573532883,0.027236142646711703
+ownership,12300,3600,3600.0,4500,0.972588344442003,0.02741165555799696

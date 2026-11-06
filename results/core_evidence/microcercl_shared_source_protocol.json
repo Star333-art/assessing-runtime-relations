@@ -1,0 +1,34 @@
+{
+  "experiment": "MicroCERCL shared-source metric exclusion sensitivity",
+  "cases": 615,
+  "applications": {
+    "Hipster": 269,
+    "SockShop": 346
+  },
+  "root_layer": "pod",
+  "known_conditions": "public injection time and native Pod root layer; ranking within Pod candidates",
+  "removed_source": "svc_metric.csv",
+  "reason": "official dataset documentation defines service resource metrics as averages of instances",
+  "retained_service_sources": [
+    "latency.csv",
+    "success_rate.csv",
+    "svc_qps.csv"
+  ],
+  "frozen": [
+    "scored values of retained metrics",
+    "entities",
+    "candidate sets",
+    "relations",
+    "target labels",
+    "one-step propagation",
+    "lambda=0.1",
+    "tie-expected ranking"
+  ],
+  "aggregation": "signed maximum over retained scored metrics mapped to each entity",
+  "permutations": 100,
+  "rewirings": 20,
+  "bootstrap": "5000 paired case resamples; nominal exploratory 95% intervals",
+  "interpretation": "alignment-dependent recovery",
+  "causal_limit": "Alignment dependence does not establish independent telemetry or causal fault propagation",
+  "official_source": "https://github.com/WDCloudEdge/MicroCERCL#metrics"
+}

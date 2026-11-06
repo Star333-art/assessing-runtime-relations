@@ -1,0 +1,29 @@
+{
+  "complete": true,
+  "aiops2022": {
+    "available_labels": 300,
+    "evaluated_isolated_cases": 51,
+    "subsets_evaluated": 1,
+    "saved_rows": 408
+  },
+  "re2": {
+    "cases": 90,
+    "components": [
+      "baro_only",
+      "full",
+      "ownership",
+      "ownership_operation_calls",
+      "ownership_service_calls"
+    ],
+    "saved_rows": 450,
+    "historical_avg5_field_equals_reciprocal_rank": false,
+    "avg5_used_in_this_audit": "recomputed from rank as mean Top-1 through Top-5"
+  },
+  "source_sha256": {
+    "D:\\AIOps\\LS-baro\\tools\\audit_extended_dataset_roles.py": "10cbc7b1091582c70629275c3a8aa856b49ad86a20e5a73d5de18f5cc204000a",
+    "D:\\AIOps\\LS-baro\\output\\aiops2022-native-20220321-cloudbed2\\cases.csv": "88497707f11f43318faa0efa89bbd91052a21a9ae12d01515a93847b0ee65bc6",
+    "D:\\AIOps\\LS-baro\\output\\aiops2022-native-20220321-cloudbed2\\summary.json": "30facab525363c7005d82f0ea4b94b521479e5973ac711a4f0444d13e76bbdf9",
+    "D:\\AIOps\\baro-main\\output\\re2_heterogeneous_dedup_components_l0p05_forward\\component_ablation_cases.csv": "06333a0377cd0df55e53251a2395dbc8a6b21f2ddf35da489db0a03a7fbb8a78",
+    "D:\\AIOps\\baro-main\\output\\re2_heterogeneous_dedup_components_l0p05_forward\\run_config.json": "b71b22814b6b24a918892cfb2b808054aa0299f8a2a97b84a97c4a6540b4b6c0"
+  }
+}

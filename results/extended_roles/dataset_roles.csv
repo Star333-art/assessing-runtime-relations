@@ -1,0 +1,3 @@
+dataset,cases,role,usable_for_core_mechanism,reason
+AIOps2022,51,adapter applicability boundary,False,"Only one of the available cloudbed subsets was processed; the saved run has no matched score-permutation, uniform-source, or degree-preserving rewiring controls."
+RCAEval RE2,90,supporting heterogeneous-relation ablation,False,"Complete case-level component ablation exists, but the graph has Metric/LogSource/Operation/Service entities and no native Host-Pod Deployment; scoring, direction, lambda, and propagation steps differ from the core protocol."

@@ -1,0 +1,230 @@
+{
+  "dataset": "AIOps 2022 HipsterShop training_data_with_faults",
+  "protocol": "aiops2022-native-isolated-relation-aware",
+  "selected_cases": 51,
+  "cases_before_isolation_filter": 55,
+  "available_cases": 300,
+  "subsets": [
+    "2022-03-21-cloudbed2"
+  ],
+  "selection": {
+    "fixed_window_seconds": {
+      "baseline": 600,
+      "detection": 600
+    },
+    "isolation_guard_seconds": 600,
+    "excluded_for_neighboring_fault": 4,
+    "note": "labels define windows/evaluation only and never enter scoring or propagation"
+  },
+  "policy": {
+    "score_mode": "baro_dataframe_equivalent",
+    "metric_policy": "exclude_last_seen",
+    "mapping_policy": "most_specific",
+    "score_normalization": "raw",
+    "entity_aggregation": "max",
+    "edge_normalization": "row",
+    "direction": "relation-aware"
+  },
+  "arm_lambdas": {
+    "Mapping-only": 0.0,
+    "Containment-only": 0.1,
+    "Dependency-only": 0.1,
+    "Full": 0.1
+  },
+  "arms": {
+    "Mapping-only": {
+      "cases": 51,
+      "level": {
+        "rank": 4.137254901960785,
+        "top1": 0.4117647058823529,
+        "top3": 0.6862745098039216,
+        "top5": 0.7647058823529411,
+        "mrr": 0.5773651018979739
+      },
+      "global": {
+        "rank": 11.362745098039216,
+        "top1": 0.0784313725490196,
+        "top3": 0.27450980392156865,
+        "top5": 0.45098039215686275,
+        "mrr": 0.2582417898978053
+      }
+    },
+    "Containment-only": {
+      "cases": 51,
+      "level": {
+        "rank": 4.352941176470588,
+        "top1": 0.19607843137254902,
+        "top3": 0.6666666666666666,
+        "top5": 0.803921568627451,
+        "mrr": 0.4498363126044787
+      },
+      "global": {
+        "rank": 9.431372549019608,
+        "top1": 0.0784313725490196,
+        "top3": 0.19607843137254902,
+        "top5": 0.35294117647058826,
+        "mrr": 0.22866092599064736
+      }
+    },
+    "Dependency-only": {
+      "cases": 51,
+      "level": {
+        "rank": 4.117647058823529,
+        "top1": 0.4117647058823529,
+        "top3": 0.6862745098039216,
+        "top5": 0.7647058823529411,
+        "mrr": 0.577637433052658
+      },
+      "global": {
+        "rank": 11.509803921568627,
+        "top1": 0.0784313725490196,
+        "top3": 0.27450980392156865,
+        "top5": 0.45098039215686275,
+        "mrr": 0.25744148626839947
+      }
+    },
+    "Full": {
+      "cases": 51,
+      "level": {
+        "rank": 4.352941176470588,
+        "top1": 0.19607843137254902,
+        "top3": 0.6666666666666666,
+        "top5": 0.803921568627451,
+        "mrr": 0.4498363126044787
+      },
+      "global": {
+        "rank": 9.666666666666666,
+        "top1": 0.0784313725490196,
+        "top3": 0.19607843137254902,
+        "top5": 0.35294117647058826,
+        "mrr": 0.22798702356356276
+      }
+    }
+  },
+  "containment_transfer": {
+    "primary": {
+      "treatment": "Containment-only",
+      "baseline": "Mapping-only",
+      "scopes": {
+        "level": {
+          "delta": {
+            "top1": -0.21568627450980393,
+            "top3": -0.0196078431372549,
+            "top5": 0.0392156862745098,
+            "mrr": -0.12752878929349518
+          },
+          "mean_rank_improvement": -0.21568627450980393,
+          "case_rank_outcomes": {
+            "improved": 3,
+            "tied": 29,
+            "regressed": 19
+          },
+          "subset_mrr_signs": {
+            "positive": 0,
+            "zero": 0,
+            "negative": 1
+          },
+          "verdict": "no_gain",
+          "per_subset": {
+            "2022-03-21-cloudbed2": {
+              "cases": 51,
+              "delta_mrr": -0.12752878929349518,
+              "delta_top1": -0.21568627450980393
+            }
+          }
+        },
+        "global": {
+          "delta": {
+            "top1": 0.0,
+            "top3": -0.0784313725490196,
+            "top5": -0.09803921568627451,
+            "mrr": -0.029580863907157945
+          },
+          "mean_rank_improvement": 1.9313725490196079,
+          "case_rank_outcomes": {
+            "improved": 10,
+            "tied": 8,
+            "regressed": 33
+          },
+          "subset_mrr_signs": {
+            "positive": 0,
+            "zero": 0,
+            "negative": 1
+          },
+          "verdict": "no_gain",
+          "per_subset": {
+            "2022-03-21-cloudbed2": {
+              "cases": 51,
+              "delta_mrr": -0.029580863907157945,
+              "delta_top1": 0.0
+            }
+          }
+        }
+      }
+    },
+    "incremental_with_dependency": {
+      "treatment": "Full",
+      "baseline": "Dependency-only",
+      "scopes": {
+        "level": {
+          "delta": {
+            "top1": -0.21568627450980393,
+            "top3": -0.0196078431372549,
+            "top5": 0.0392156862745098,
+            "mrr": -0.1278011204481793
+          },
+          "mean_rank_improvement": -0.23529411764705882,
+          "case_rank_outcomes": {
+            "improved": 3,
+            "tied": 29,
+            "regressed": 19
+          },
+          "subset_mrr_signs": {
+            "positive": 0,
+            "zero": 0,
+            "negative": 1
+          },
+          "verdict": "no_gain",
+          "per_subset": {
+            "2022-03-21-cloudbed2": {
+              "cases": 51,
+              "delta_mrr": -0.1278011204481793,
+              "delta_top1": -0.21568627450980393
+            }
+          }
+        },
+        "global": {
+          "delta": {
+            "top1": 0.0,
+            "top3": -0.0784313725490196,
+            "top5": -0.09803921568627451,
+            "mrr": -0.029454462704836686
+          },
+          "mean_rank_improvement": 1.8431372549019607,
+          "case_rank_outcomes": {
+            "improved": 10,
+            "tied": 9,
+            "regressed": 32
+          },
+          "subset_mrr_signs": {
+            "positive": 0,
+            "zero": 0,
+            "negative": 1
+          },
+          "verdict": "no_gain",
+          "per_subset": {
+            "2022-03-21-cloudbed2": {
+              "cases": 51,
+              "delta_mrr": -0.029454462704836686,
+              "delta_top1": 0.0
+            }
+          }
+        }
+      }
+    },
+    "predeclared_interpretation": {
+      "stable_gain": "positive overall MRR delta, positive in at least half of subsets, and no more case regressions than improvements"
+    }
+  },
+  "run_signature": "8ebd2ffd93ae78478e95f25847041f2a2adb3b52280ab7bbc897fd31621986db"
+}

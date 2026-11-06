@@ -1,0 +1,7 @@
+file,bound_layer,metrics,documented_source,excluded_in_sensitivity
+node.csv,Host,"CPU, memory, network and edge-network measurements",direct host measurements,False
+instance.csv,Pod,"CPU, memory and network-transmit measurements for each instance",direct instance/Pod measurements,False
+svc_metric.csv,Service,"CPU, memory, filesystem and network resource measurements",average of the service's instances,True
+latency.csv,Service,service latency percentiles,service-level request-performance series,False
+success_rate.csv,Service,service success rate,service-level request-performance series,False
+svc_qps.csv,Service,service queries per second,service-level request-performance series,False

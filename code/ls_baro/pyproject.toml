@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ls-baro"
+version = "0.1.0"
+description = "BARO mapping and topology propagation for LatentScope Dataset B"
+requires-python = ">=3.9"
+
+[project.scripts]
+ls-baro = "ls_baro.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--basetemp=pytest_tmp"
+norecursedirs = ["output", ".git", ".ruff_cache", ".pytest_cache", "pytest_tmp"]

@@ -1,0 +1,91 @@
+{
+  "run_signature": "8ebd2ffd93ae78478e95f25847041f2a2adb3b52280ab7bbc897fd31621986db",
+  "case": {
+    "case_id": "2022-03-21-cloudbed2:023:1647829767",
+    "subset": "2022-03-21-cloudbed2",
+    "timestamp": 1647829767,
+    "root_cause": {
+      "type": "service",
+      "key": "frontend",
+      "failure_type": "k8s容器内存负载"
+    },
+    "failure_type": "k8s容器内存负载",
+    "seconds_from_previous": 1620,
+    "seconds_to_next": 1389,
+    "scored_metrics": 844,
+    "arms": {
+      "Mapping-only": {
+        "level": {
+          "rank": 2.0,
+          "mrr": 0.5,
+          "top1": 0.0,
+          "top3": 1.0,
+          "top5": 1.0,
+          "tie_size": 1
+        },
+        "global": {
+          "rank": 36.0,
+          "mrr": 0.027777777777777776,
+          "top1": 0.0,
+          "top3": 0.0,
+          "top5": 0.0,
+          "tie_size": 1
+        }
+      },
+      "Containment-only": {
+        "level": {
+          "rank": 4.0,
+          "mrr": 0.25,
+          "top1": 0.0,
+          "top3": 0.0,
+          "top5": 1.0,
+          "tie_size": 1
+        },
+        "global": {
+          "rank": 12.0,
+          "mrr": 0.08333333333333333,
+          "top1": 0.0,
+          "top3": 0.0,
+          "top5": 0.0,
+          "tie_size": 1
+        }
+      },
+      "Dependency-only": {
+        "level": {
+          "rank": 2.0,
+          "mrr": 0.5,
+          "top1": 0.0,
+          "top3": 1.0,
+          "top5": 1.0,
+          "tie_size": 1
+        },
+        "global": {
+          "rank": 36.0,
+          "mrr": 0.027777777777777776,
+          "top1": 0.0,
+          "top3": 0.0,
+          "top5": 0.0,
+          "tie_size": 1
+        }
+      },
+      "Full": {
+        "level": {
+          "rank": 4.0,
+          "mrr": 0.25,
+          "top1": 0.0,
+          "top3": 0.0,
+          "top5": 1.0,
+          "tie_size": 1
+        },
+        "global": {
+          "rank": 12.0,
+          "mrr": 0.08333333333333333,
+          "top1": 0.0,
+          "top3": 0.0,
+          "top5": 0.0,
+          "tie_size": 1
+        }
+      }
+    }
+  }
+}

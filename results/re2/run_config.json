@@ -1,0 +1,73 @@
+{
+  "variant": "route_b_deduplicated_component_ablation",
+  "data_path": "../rcaeval-data",
+  "filter": [
+    "re2ob"
+  ],
+  "components": [
+    "baro_only",
+    "ownership",
+    "ownership_service_calls",
+    "ownership_operation_calls",
+    "full"
+  ],
+  "topology_lambda": 0.05,
+  "direction": "forward",
+  "bin_seconds": 15,
+  "propagation_steps": 2,
+  "relation_weights_by_component": {
+    "baro_only": {
+      "metric_observes_service": 0.0,
+      "log_source_proxy_for_service": 0.0,
+      "operation_belongs_to_service": 0.0,
+      "operation_calls_operation": 0.0,
+      "operation_called_by_operation": 0.0,
+      "service_calls_service": 0.0,
+      "service_called_by_service": 0.0
+    },
+    "ownership": {
+      "metric_observes_service": 0.0,
+      "log_source_proxy_for_service": 0.2,
+      "operation_belongs_to_service": 0.5,
+      "operation_calls_operation": 0.0,
+      "operation_called_by_operation": 0.0,
+      "service_calls_service": 0.0,
+      "service_called_by_service": 0.0
+    },
+    "ownership_service_calls": {
+      "metric_observes_service": 0.0,
+      "log_source_proxy_for_service": 0.2,
+      "operation_belongs_to_service": 0.5,
+      "operation_calls_operation": 0.0,
+      "operation_called_by_operation": 0.0,
+      "service_calls_service": 1.0,
+      "service_called_by_service": 1.0
+    },
+    "ownership_operation_calls": {
+      "metric_observes_service": 0.0,
+      "log_source_proxy_for_service": 0.2,
+      "operation_belongs_to_service": 0.5,
+      "operation_calls_operation": 1.0,
+      "operation_called_by_operation": 1.0,
+      "service_calls_service": 0.0,
+      "service_called_by_service": 0.0
+    },
+    "full": {
+      "metric_observes_service": 0.0,
+      "log_source_proxy_for_service": 0.2,
+      "operation_belongs_to_service": 0.5,
+      "operation_calls_operation": 1.0,
+      "operation_called_by_operation": 1.0,
+      "service_calls_service": 1.0,
+      "service_called_by_service": 1.0
+    }
+  },
+  "fixed_evidence_policy": "BARO initializes Service once; Metric->Service is context-only",
+  "component_meanings": {
+    "baro_only": "BARO Service baseline; all propagation weights are zero",
+    "ownership": "LogSource->Service and Operation->Service",
+    "ownership_service_calls": "ownership plus Service->Service calls",
+    "ownership_operation_calls": "ownership plus Operation->Operation calls",
+    "full": "ownership plus both Operation and Service call relations"
+  }
+}

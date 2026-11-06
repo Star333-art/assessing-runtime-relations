@@ -1,0 +1,5 @@
+dataset,cohort,cases,unique_pods,unique_deployments,repeated_case_records,overlapping_windows,interpretation
+LSDB,all retained roots,88,,,0,not exposed by release metadata,Independent deployment or batch resampling is not claimed.
+AIOps2025,all retained single-entity cases,272,,,0,0,The case audit reports no overlapping incident windows; stable deployment identifiers are not consistently available.
+MicroCERCL,Hipster directory-exact Pod cases,269,18,4,251,not recorded,Repeated metric-level injections share a small number of Pods and deployments.
+MicroCERCL,SockShop directory-exact Pod cases,346,12,3,334,not recorded,Repeated metric-level injections share a small number of Pods and deployments.

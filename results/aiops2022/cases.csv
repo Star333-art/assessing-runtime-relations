@@ -1,0 +1,409 @@
+﻿case_id,subset,timestamp,level,root_cause,failure_type,arm,scope,rank,mrr,top1,top3,top5,tie_size
+2022-03-21-cloudbed2:000:1647792456,2022-03-21-cloudbed2,1647792456,host,node-2,node 磁盘读IO消耗,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:000:1647792456,2022-03-21-cloudbed2,1647792456,host,node-2,node 磁盘读IO消耗,Mapping-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:000:1647792456,2022-03-21-cloudbed2,1647792456,host,node-2,node 磁盘读IO消耗,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:000:1647792456,2022-03-21-cloudbed2,1647792456,host,node-2,node 磁盘读IO消耗,Containment-only,global,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:000:1647792456,2022-03-21-cloudbed2,1647792456,host,node-2,node 磁盘读IO消耗,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:000:1647792456,2022-03-21-cloudbed2,1647792456,host,node-2,node 磁盘读IO消耗,Dependency-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:000:1647792456,2022-03-21-cloudbed2,1647792456,host,node-2,node 磁盘读IO消耗,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:000:1647792456,2022-03-21-cloudbed2,1647792456,host,node-2,node 磁盘读IO消耗,Full,global,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:001:1647793099,2022-03-21-cloudbed2,1647793099,pod,shippingservice-0,k8s容器网络资源包重复发送,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:001:1647793099,2022-03-21-cloudbed2,1647793099,pod,shippingservice-0,k8s容器网络资源包重复发送,Mapping-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:001:1647793099,2022-03-21-cloudbed2,1647793099,pod,shippingservice-0,k8s容器网络资源包重复发送,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:001:1647793099,2022-03-21-cloudbed2,1647793099,pod,shippingservice-0,k8s容器网络资源包重复发送,Containment-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:001:1647793099,2022-03-21-cloudbed2,1647793099,pod,shippingservice-0,k8s容器网络资源包重复发送,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:001:1647793099,2022-03-21-cloudbed2,1647793099,pod,shippingservice-0,k8s容器网络资源包重复发送,Dependency-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:001:1647793099,2022-03-21-cloudbed2,1647793099,pod,shippingservice-0,k8s容器网络资源包重复发送,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:001:1647793099,2022-03-21-cloudbed2,1647793099,pod,shippingservice-0,k8s容器网络资源包重复发送,Full,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:002:1647794809,2022-03-21-cloudbed2,1647794809,pod,frontend-2,k8s容器读io负载,Mapping-only,level,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:002:1647794809,2022-03-21-cloudbed2,1647794809,pod,frontend-2,k8s容器读io负载,Mapping-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:002:1647794809,2022-03-21-cloudbed2,1647794809,pod,frontend-2,k8s容器读io负载,Containment-only,level,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:002:1647794809,2022-03-21-cloudbed2,1647794809,pod,frontend-2,k8s容器读io负载,Containment-only,global,16.0,0.0625,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:002:1647794809,2022-03-21-cloudbed2,1647794809,pod,frontend-2,k8s容器读io负载,Dependency-only,level,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:002:1647794809,2022-03-21-cloudbed2,1647794809,pod,frontend-2,k8s容器读io负载,Dependency-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:002:1647794809,2022-03-21-cloudbed2,1647794809,pod,frontend-2,k8s容器读io负载,Full,level,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:002:1647794809,2022-03-21-cloudbed2,1647794809,pod,frontend-2,k8s容器读io负载,Full,global,16.0,0.0625,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:003:1647795480,2022-03-21-cloudbed2,1647795480,pod,currencyservice-2,k8s容器网络丢包,Mapping-only,level,17.0,0.058823529411764705,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:003:1647795480,2022-03-21-cloudbed2,1647795480,pod,currencyservice-2,k8s容器网络丢包,Mapping-only,global,25.0,0.04,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:003:1647795480,2022-03-21-cloudbed2,1647795480,pod,currencyservice-2,k8s容器网络丢包,Containment-only,level,17.0,0.058823529411764705,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:003:1647795480,2022-03-21-cloudbed2,1647795480,pod,currencyservice-2,k8s容器网络丢包,Containment-only,global,28.0,0.03571428571428571,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:003:1647795480,2022-03-21-cloudbed2,1647795480,pod,currencyservice-2,k8s容器网络丢包,Dependency-only,level,17.0,0.058823529411764705,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:003:1647795480,2022-03-21-cloudbed2,1647795480,pod,currencyservice-2,k8s容器网络丢包,Dependency-only,global,25.0,0.04,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:003:1647795480,2022-03-21-cloudbed2,1647795480,pod,currencyservice-2,k8s容器网络丢包,Full,level,17.0,0.058823529411764705,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:003:1647795480,2022-03-21-cloudbed2,1647795480,pod,currencyservice-2,k8s容器网络丢包,Full,global,28.0,0.03571428571428571,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:004:1647797643,2022-03-21-cloudbed2,1647797643,pod,adservice-0,k8s容器进程中止,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:004:1647797643,2022-03-21-cloudbed2,1647797643,pod,adservice-0,k8s容器进程中止,Mapping-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:004:1647797643,2022-03-21-cloudbed2,1647797643,pod,adservice-0,k8s容器进程中止,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:004:1647797643,2022-03-21-cloudbed2,1647797643,pod,adservice-0,k8s容器进程中止,Containment-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:004:1647797643,2022-03-21-cloudbed2,1647797643,pod,adservice-0,k8s容器进程中止,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:004:1647797643,2022-03-21-cloudbed2,1647797643,pod,adservice-0,k8s容器进程中止,Dependency-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:004:1647797643,2022-03-21-cloudbed2,1647797643,pod,adservice-0,k8s容器进程中止,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:004:1647797643,2022-03-21-cloudbed2,1647797643,pod,adservice-0,k8s容器进程中止,Full,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:005:1647798485,2022-03-21-cloudbed2,1647798485,pod,paymentservice-0,k8s容器网络资源包重复发送,Mapping-only,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:005:1647798485,2022-03-21-cloudbed2,1647798485,pod,paymentservice-0,k8s容器网络资源包重复发送,Mapping-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:005:1647798485,2022-03-21-cloudbed2,1647798485,pod,paymentservice-0,k8s容器网络资源包重复发送,Containment-only,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:005:1647798485,2022-03-21-cloudbed2,1647798485,pod,paymentservice-0,k8s容器网络资源包重复发送,Containment-only,global,11.0,0.09090909090909091,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:005:1647798485,2022-03-21-cloudbed2,1647798485,pod,paymentservice-0,k8s容器网络资源包重复发送,Dependency-only,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:005:1647798485,2022-03-21-cloudbed2,1647798485,pod,paymentservice-0,k8s容器网络资源包重复发送,Dependency-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:005:1647798485,2022-03-21-cloudbed2,1647798485,pod,paymentservice-0,k8s容器网络资源包重复发送,Full,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:005:1647798485,2022-03-21-cloudbed2,1647798485,pod,paymentservice-0,k8s容器网络资源包重复发送,Full,global,11.0,0.09090909090909091,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:006:1647799707,2022-03-21-cloudbed2,1647799707,host,node-2,node 磁盘空间消耗,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:006:1647799707,2022-03-21-cloudbed2,1647799707,host,node-2,node 磁盘空间消耗,Mapping-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:006:1647799707,2022-03-21-cloudbed2,1647799707,host,node-2,node 磁盘空间消耗,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:006:1647799707,2022-03-21-cloudbed2,1647799707,host,node-2,node 磁盘空间消耗,Containment-only,global,11.0,0.09090909090909091,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:006:1647799707,2022-03-21-cloudbed2,1647799707,host,node-2,node 磁盘空间消耗,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:006:1647799707,2022-03-21-cloudbed2,1647799707,host,node-2,node 磁盘空间消耗,Dependency-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:006:1647799707,2022-03-21-cloudbed2,1647799707,host,node-2,node 磁盘空间消耗,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:006:1647799707,2022-03-21-cloudbed2,1647799707,host,node-2,node 磁盘空间消耗,Full,global,11.0,0.09090909090909091,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:007:1647801135,2022-03-21-cloudbed2,1647801135,service,cartservice,k8s容器网络资源包损坏,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:007:1647801135,2022-03-21-cloudbed2,1647801135,service,cartservice,k8s容器网络资源包损坏,Mapping-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:007:1647801135,2022-03-21-cloudbed2,1647801135,service,cartservice,k8s容器网络资源包损坏,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:007:1647801135,2022-03-21-cloudbed2,1647801135,service,cartservice,k8s容器网络资源包损坏,Containment-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:007:1647801135,2022-03-21-cloudbed2,1647801135,service,cartservice,k8s容器网络资源包损坏,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:007:1647801135,2022-03-21-cloudbed2,1647801135,service,cartservice,k8s容器网络资源包损坏,Dependency-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:007:1647801135,2022-03-21-cloudbed2,1647801135,service,cartservice,k8s容器网络资源包损坏,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:007:1647801135,2022-03-21-cloudbed2,1647801135,service,cartservice,k8s容器网络资源包损坏,Full,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:008:1647804189,2022-03-21-cloudbed2,1647804189,host,node-5,node 磁盘空间消耗,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:008:1647804189,2022-03-21-cloudbed2,1647804189,host,node-5,node 磁盘空间消耗,Mapping-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:008:1647804189,2022-03-21-cloudbed2,1647804189,host,node-5,node 磁盘空间消耗,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:008:1647804189,2022-03-21-cloudbed2,1647804189,host,node-5,node 磁盘空间消耗,Containment-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:008:1647804189,2022-03-21-cloudbed2,1647804189,host,node-5,node 磁盘空间消耗,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:008:1647804189,2022-03-21-cloudbed2,1647804189,host,node-5,node 磁盘空间消耗,Dependency-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:008:1647804189,2022-03-21-cloudbed2,1647804189,host,node-5,node 磁盘空间消耗,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:008:1647804189,2022-03-21-cloudbed2,1647804189,host,node-5,node 磁盘空间消耗,Full,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:009:1647806025,2022-03-21-cloudbed2,1647806025,pod,recommendationservice-1,k8s容器进程中止,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:009:1647806025,2022-03-21-cloudbed2,1647806025,pod,recommendationservice-1,k8s容器进程中止,Mapping-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:009:1647806025,2022-03-21-cloudbed2,1647806025,pod,recommendationservice-1,k8s容器进程中止,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:009:1647806025,2022-03-21-cloudbed2,1647806025,pod,recommendationservice-1,k8s容器进程中止,Containment-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:009:1647806025,2022-03-21-cloudbed2,1647806025,pod,recommendationservice-1,k8s容器进程中止,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:009:1647806025,2022-03-21-cloudbed2,1647806025,pod,recommendationservice-1,k8s容器进程中止,Dependency-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:009:1647806025,2022-03-21-cloudbed2,1647806025,pod,recommendationservice-1,k8s容器进程中止,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:009:1647806025,2022-03-21-cloudbed2,1647806025,pod,recommendationservice-1,k8s容器进程中止,Full,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:010:1647807214,2022-03-21-cloudbed2,1647807214,service,emailservice,k8s容器读io负载,Mapping-only,level,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:010:1647807214,2022-03-21-cloudbed2,1647807214,service,emailservice,k8s容器读io负载,Mapping-only,global,57.0,0.017543859649122806,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:010:1647807214,2022-03-21-cloudbed2,1647807214,service,emailservice,k8s容器读io负载,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:010:1647807214,2022-03-21-cloudbed2,1647807214,service,emailservice,k8s容器读io负载,Containment-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:010:1647807214,2022-03-21-cloudbed2,1647807214,service,emailservice,k8s容器读io负载,Dependency-only,level,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:010:1647807214,2022-03-21-cloudbed2,1647807214,service,emailservice,k8s容器读io负载,Dependency-only,global,56.0,0.017857142857142856,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:010:1647807214,2022-03-21-cloudbed2,1647807214,service,emailservice,k8s容器读io负载,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:010:1647807214,2022-03-21-cloudbed2,1647807214,service,emailservice,k8s容器读io负载,Full,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:011:1647808427,2022-03-21-cloudbed2,1647808427,service,cartservice,k8s容器网络丢包,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:011:1647808427,2022-03-21-cloudbed2,1647808427,service,cartservice,k8s容器网络丢包,Mapping-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:011:1647808427,2022-03-21-cloudbed2,1647808427,service,cartservice,k8s容器网络丢包,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:011:1647808427,2022-03-21-cloudbed2,1647808427,service,cartservice,k8s容器网络丢包,Containment-only,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:011:1647808427,2022-03-21-cloudbed2,1647808427,service,cartservice,k8s容器网络丢包,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:011:1647808427,2022-03-21-cloudbed2,1647808427,service,cartservice,k8s容器网络丢包,Dependency-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:011:1647808427,2022-03-21-cloudbed2,1647808427,service,cartservice,k8s容器网络丢包,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:011:1647808427,2022-03-21-cloudbed2,1647808427,service,cartservice,k8s容器网络丢包,Full,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:012:1647811370,2022-03-21-cloudbed2,1647811370,pod,productcatalogservice-0,k8s容器写io负载,Mapping-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:012:1647811370,2022-03-21-cloudbed2,1647811370,pod,productcatalogservice-0,k8s容器写io负载,Mapping-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:012:1647811370,2022-03-21-cloudbed2,1647811370,pod,productcatalogservice-0,k8s容器写io负载,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:012:1647811370,2022-03-21-cloudbed2,1647811370,pod,productcatalogservice-0,k8s容器写io负载,Containment-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:012:1647811370,2022-03-21-cloudbed2,1647811370,pod,productcatalogservice-0,k8s容器写io负载,Dependency-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:012:1647811370,2022-03-21-cloudbed2,1647811370,pod,productcatalogservice-0,k8s容器写io负载,Dependency-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:012:1647811370,2022-03-21-cloudbed2,1647811370,pod,productcatalogservice-0,k8s容器写io负载,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:012:1647811370,2022-03-21-cloudbed2,1647811370,pod,productcatalogservice-0,k8s容器写io负载,Full,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:013:1647814829,2022-03-21-cloudbed2,1647814829,host,node-4,node 内存消耗,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:013:1647814829,2022-03-21-cloudbed2,1647814829,host,node-4,node 内存消耗,Mapping-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:013:1647814829,2022-03-21-cloudbed2,1647814829,host,node-4,node 内存消耗,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:013:1647814829,2022-03-21-cloudbed2,1647814829,host,node-4,node 内存消耗,Containment-only,global,10.0,0.1,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:013:1647814829,2022-03-21-cloudbed2,1647814829,host,node-4,node 内存消耗,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:013:1647814829,2022-03-21-cloudbed2,1647814829,host,node-4,node 内存消耗,Dependency-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:013:1647814829,2022-03-21-cloudbed2,1647814829,host,node-4,node 内存消耗,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:013:1647814829,2022-03-21-cloudbed2,1647814829,host,node-4,node 内存消耗,Full,global,10.0,0.1,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:014:1647816272,2022-03-21-cloudbed2,1647816272,pod,recommendationservice-1,k8s容器网络资源包损坏,Mapping-only,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:014:1647816272,2022-03-21-cloudbed2,1647816272,pod,recommendationservice-1,k8s容器网络资源包损坏,Mapping-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:014:1647816272,2022-03-21-cloudbed2,1647816272,pod,recommendationservice-1,k8s容器网络资源包损坏,Containment-only,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:014:1647816272,2022-03-21-cloudbed2,1647816272,pod,recommendationservice-1,k8s容器网络资源包损坏,Containment-only,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:014:1647816272,2022-03-21-cloudbed2,1647816272,pod,recommendationservice-1,k8s容器网络资源包损坏,Dependency-only,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:014:1647816272,2022-03-21-cloudbed2,1647816272,pod,recommendationservice-1,k8s容器网络资源包损坏,Dependency-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:014:1647816272,2022-03-21-cloudbed2,1647816272,pod,recommendationservice-1,k8s容器网络资源包损坏,Full,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:014:1647816272,2022-03-21-cloudbed2,1647816272,pod,recommendationservice-1,k8s容器网络资源包损坏,Full,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:015:1647816878,2022-03-21-cloudbed2,1647816878,pod,emailservice-0,k8s容器网络丢包,Mapping-only,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:015:1647816878,2022-03-21-cloudbed2,1647816878,pod,emailservice-0,k8s容器网络丢包,Mapping-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:015:1647816878,2022-03-21-cloudbed2,1647816878,pod,emailservice-0,k8s容器网络丢包,Containment-only,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:015:1647816878,2022-03-21-cloudbed2,1647816878,pod,emailservice-0,k8s容器网络丢包,Containment-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:015:1647816878,2022-03-21-cloudbed2,1647816878,pod,emailservice-0,k8s容器网络丢包,Dependency-only,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:015:1647816878,2022-03-21-cloudbed2,1647816878,pod,emailservice-0,k8s容器网络丢包,Dependency-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:015:1647816878,2022-03-21-cloudbed2,1647816878,pod,emailservice-0,k8s容器网络丢包,Full,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:015:1647816878,2022-03-21-cloudbed2,1647816878,pod,emailservice-0,k8s容器网络丢包,Full,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:016:1647818792,2022-03-21-cloudbed2,1647818792,service,frontend,k8s容器网络延迟,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:016:1647818792,2022-03-21-cloudbed2,1647818792,service,frontend,k8s容器网络延迟,Mapping-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:016:1647818792,2022-03-21-cloudbed2,1647818792,service,frontend,k8s容器网络延迟,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:016:1647818792,2022-03-21-cloudbed2,1647818792,service,frontend,k8s容器网络延迟,Containment-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:016:1647818792,2022-03-21-cloudbed2,1647818792,service,frontend,k8s容器网络延迟,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:016:1647818792,2022-03-21-cloudbed2,1647818792,service,frontend,k8s容器网络延迟,Dependency-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:016:1647818792,2022-03-21-cloudbed2,1647818792,service,frontend,k8s容器网络延迟,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:016:1647818792,2022-03-21-cloudbed2,1647818792,service,frontend,k8s容器网络延迟,Full,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:017:1647820076,2022-03-21-cloudbed2,1647820076,host,node-4,node节点CPU故障,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:017:1647820076,2022-03-21-cloudbed2,1647820076,host,node-4,node节点CPU故障,Mapping-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:017:1647820076,2022-03-21-cloudbed2,1647820076,host,node-4,node节点CPU故障,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:017:1647820076,2022-03-21-cloudbed2,1647820076,host,node-4,node节点CPU故障,Containment-only,global,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:017:1647820076,2022-03-21-cloudbed2,1647820076,host,node-4,node节点CPU故障,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:017:1647820076,2022-03-21-cloudbed2,1647820076,host,node-4,node节点CPU故障,Dependency-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:017:1647820076,2022-03-21-cloudbed2,1647820076,host,node-4,node节点CPU故障,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:017:1647820076,2022-03-21-cloudbed2,1647820076,host,node-4,node节点CPU故障,Full,global,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:018:1647821872,2022-03-21-cloudbed2,1647821872,service,productcatalogservice,k8s容器网络丢包,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:018:1647821872,2022-03-21-cloudbed2,1647821872,service,productcatalogservice,k8s容器网络丢包,Mapping-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:018:1647821872,2022-03-21-cloudbed2,1647821872,service,productcatalogservice,k8s容器网络丢包,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:018:1647821872,2022-03-21-cloudbed2,1647821872,service,productcatalogservice,k8s容器网络丢包,Containment-only,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:018:1647821872,2022-03-21-cloudbed2,1647821872,service,productcatalogservice,k8s容器网络丢包,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:018:1647821872,2022-03-21-cloudbed2,1647821872,service,productcatalogservice,k8s容器网络丢包,Dependency-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:018:1647821872,2022-03-21-cloudbed2,1647821872,service,productcatalogservice,k8s容器网络丢包,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:018:1647821872,2022-03-21-cloudbed2,1647821872,service,productcatalogservice,k8s容器网络丢包,Full,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:019:1647823589,2022-03-21-cloudbed2,1647823589,host,node-6,node 磁盘写IO消耗,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:019:1647823589,2022-03-21-cloudbed2,1647823589,host,node-6,node 磁盘写IO消耗,Mapping-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:019:1647823589,2022-03-21-cloudbed2,1647823589,host,node-6,node 磁盘写IO消耗,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:019:1647823589,2022-03-21-cloudbed2,1647823589,host,node-6,node 磁盘写IO消耗,Containment-only,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:019:1647823589,2022-03-21-cloudbed2,1647823589,host,node-6,node 磁盘写IO消耗,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:019:1647823589,2022-03-21-cloudbed2,1647823589,host,node-6,node 磁盘写IO消耗,Dependency-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:019:1647823589,2022-03-21-cloudbed2,1647823589,host,node-6,node 磁盘写IO消耗,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:019:1647823589,2022-03-21-cloudbed2,1647823589,host,node-6,node 磁盘写IO消耗,Full,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:020:1647824881,2022-03-21-cloudbed2,1647824881,pod,recommendationservice-1,k8s容器网络延迟,Mapping-only,level,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:020:1647824881,2022-03-21-cloudbed2,1647824881,pod,recommendationservice-1,k8s容器网络延迟,Mapping-only,global,12.0,0.08333333333333333,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:020:1647824881,2022-03-21-cloudbed2,1647824881,pod,recommendationservice-1,k8s容器网络延迟,Containment-only,level,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:020:1647824881,2022-03-21-cloudbed2,1647824881,pod,recommendationservice-1,k8s容器网络延迟,Containment-only,global,14.0,0.07142857142857142,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:020:1647824881,2022-03-21-cloudbed2,1647824881,pod,recommendationservice-1,k8s容器网络延迟,Dependency-only,level,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:020:1647824881,2022-03-21-cloudbed2,1647824881,pod,recommendationservice-1,k8s容器网络延迟,Dependency-only,global,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:020:1647824881,2022-03-21-cloudbed2,1647824881,pod,recommendationservice-1,k8s容器网络延迟,Full,level,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:020:1647824881,2022-03-21-cloudbed2,1647824881,pod,recommendationservice-1,k8s容器网络延迟,Full,global,15.0,0.06666666666666667,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:021:1647826274,2022-03-21-cloudbed2,1647826274,pod,shippingservice-1,k8s容器内存负载,Mapping-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:021:1647826274,2022-03-21-cloudbed2,1647826274,pod,shippingservice-1,k8s容器内存负载,Mapping-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:021:1647826274,2022-03-21-cloudbed2,1647826274,pod,shippingservice-1,k8s容器内存负载,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:021:1647826274,2022-03-21-cloudbed2,1647826274,pod,shippingservice-1,k8s容器内存负载,Containment-only,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:021:1647826274,2022-03-21-cloudbed2,1647826274,pod,shippingservice-1,k8s容器内存负载,Dependency-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:021:1647826274,2022-03-21-cloudbed2,1647826274,pod,shippingservice-1,k8s容器内存负载,Dependency-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:021:1647826274,2022-03-21-cloudbed2,1647826274,pod,shippingservice-1,k8s容器内存负载,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:021:1647826274,2022-03-21-cloudbed2,1647826274,pod,shippingservice-1,k8s容器内存负载,Full,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:022:1647828147,2022-03-21-cloudbed2,1647828147,host,node-6,node节点CPU故障,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:022:1647828147,2022-03-21-cloudbed2,1647828147,host,node-6,node节点CPU故障,Mapping-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:022:1647828147,2022-03-21-cloudbed2,1647828147,host,node-6,node节点CPU故障,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:022:1647828147,2022-03-21-cloudbed2,1647828147,host,node-6,node节点CPU故障,Containment-only,global,11.0,0.09090909090909091,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:022:1647828147,2022-03-21-cloudbed2,1647828147,host,node-6,node节点CPU故障,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:022:1647828147,2022-03-21-cloudbed2,1647828147,host,node-6,node节点CPU故障,Dependency-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:022:1647828147,2022-03-21-cloudbed2,1647828147,host,node-6,node节点CPU故障,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:022:1647828147,2022-03-21-cloudbed2,1647828147,host,node-6,node节点CPU故障,Full,global,11.0,0.09090909090909091,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:023:1647829767,2022-03-21-cloudbed2,1647829767,service,frontend,k8s容器内存负载,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:023:1647829767,2022-03-21-cloudbed2,1647829767,service,frontend,k8s容器内存负载,Mapping-only,global,36.0,0.027777777777777776,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:023:1647829767,2022-03-21-cloudbed2,1647829767,service,frontend,k8s容器内存负载,Containment-only,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:023:1647829767,2022-03-21-cloudbed2,1647829767,service,frontend,k8s容器内存负载,Containment-only,global,12.0,0.08333333333333333,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:023:1647829767,2022-03-21-cloudbed2,1647829767,service,frontend,k8s容器内存负载,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:023:1647829767,2022-03-21-cloudbed2,1647829767,service,frontend,k8s容器内存负载,Dependency-only,global,36.0,0.027777777777777776,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:023:1647829767,2022-03-21-cloudbed2,1647829767,service,frontend,k8s容器内存负载,Full,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:023:1647829767,2022-03-21-cloudbed2,1647829767,service,frontend,k8s容器内存负载,Full,global,12.0,0.08333333333333333,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:024:1647831156,2022-03-21-cloudbed2,1647831156,service,adservice,k8s容器读io负载,Mapping-only,level,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:024:1647831156,2022-03-21-cloudbed2,1647831156,service,adservice,k8s容器读io负载,Mapping-only,global,56.0,0.017857142857142856,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:024:1647831156,2022-03-21-cloudbed2,1647831156,service,adservice,k8s容器读io负载,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:024:1647831156,2022-03-21-cloudbed2,1647831156,service,adservice,k8s容器读io负载,Containment-only,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:024:1647831156,2022-03-21-cloudbed2,1647831156,service,adservice,k8s容器读io负载,Dependency-only,level,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:024:1647831156,2022-03-21-cloudbed2,1647831156,service,adservice,k8s容器读io负载,Dependency-only,global,56.0,0.017857142857142856,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:024:1647831156,2022-03-21-cloudbed2,1647831156,service,adservice,k8s容器读io负载,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:024:1647831156,2022-03-21-cloudbed2,1647831156,service,adservice,k8s容器读io负载,Full,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:025:1647831835,2022-03-21-cloudbed2,1647831835,service,checkoutservice,k8s容器网络丢包,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:025:1647831835,2022-03-21-cloudbed2,1647831835,service,checkoutservice,k8s容器网络丢包,Mapping-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:025:1647831835,2022-03-21-cloudbed2,1647831835,service,checkoutservice,k8s容器网络丢包,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:025:1647831835,2022-03-21-cloudbed2,1647831835,service,checkoutservice,k8s容器网络丢包,Containment-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:025:1647831835,2022-03-21-cloudbed2,1647831835,service,checkoutservice,k8s容器网络丢包,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:025:1647831835,2022-03-21-cloudbed2,1647831835,service,checkoutservice,k8s容器网络丢包,Dependency-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:025:1647831835,2022-03-21-cloudbed2,1647831835,service,checkoutservice,k8s容器网络丢包,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:025:1647831835,2022-03-21-cloudbed2,1647831835,service,checkoutservice,k8s容器网络丢包,Full,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:026:1647833117,2022-03-21-cloudbed2,1647833117,host,node-6,node 磁盘读IO消耗,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:026:1647833117,2022-03-21-cloudbed2,1647833117,host,node-6,node 磁盘读IO消耗,Mapping-only,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:026:1647833117,2022-03-21-cloudbed2,1647833117,host,node-6,node 磁盘读IO消耗,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:026:1647833117,2022-03-21-cloudbed2,1647833117,host,node-6,node 磁盘读IO消耗,Containment-only,global,10.0,0.1,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:026:1647833117,2022-03-21-cloudbed2,1647833117,host,node-6,node 磁盘读IO消耗,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:026:1647833117,2022-03-21-cloudbed2,1647833117,host,node-6,node 磁盘读IO消耗,Dependency-only,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:026:1647833117,2022-03-21-cloudbed2,1647833117,host,node-6,node 磁盘读IO消耗,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:026:1647833117,2022-03-21-cloudbed2,1647833117,host,node-6,node 磁盘读IO消耗,Full,global,10.0,0.1,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:027:1647836047,2022-03-21-cloudbed2,1647836047,host,node-5,node 磁盘写IO消耗,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:027:1647836047,2022-03-21-cloudbed2,1647836047,host,node-5,node 磁盘写IO消耗,Mapping-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:027:1647836047,2022-03-21-cloudbed2,1647836047,host,node-5,node 磁盘写IO消耗,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:027:1647836047,2022-03-21-cloudbed2,1647836047,host,node-5,node 磁盘写IO消耗,Containment-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:027:1647836047,2022-03-21-cloudbed2,1647836047,host,node-5,node 磁盘写IO消耗,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:027:1647836047,2022-03-21-cloudbed2,1647836047,host,node-5,node 磁盘写IO消耗,Dependency-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:027:1647836047,2022-03-21-cloudbed2,1647836047,host,node-5,node 磁盘写IO消耗,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:027:1647836047,2022-03-21-cloudbed2,1647836047,host,node-5,node 磁盘写IO消耗,Full,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:028:1647837983,2022-03-21-cloudbed2,1647837983,pod,shippingservice-0,k8s容器网络资源包损坏,Mapping-only,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:028:1647837983,2022-03-21-cloudbed2,1647837983,pod,shippingservice-0,k8s容器网络资源包损坏,Mapping-only,global,10.0,0.1,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:028:1647837983,2022-03-21-cloudbed2,1647837983,pod,shippingservice-0,k8s容器网络资源包损坏,Containment-only,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:028:1647837983,2022-03-21-cloudbed2,1647837983,pod,shippingservice-0,k8s容器网络资源包损坏,Containment-only,global,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:028:1647837983,2022-03-21-cloudbed2,1647837983,pod,shippingservice-0,k8s容器网络资源包损坏,Dependency-only,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:028:1647837983,2022-03-21-cloudbed2,1647837983,pod,shippingservice-0,k8s容器网络资源包损坏,Dependency-only,global,15.0,0.06666666666666667,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:028:1647837983,2022-03-21-cloudbed2,1647837983,pod,shippingservice-0,k8s容器网络资源包损坏,Full,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:028:1647837983,2022-03-21-cloudbed2,1647837983,pod,shippingservice-0,k8s容器网络资源包损坏,Full,global,18.0,0.05555555555555555,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:029:1647839856,2022-03-21-cloudbed2,1647839856,pod,shippingservice-2,k8s容器读io负载,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:029:1647839856,2022-03-21-cloudbed2,1647839856,pod,shippingservice-2,k8s容器读io负载,Mapping-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:029:1647839856,2022-03-21-cloudbed2,1647839856,pod,shippingservice-2,k8s容器读io负载,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:029:1647839856,2022-03-21-cloudbed2,1647839856,pod,shippingservice-2,k8s容器读io负载,Containment-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:029:1647839856,2022-03-21-cloudbed2,1647839856,pod,shippingservice-2,k8s容器读io负载,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:029:1647839856,2022-03-21-cloudbed2,1647839856,pod,shippingservice-2,k8s容器读io负载,Dependency-only,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:029:1647839856,2022-03-21-cloudbed2,1647839856,pod,shippingservice-2,k8s容器读io负载,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:029:1647839856,2022-03-21-cloudbed2,1647839856,pod,shippingservice-2,k8s容器读io负载,Full,global,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:030:1647840981,2022-03-21-cloudbed2,1647840981,pod,recommendationservice-0,k8s容器网络资源包重复发送,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:030:1647840981,2022-03-21-cloudbed2,1647840981,pod,recommendationservice-0,k8s容器网络资源包重复发送,Mapping-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:030:1647840981,2022-03-21-cloudbed2,1647840981,pod,recommendationservice-0,k8s容器网络资源包重复发送,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:030:1647840981,2022-03-21-cloudbed2,1647840981,pod,recommendationservice-0,k8s容器网络资源包重复发送,Containment-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:030:1647840981,2022-03-21-cloudbed2,1647840981,pod,recommendationservice-0,k8s容器网络资源包重复发送,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:030:1647840981,2022-03-21-cloudbed2,1647840981,pod,recommendationservice-0,k8s容器网络资源包重复发送,Dependency-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:030:1647840981,2022-03-21-cloudbed2,1647840981,pod,recommendationservice-0,k8s容器网络资源包重复发送,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:030:1647840981,2022-03-21-cloudbed2,1647840981,pod,recommendationservice-0,k8s容器网络资源包重复发送,Full,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:031:1647841753,2022-03-21-cloudbed2,1647841753,pod,frontend-2,k8s容器网络丢包,Mapping-only,level,17.0,0.058823529411764705,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:031:1647841753,2022-03-21-cloudbed2,1647841753,pod,frontend-2,k8s容器网络丢包,Mapping-only,global,26.0,0.038461538461538464,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:031:1647841753,2022-03-21-cloudbed2,1647841753,pod,frontend-2,k8s容器网络丢包,Containment-only,level,17.0,0.058823529411764705,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:031:1647841753,2022-03-21-cloudbed2,1647841753,pod,frontend-2,k8s容器网络丢包,Containment-only,global,28.0,0.03571428571428571,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:031:1647841753,2022-03-21-cloudbed2,1647841753,pod,frontend-2,k8s容器网络丢包,Dependency-only,level,17.0,0.058823529411764705,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:031:1647841753,2022-03-21-cloudbed2,1647841753,pod,frontend-2,k8s容器网络丢包,Dependency-only,global,26.0,0.038461538461538464,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:031:1647841753,2022-03-21-cloudbed2,1647841753,pod,frontend-2,k8s容器网络丢包,Full,level,17.0,0.058823529411764705,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:031:1647841753,2022-03-21-cloudbed2,1647841753,pod,frontend-2,k8s容器网络丢包,Full,global,30.0,0.03333333333333333,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:032:1647843588,2022-03-21-cloudbed2,1647843588,pod,productcatalogservice-1,k8s容器网络丢包,Mapping-only,level,25.0,0.04,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:032:1647843588,2022-03-21-cloudbed2,1647843588,pod,productcatalogservice-1,k8s容器网络丢包,Mapping-only,global,37.0,0.02702702702702703,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:032:1647843588,2022-03-21-cloudbed2,1647843588,pod,productcatalogservice-1,k8s容器网络丢包,Containment-only,level,25.0,0.04,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:032:1647843588,2022-03-21-cloudbed2,1647843588,pod,productcatalogservice-1,k8s容器网络丢包,Containment-only,global,39.0,0.02564102564102564,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:032:1647843588,2022-03-21-cloudbed2,1647843588,pod,productcatalogservice-1,k8s容器网络丢包,Dependency-only,level,25.0,0.04,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:032:1647843588,2022-03-21-cloudbed2,1647843588,pod,productcatalogservice-1,k8s容器网络丢包,Dependency-only,global,41.0,0.024390243902439025,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:032:1647843588,2022-03-21-cloudbed2,1647843588,pod,productcatalogservice-1,k8s容器网络丢包,Full,level,25.0,0.04,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:032:1647843588,2022-03-21-cloudbed2,1647843588,pod,productcatalogservice-1,k8s容器网络丢包,Full,global,41.0,0.024390243902439025,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:033:1647844751,2022-03-21-cloudbed2,1647844751,pod,productcatalogservice2-0,k8s容器内存负载,Mapping-only,level,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:033:1647844751,2022-03-21-cloudbed2,1647844751,pod,productcatalogservice2-0,k8s容器内存负载,Mapping-only,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:033:1647844751,2022-03-21-cloudbed2,1647844751,pod,productcatalogservice2-0,k8s容器内存负载,Containment-only,level,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:033:1647844751,2022-03-21-cloudbed2,1647844751,pod,productcatalogservice2-0,k8s容器内存负载,Containment-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:033:1647844751,2022-03-21-cloudbed2,1647844751,pod,productcatalogservice2-0,k8s容器内存负载,Dependency-only,level,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:033:1647844751,2022-03-21-cloudbed2,1647844751,pod,productcatalogservice2-0,k8s容器内存负载,Dependency-only,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:033:1647844751,2022-03-21-cloudbed2,1647844751,pod,productcatalogservice2-0,k8s容器内存负载,Full,level,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:033:1647844751,2022-03-21-cloudbed2,1647844751,pod,productcatalogservice2-0,k8s容器内存负载,Full,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:034:1647845941,2022-03-21-cloudbed2,1647845941,service,frontend,k8s容器cpu负载,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:034:1647845941,2022-03-21-cloudbed2,1647845941,service,frontend,k8s容器cpu负载,Mapping-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:034:1647845941,2022-03-21-cloudbed2,1647845941,service,frontend,k8s容器cpu负载,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:034:1647845941,2022-03-21-cloudbed2,1647845941,service,frontend,k8s容器cpu负载,Containment-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:034:1647845941,2022-03-21-cloudbed2,1647845941,service,frontend,k8s容器cpu负载,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:034:1647845941,2022-03-21-cloudbed2,1647845941,service,frontend,k8s容器cpu负载,Dependency-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:034:1647845941,2022-03-21-cloudbed2,1647845941,service,frontend,k8s容器cpu负载,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:034:1647845941,2022-03-21-cloudbed2,1647845941,service,frontend,k8s容器cpu负载,Full,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:035:1647847185,2022-03-21-cloudbed2,1647847185,service,paymentservice,k8s容器进程中止,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:035:1647847185,2022-03-21-cloudbed2,1647847185,service,paymentservice,k8s容器进程中止,Mapping-only,global,25.0,0.04,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:035:1647847185,2022-03-21-cloudbed2,1647847185,service,paymentservice,k8s容器进程中止,Containment-only,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:035:1647847185,2022-03-21-cloudbed2,1647847185,service,paymentservice,k8s容器进程中止,Containment-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:035:1647847185,2022-03-21-cloudbed2,1647847185,service,paymentservice,k8s容器进程中止,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:035:1647847185,2022-03-21-cloudbed2,1647847185,service,paymentservice,k8s容器进程中止,Dependency-only,global,25.0,0.04,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:035:1647847185,2022-03-21-cloudbed2,1647847185,service,paymentservice,k8s容器进程中止,Full,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:035:1647847185,2022-03-21-cloudbed2,1647847185,service,paymentservice,k8s容器进程中止,Full,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:036:1647848749,2022-03-21-cloudbed2,1647848749,service,paymentservice,k8s容器网络资源包重复发送,Mapping-only,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:036:1647848749,2022-03-21-cloudbed2,1647848749,service,paymentservice,k8s容器网络资源包重复发送,Mapping-only,global,53.5,0.018691588785046728,0.0,0.0,0.0,2
+2022-03-21-cloudbed2:036:1647848749,2022-03-21-cloudbed2,1647848749,service,paymentservice,k8s容器网络资源包重复发送,Containment-only,level,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:036:1647848749,2022-03-21-cloudbed2,1647848749,service,paymentservice,k8s容器网络资源包重复发送,Containment-only,global,40.0,0.025,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:036:1647848749,2022-03-21-cloudbed2,1647848749,service,paymentservice,k8s容器网络资源包重复发送,Dependency-only,level,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:036:1647848749,2022-03-21-cloudbed2,1647848749,service,paymentservice,k8s容器网络资源包重复发送,Dependency-only,global,53.0,0.018867924528301886,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:036:1647848749,2022-03-21-cloudbed2,1647848749,service,paymentservice,k8s容器网络资源包重复发送,Full,level,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:036:1647848749,2022-03-21-cloudbed2,1647848749,service,paymentservice,k8s容器网络资源包重复发送,Full,global,40.0,0.025,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:037:1647850089,2022-03-21-cloudbed2,1647850089,pod,adservice-0,k8s容器网络丢包,Mapping-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:037:1647850089,2022-03-21-cloudbed2,1647850089,pod,adservice-0,k8s容器网络丢包,Mapping-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:037:1647850089,2022-03-21-cloudbed2,1647850089,pod,adservice-0,k8s容器网络丢包,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:037:1647850089,2022-03-21-cloudbed2,1647850089,pod,adservice-0,k8s容器网络丢包,Containment-only,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:037:1647850089,2022-03-21-cloudbed2,1647850089,pod,adservice-0,k8s容器网络丢包,Dependency-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:037:1647850089,2022-03-21-cloudbed2,1647850089,pod,adservice-0,k8s容器网络丢包,Dependency-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:037:1647850089,2022-03-21-cloudbed2,1647850089,pod,adservice-0,k8s容器网络丢包,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:037:1647850089,2022-03-21-cloudbed2,1647850089,pod,adservice-0,k8s容器网络丢包,Full,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:038:1647852410,2022-03-21-cloudbed2,1647852410,host,node-1,node 磁盘空间消耗,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:038:1647852410,2022-03-21-cloudbed2,1647852410,host,node-1,node 磁盘空间消耗,Mapping-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:038:1647852410,2022-03-21-cloudbed2,1647852410,host,node-1,node 磁盘空间消耗,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:038:1647852410,2022-03-21-cloudbed2,1647852410,host,node-1,node 磁盘空间消耗,Containment-only,global,11.0,0.09090909090909091,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:038:1647852410,2022-03-21-cloudbed2,1647852410,host,node-1,node 磁盘空间消耗,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:038:1647852410,2022-03-21-cloudbed2,1647852410,host,node-1,node 磁盘空间消耗,Dependency-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:038:1647852410,2022-03-21-cloudbed2,1647852410,host,node-1,node 磁盘空间消耗,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:038:1647852410,2022-03-21-cloudbed2,1647852410,host,node-1,node 磁盘空间消耗,Full,global,11.0,0.09090909090909091,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:039:1647853188,2022-03-21-cloudbed2,1647853188,pod,adservice-2,k8s容器网络延迟,Mapping-only,level,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:039:1647853188,2022-03-21-cloudbed2,1647853188,pod,adservice-2,k8s容器网络延迟,Mapping-only,global,18.0,0.05555555555555555,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:039:1647853188,2022-03-21-cloudbed2,1647853188,pod,adservice-2,k8s容器网络延迟,Containment-only,level,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:039:1647853188,2022-03-21-cloudbed2,1647853188,pod,adservice-2,k8s容器网络延迟,Containment-only,global,19.0,0.05263157894736842,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:039:1647853188,2022-03-21-cloudbed2,1647853188,pod,adservice-2,k8s容器网络延迟,Dependency-only,level,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:039:1647853188,2022-03-21-cloudbed2,1647853188,pod,adservice-2,k8s容器网络延迟,Dependency-only,global,18.0,0.05555555555555555,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:039:1647853188,2022-03-21-cloudbed2,1647853188,pod,adservice-2,k8s容器网络延迟,Full,level,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:039:1647853188,2022-03-21-cloudbed2,1647853188,pod,adservice-2,k8s容器网络延迟,Full,global,20.0,0.05,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:042:1647857282,2022-03-21-cloudbed2,1647857282,service,checkoutservice,k8s容器网络资源包损坏,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:042:1647857282,2022-03-21-cloudbed2,1647857282,service,checkoutservice,k8s容器网络资源包损坏,Mapping-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:042:1647857282,2022-03-21-cloudbed2,1647857282,service,checkoutservice,k8s容器网络资源包损坏,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:042:1647857282,2022-03-21-cloudbed2,1647857282,service,checkoutservice,k8s容器网络资源包损坏,Containment-only,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:042:1647857282,2022-03-21-cloudbed2,1647857282,service,checkoutservice,k8s容器网络资源包损坏,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:042:1647857282,2022-03-21-cloudbed2,1647857282,service,checkoutservice,k8s容器网络资源包损坏,Dependency-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:042:1647857282,2022-03-21-cloudbed2,1647857282,service,checkoutservice,k8s容器网络资源包损坏,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:042:1647857282,2022-03-21-cloudbed2,1647857282,service,checkoutservice,k8s容器网络资源包损坏,Full,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:043:1647858555,2022-03-21-cloudbed2,1647858555,service,adservice,k8s容器网络丢包,Mapping-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:043:1647858555,2022-03-21-cloudbed2,1647858555,service,adservice,k8s容器网络丢包,Mapping-only,global,31.0,0.03225806451612903,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:043:1647858555,2022-03-21-cloudbed2,1647858555,service,adservice,k8s容器网络丢包,Containment-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:043:1647858555,2022-03-21-cloudbed2,1647858555,service,adservice,k8s容器网络丢包,Containment-only,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:043:1647858555,2022-03-21-cloudbed2,1647858555,service,adservice,k8s容器网络丢包,Dependency-only,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:043:1647858555,2022-03-21-cloudbed2,1647858555,service,adservice,k8s容器网络丢包,Dependency-only,global,30.0,0.03333333333333333,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:043:1647858555,2022-03-21-cloudbed2,1647858555,service,adservice,k8s容器网络丢包,Full,level,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:043:1647858555,2022-03-21-cloudbed2,1647858555,service,adservice,k8s容器网络丢包,Full,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:044:1647859493,2022-03-21-cloudbed2,1647859493,host,node-6,node 内存消耗,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:044:1647859493,2022-03-21-cloudbed2,1647859493,host,node-6,node 内存消耗,Mapping-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:044:1647859493,2022-03-21-cloudbed2,1647859493,host,node-6,node 内存消耗,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:044:1647859493,2022-03-21-cloudbed2,1647859493,host,node-6,node 内存消耗,Containment-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:044:1647859493,2022-03-21-cloudbed2,1647859493,host,node-6,node 内存消耗,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:044:1647859493,2022-03-21-cloudbed2,1647859493,host,node-6,node 内存消耗,Dependency-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:044:1647859493,2022-03-21-cloudbed2,1647859493,host,node-6,node 内存消耗,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:044:1647859493,2022-03-21-cloudbed2,1647859493,host,node-6,node 内存消耗,Full,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:045:1647861002,2022-03-21-cloudbed2,1647861002,service,shippingservice,k8s容器内存负载,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:045:1647861002,2022-03-21-cloudbed2,1647861002,service,shippingservice,k8s容器内存负载,Mapping-only,global,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:045:1647861002,2022-03-21-cloudbed2,1647861002,service,shippingservice,k8s容器内存负载,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:045:1647861002,2022-03-21-cloudbed2,1647861002,service,shippingservice,k8s容器内存负载,Containment-only,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:045:1647861002,2022-03-21-cloudbed2,1647861002,service,shippingservice,k8s容器内存负载,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:045:1647861002,2022-03-21-cloudbed2,1647861002,service,shippingservice,k8s容器内存负载,Dependency-only,global,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:045:1647861002,2022-03-21-cloudbed2,1647861002,service,shippingservice,k8s容器内存负载,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:045:1647861002,2022-03-21-cloudbed2,1647861002,service,shippingservice,k8s容器内存负载,Full,global,6.0,0.16666666666666666,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:046:1647862375,2022-03-21-cloudbed2,1647862375,service,paymentservice,k8s容器cpu负载,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:046:1647862375,2022-03-21-cloudbed2,1647862375,service,paymentservice,k8s容器cpu负载,Mapping-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:046:1647862375,2022-03-21-cloudbed2,1647862375,service,paymentservice,k8s容器cpu负载,Containment-only,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:046:1647862375,2022-03-21-cloudbed2,1647862375,service,paymentservice,k8s容器cpu负载,Containment-only,global,12.0,0.08333333333333333,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:046:1647862375,2022-03-21-cloudbed2,1647862375,service,paymentservice,k8s容器cpu负载,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:046:1647862375,2022-03-21-cloudbed2,1647862375,service,paymentservice,k8s容器cpu负载,Dependency-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:046:1647862375,2022-03-21-cloudbed2,1647862375,service,paymentservice,k8s容器cpu负载,Full,level,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:046:1647862375,2022-03-21-cloudbed2,1647862375,service,paymentservice,k8s容器cpu负载,Full,global,12.0,0.08333333333333333,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:047:1647864210,2022-03-21-cloudbed2,1647864210,pod,checkoutservice-2,k8s容器网络资源包损坏,Mapping-only,level,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:047:1647864210,2022-03-21-cloudbed2,1647864210,pod,checkoutservice-2,k8s容器网络资源包损坏,Mapping-only,global,18.0,0.05555555555555555,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:047:1647864210,2022-03-21-cloudbed2,1647864210,pod,checkoutservice-2,k8s容器网络资源包损坏,Containment-only,level,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:047:1647864210,2022-03-21-cloudbed2,1647864210,pod,checkoutservice-2,k8s容器网络资源包损坏,Containment-only,global,22.0,0.045454545454545456,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:047:1647864210,2022-03-21-cloudbed2,1647864210,pod,checkoutservice-2,k8s容器网络资源包损坏,Dependency-only,level,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:047:1647864210,2022-03-21-cloudbed2,1647864210,pod,checkoutservice-2,k8s容器网络资源包损坏,Dependency-only,global,18.0,0.05555555555555555,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:047:1647864210,2022-03-21-cloudbed2,1647864210,pod,checkoutservice-2,k8s容器网络资源包损坏,Full,level,13.0,0.07692307692307693,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:047:1647864210,2022-03-21-cloudbed2,1647864210,pod,checkoutservice-2,k8s容器网络资源包损坏,Full,global,23.0,0.043478260869565216,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:050:1647868134,2022-03-21-cloudbed2,1647868134,host,node-6,node 磁盘空间消耗,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:050:1647868134,2022-03-21-cloudbed2,1647868134,host,node-6,node 磁盘空间消耗,Mapping-only,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:050:1647868134,2022-03-21-cloudbed2,1647868134,host,node-6,node 磁盘空间消耗,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:050:1647868134,2022-03-21-cloudbed2,1647868134,host,node-6,node 磁盘空间消耗,Containment-only,global,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:050:1647868134,2022-03-21-cloudbed2,1647868134,host,node-6,node 磁盘空间消耗,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:050:1647868134,2022-03-21-cloudbed2,1647868134,host,node-6,node 磁盘空间消耗,Dependency-only,global,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:050:1647868134,2022-03-21-cloudbed2,1647868134,host,node-6,node 磁盘空间消耗,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:050:1647868134,2022-03-21-cloudbed2,1647868134,host,node-6,node 磁盘空间消耗,Full,global,8.0,0.125,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:051:1647869511,2022-03-21-cloudbed2,1647869511,pod,frontend-2,k8s容器读io负载,Mapping-only,level,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:051:1647869511,2022-03-21-cloudbed2,1647869511,pod,frontend-2,k8s容器读io负载,Mapping-only,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:051:1647869511,2022-03-21-cloudbed2,1647869511,pod,frontend-2,k8s容器读io负载,Containment-only,level,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:051:1647869511,2022-03-21-cloudbed2,1647869511,pod,frontend-2,k8s容器读io负载,Containment-only,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:051:1647869511,2022-03-21-cloudbed2,1647869511,pod,frontend-2,k8s容器读io负载,Dependency-only,level,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:051:1647869511,2022-03-21-cloudbed2,1647869511,pod,frontend-2,k8s容器读io负载,Dependency-only,global,7.0,0.14285714285714285,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:051:1647869511,2022-03-21-cloudbed2,1647869511,pod,frontend-2,k8s容器读io负载,Full,level,5.0,0.2,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:051:1647869511,2022-03-21-cloudbed2,1647869511,pod,frontend-2,k8s容器读io负载,Full,global,9.0,0.1111111111111111,0.0,0.0,0.0,1
+2022-03-21-cloudbed2:052:1647870712,2022-03-21-cloudbed2,1647870712,host,node-5,node 内存消耗,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:052:1647870712,2022-03-21-cloudbed2,1647870712,host,node-5,node 内存消耗,Mapping-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:052:1647870712,2022-03-21-cloudbed2,1647870712,host,node-5,node 内存消耗,Containment-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:052:1647870712,2022-03-21-cloudbed2,1647870712,host,node-5,node 内存消耗,Containment-only,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:052:1647870712,2022-03-21-cloudbed2,1647870712,host,node-5,node 内存消耗,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:052:1647870712,2022-03-21-cloudbed2,1647870712,host,node-5,node 内存消耗,Dependency-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:052:1647870712,2022-03-21-cloudbed2,1647870712,host,node-5,node 内存消耗,Full,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:052:1647870712,2022-03-21-cloudbed2,1647870712,host,node-5,node 内存消耗,Full,global,3.0,0.3333333333333333,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:053:1647873906,2022-03-21-cloudbed2,1647873906,service,frontend,k8s容器网络资源包损坏,Mapping-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:053:1647873906,2022-03-21-cloudbed2,1647873906,service,frontend,k8s容器网络资源包损坏,Mapping-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:053:1647873906,2022-03-21-cloudbed2,1647873906,service,frontend,k8s容器网络资源包损坏,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:053:1647873906,2022-03-21-cloudbed2,1647873906,service,frontend,k8s容器网络资源包损坏,Containment-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:053:1647873906,2022-03-21-cloudbed2,1647873906,service,frontend,k8s容器网络资源包损坏,Dependency-only,level,1.0,1.0,1.0,1.0,1.0,1
+2022-03-21-cloudbed2:053:1647873906,2022-03-21-cloudbed2,1647873906,service,frontend,k8s容器网络资源包损坏,Dependency-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:053:1647873906,2022-03-21-cloudbed2,1647873906,service,frontend,k8s容器网络资源包损坏,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:053:1647873906,2022-03-21-cloudbed2,1647873906,service,frontend,k8s容器网络资源包损坏,Full,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:054:1647876814,2022-03-21-cloudbed2,1647876814,pod,checkoutservice2-0,k8s容器cpu负载,Mapping-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:054:1647876814,2022-03-21-cloudbed2,1647876814,pod,checkoutservice2-0,k8s容器cpu负载,Mapping-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:054:1647876814,2022-03-21-cloudbed2,1647876814,pod,checkoutservice2-0,k8s容器cpu负载,Containment-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:054:1647876814,2022-03-21-cloudbed2,1647876814,pod,checkoutservice2-0,k8s容器cpu负载,Containment-only,global,4.0,0.25,0.0,0.0,1.0,1
+2022-03-21-cloudbed2:054:1647876814,2022-03-21-cloudbed2,1647876814,pod,checkoutservice2-0,k8s容器cpu负载,Dependency-only,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:054:1647876814,2022-03-21-cloudbed2,1647876814,pod,checkoutservice2-0,k8s容器cpu负载,Dependency-only,global,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:054:1647876814,2022-03-21-cloudbed2,1647876814,pod,checkoutservice2-0,k8s容器cpu负载,Full,level,2.0,0.5,0.0,1.0,1.0,1
+2022-03-21-cloudbed2:054:1647876814,2022-03-21-cloudbed2,1647876814,pod,checkoutservice2-0,k8s容器cpu负载,Full,global,4.0,0.25,0.0,0.0,1.0,1

@@ -1,0 +1,7 @@
+{
+  "seed": 20261106,
+  "repeats": 5000,
+  "cluster": "native Pod identity within application",
+  "weighting": "case-weighted ratio of resampled cluster sums to sizes",
+  "limitation": "Pod clusters do not establish independent deployments; exploratory only"
+}

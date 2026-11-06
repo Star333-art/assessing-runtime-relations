@@ -1,0 +1,159 @@
+{
+  "status": "complete_review_draft",
+  "date": "2026-11-03",
+  "pages": 23,
+  "figures": 5,
+  "tables": 15,
+  "references": 19,
+  "unresolved_references": false,
+  "replacement_glyphs": false,
+  "out_of_page_characters": 0,
+  "template_files_byte_identical": {
+    "cas-sc.cls": true,
+    "cas-common.sty": true,
+    "cas-model2-names.bst": true
+  },
+  "visual_review": "All 23 pages rendered; the title page, new metric-source table, mechanism tables, discussion, appendix and references were inspected; no clipping was observed",
+  "known_template_warning": "CAS keywords are placed in a deliberate zero-width overlay box; one internal maketitle Overfull warning remains, without visible out-of-page content",
+  "highlights_character_counts": [
+    77,
+    76,
+    66,
+    73
+  ],
+  "pdf_sha256": "8b446dd9c3490c5d96e251b3bdcb2cf2fe907ccfd7e6f6aeb77b83ff2b600e6e",
+  "required_author_confirmation": [
+    "author details",
+    "funding",
+    "competing interests",
+    "CRediT",
+    "journal-required AI-use disclosure"
+  ],
+  "evidence_snapshots": [
+    {
+      "snapshot": "evidence/lsdb_relation_summary.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\lsdb_relation_split_l0p1\\relation_summary.csv",
+      "sha256": "1242e029a503ee9c39fbf3c558fcc407b397cfdf3b35f748491fef4626ad3371"
+    },
+    {
+      "snapshot": "evidence/aiops2025_native_summary.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\aiops2025_lsdb_protocol_20261023\\summary.csv",
+      "sha256": "1a37ba2ccb6cf1c2814953651fded5f668445dfb3a6863dd7ad67f63c87bc7ed"
+    },
+    {
+      "snapshot": "evidence/microcercl_by_application.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_lsdb_protocol_20261023\\by_application.csv",
+      "sha256": "0575b5b08678024734d5bc76b52395681a6ef9c7b93801a1c30fede336a47df0"
+    },
+    {
+      "snapshot": "evidence/microcercl_native_summary.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_lsdb_protocol_20261023\\summary.csv",
+      "sha256": "d5dcab1329741f02c8996780217b9139ea6bbe7b889a2bd440ca0d7818c2265b"
+    },
+    {
+      "snapshot": "evidence/lsdb_observation_gradient_summary.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\entity_observation_followup_20261026\\lsdb_observation_gradient_summary.csv",
+      "sha256": "e66d7b413979e488c1332d17b70f864486a834de13483033049bb6e954126fd0"
+    },
+    {
+      "snapshot": "evidence/lsdb_observation_gradient_paired_ci.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\entity_observation_followup_20261026\\lsdb_observation_gradient_paired_ci.csv",
+      "sha256": "23b190ed0ea0f6e1d196043091c5a4d301f06906f5533c3b81943478502d8093"
+    },
+    {
+      "snapshot": "evidence/structural_prior_summary.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\entity_observation_followup_20261026\\structural_prior_summary.csv",
+      "sha256": "8e0e8266fa42ea2fa09340df791114a2712f9be370e21a70cdb7af36d225eae1"
+    },
+    {
+      "snapshot": "evidence/propagation_vs_structural_prior.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\entity_observation_followup_20261026\\propagation_vs_structural_prior.csv",
+      "sha256": "b987a80d5de4412f4fe0a1efa8a27a4dc77c46ceed9d5925f753428c974c837a"
+    },
+    {
+      "snapshot": "evidence/aiops2025_observation_gradient_summary.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\aiops2025_observability_rewire_20261026\\observation_gradient_summary.csv",
+      "sha256": "fdf2db8e0cbfa7f1ca31648857f84a0f4a6af9d520616d80bb9dc49e71b6dbf5"
+    },
+    {
+      "snapshot": "evidence/aiops2025_observation_gradient_paired_ci.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\aiops2025_observability_rewire_20261026\\observation_gradient_paired_ci.csv",
+      "sha256": "a958f2fbfe47f209cc4009adcc2b469fd7d6cb7f5bc53bca336d19435e226003"
+    },
+    {
+      "snapshot": "evidence/rewired_topology_paired_ci.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\aiops2025_observability_rewire_20261026\\rewired_topology_paired_ci.csv",
+      "sha256": "456adad4865daeb19b97c007a1bbe7874aeba45f94446df6068590ee47ba8700"
+    },
+    {
+      "snapshot": "evidence/followup_protocol.json",
+      "source": "D:\\AIOps\\LS-baro\\output\\entity_observation_followup_20261026\\protocol.json",
+      "sha256": "86b11bd90bef11787d9e2a740afe9a17ee1ae34f66cb15da45dc57ff1686abeb"
+    },
+    {
+      "snapshot": "evidence/followup_verification.json",
+      "source": "D:\\AIOps\\LS-baro\\output\\entity_observation_followup_20261026\\verification.json",
+      "sha256": "1b2ee82ef2a69590634340e4d83031d3b30c27dad127ccc6dcc8b5a660cdcc89"
+    },
+    {
+      "snapshot": "evidence/microcercl_shared_source_summary.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_shared_source_sensitivity_20261103\\mechanism_control_summary.csv",
+      "sha256": "d29b560f6573a13e48d2a018f91ac1c5ac6e79140333665330f3340eaa96ec3f"
+    },
+    {
+      "snapshot": "evidence/microcercl_shared_source_paired_ci.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_shared_source_sensitivity_20261103\\mechanism_control_paired_ci.csv",
+      "sha256": "e1ccdb89bfb51c060ab5fd3686e87d8d1e5e00cc3da713a9d2cb6280d5f9cd40"
+    },
+    {
+      "snapshot": "evidence/microcercl_filtered_vs_original_paired_ci.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_shared_source_sensitivity_20261103\\filtered_vs_original_paired_ci.csv",
+      "sha256": "19a3f46186d207071571fb96800a622941b0050324c701e777f4fe05cce837e5"
+    },
+    {
+      "snapshot": "evidence/microcercl_metric_source_definitions.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_shared_source_sensitivity_20261103\\metric_source_definitions.csv",
+      "sha256": "40b12d835d6097af805c5c5c254281421e9f325006fb967e73e3ca1f08a0c8b0"
+    },
+    {
+      "snapshot": "evidence/microcercl_shared_source_case_results.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_shared_source_sensitivity_20261103\\mechanism_control_cases.csv",
+      "sha256": "ce4697c42bd97bca6a1d7ab73affc50a471901cbefdde60590965a810ba45cbe"
+    },
+    {
+      "snapshot": "evidence/microcercl_rewiring_integrity.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_shared_source_sensitivity_20261103\\rewiring_integrity.csv",
+      "sha256": "e4ecaa7d3c19f3a6a75aad945d9cccaa5ba6359703d788761f7abe382450e80b"
+    },
+    {
+      "snapshot": "evidence/microcercl_shared_source_protocol.json",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_shared_source_sensitivity_20261103\\protocol.json",
+      "sha256": "daeb348ec45973a488867dc2320e6f9725a02e2e5b21a7020a0627709ef6b88e"
+    },
+    {
+      "snapshot": "evidence/microcercl_shared_source_verification.json",
+      "source": "D:\\AIOps\\LS-baro\\output\\microcercl_shared_source_sensitivity_20261103\\verification.json",
+      "sha256": "49439d88cd909f93494cb1e28cee1a17b2c0fd25dc307d5606ba5370c6723ddb"
+    },
+    {
+      "snapshot": "evidence/lambda_sensitivity_summary.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\lambda_sensitivity_20261103\\lambda_sensitivity_summary.csv",
+      "sha256": "9bc36335df2eb35c2b824904cfe0ffff564fb41fe523f1ccdf972dd95c34b4ca"
+    },
+    {
+      "snapshot": "evidence/lambda_sensitivity_cases.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\lambda_sensitivity_20261103\\lambda_sensitivity_cases.csv",
+      "sha256": "9eff3eacfc2925289049bd888f82721c16726c7bd43c459e3a82247ead03d0fe"
+    },
+    {
+      "snapshot": "evidence/lambda_sensitivity_rank_check.csv",
+      "source": "D:\\AIOps\\LS-baro\\output\\lambda_sensitivity_20261103\\complete_mask_rank_check.csv",
+      "sha256": "866bb6ad88afc195503c388901638251aa9599330c81a872844e8fe822e6fe0a"
+    },
+    {
+      "snapshot": "evidence/lambda_sensitivity_protocol.json",
+      "source": "D:\\AIOps\\LS-baro\\output\\lambda_sensitivity_20261103\\protocol.json",
+      "sha256": "7b7e8c2e3881400ae540f8d9a3bbdeeb5634cfb4defe1c8a8d46705777b0c0de"
+    }
+  ]
+}
