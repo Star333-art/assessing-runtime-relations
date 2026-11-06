@@ -1,6 +1,6 @@
 # Reproduction status: 2026-11-06
 
-Local review revision: requirements-audit-20261106. No public repository or immutable public release has been verified for this study. Publication remains pending author action; local hashes are not a public DOI or commit.
+Local review revision: requirements-audit-20261106. Public repository: https://github.com/Star333-art/assessing-runtime-relations. The manuscript is pinned to release `v1.0.0` (commit `ebe1973d7aee69b814638eb6e48c13c6e17b451f`). The release tag must remain attached to this artifact commit when the repository is updated.
 
 ## Windows and randomness
 

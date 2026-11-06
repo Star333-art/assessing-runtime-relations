@@ -1,5 +1,8 @@
 # Open Science Artifact
 
+Public repository: https://github.com/Star333-art/assessing-runtime-relations
+Manuscript release: `v1.0.0`
+
 This artifact accompanies *Assessing Runtime Relations under Incomplete Entity
 Observations*. It contains the active analysis code, tests, processed evidence,
 protocol metadata, and supporting-result replay material used by the paper.
