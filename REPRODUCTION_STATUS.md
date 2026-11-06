@@ -1,6 +1,6 @@
 # Reproduction status: 2026-11-06
 
-Local review revision: requirements-audit-20261106. Public repository: https://github.com/Star333-art/assessing-runtime-relations. The manuscript is pinned to release `v1.0.0`; the release tag must remain attached to the artifact commit when the repository is updated.
+Local review revision: requirements-audit-20261106. Public repository: https://github.com/Star333-art/assessing-runtime-relations. The manuscript is pinned to release `v1.0.1`; the release tag must remain attached to the artifact commit when the repository is updated.
 
 ## Windows and randomness
 
