@@ -1,0 +1,7 @@
+{
+  "comparisons": 50,
+  "raw_below_005": 29,
+  "holm_below_005": 16,
+  "alpha": 0.05,
+  "interpretation": "Exploratory sensitivity analysis; bootstrap classifications are retained separately."
+}

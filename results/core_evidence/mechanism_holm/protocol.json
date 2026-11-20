@@ -1,0 +1,52 @@
+{
+  "metric": "tie_avg5",
+  "pair_unit": "case; random controls already averaged within case",
+  "contrast": "Real minus each reference/control",
+  "alternative": "greater",
+  "zero_method": "wilcox",
+  "method": "approx",
+  "correction": false,
+  "all_zero_p": 1.0,
+  "difference_rounding": "none",
+  "csv_float_parser": "pandas default",
+  "family_size": 50,
+  "adjustment": "Holm across all 50 tests",
+  "adjustment_before_display_rounding": true,
+  "expected_cases": {
+    "lsdb/deployment/host": 12,
+    "lsdb/deployment/pod": 26,
+    "lsdb/ownership/pod": 26,
+    "lsdb/ownership/service": 50,
+    "aiops2025/deployment/host": 81,
+    "aiops2025/deployment/pod": 68,
+    "aiops2025/ownership/pod": 62,
+    "aiops2025/ownership/service": 100,
+    "microcercl/deployment/pod": 615,
+    "microcercl/ownership/pod": 615
+  },
+  "source_policies": {
+    "microcercl/ownership/pod": "exclude_instance_aggregated_service_resources",
+    "other_tasks": "original"
+  },
+  "versions": {
+    "python": "3.13.9",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3"
+  },
+  "source_sha256": "6d73a565140d5214ece1d02c180c4ad7bea2da0a414ed1d463976c60a1701e30",
+  "inputs": {
+    "core_cases": {
+      "filename": "relation_mechanism_cases.csv",
+      "sha256": "42a84373c472277a500c455246c7da5e4464106f0b04deca9639f1d835531f34"
+    },
+    "microcercl_cases": {
+      "filename": "microcercl_relation_cases.csv",
+      "sha256": "8bad948b658e3eb2a121250390e66587a028a527c3d10cfc3c07b2365779c2ab"
+    },
+    "filtered_cases": {
+      "filename": "microcercl_shared_source_case_results.csv",
+      "sha256": "786422051a6cdfefc42a4e4648eb9389bc69d512a94393d2c7b2f433265d7504"
+    }
+  }
+}

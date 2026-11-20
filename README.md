@@ -38,6 +38,39 @@ python -m venv .venv
 
 On Linux or macOS, replace `.venv/Scripts/python` with `.venv/bin/python`.
 
+## Replay multiple-comparison sensitivity
+
+From the repository root, use Python 3.11 or later and install the pinned
+analysis dependencies:
+
+```bash
+python -m pip install -r code/ls_baro/requirements-holm.txt
+python code/ls_baro/tools/evaluate_mechanism_holm.py
+```
+
+The input snapshots are bundled under `results/core_evidence/`. The command
+writes all 50 raw and globally Holm-adjusted p-values, per-task support counts,
+and a protocol with dependency versions and SHA-256 hashes to
+`reproduced/mechanism_holm/`. Frozen reference outputs and input provenance
+are in `results/core_evidence/mechanism_holm/`.
+
+The replay yields 29 unadjusted and 16 Holm-adjusted comparisons below 0.05.
+LSDB Ownership-to-Service and MicroCERCL Ownership-to-Pod each retain all five
+comparisons; LSDB Ownership-to-Pod retains zero. MicroCERCL Ownership excludes
+instance-aggregated Service resource scores, while Deployment uses the original
+source set. The analysis uses one case-level score per condition after averaging
+random controls within each case. Bootstrap classifications remain exploratory.
+The protocol records the explicit asymptotic signed-rank settings used for this
+replay. The historical aggregate count of 12 has no corresponding 50-test
+generator in the original release and is superseded by these reproducible
+comparison-level results.
+
+To validate the replay:
+
+```bash
+python -m pytest -q code/ls_baro/tests/test_mechanism_holm.py
+```
+
 ## Verify the active implementation
 
 ```bash
@@ -48,7 +81,7 @@ cd ../re2_support
 python -m pytest -q
 ```
 
-Expected results in the prepared workspace are 26 passing core tests and 9
+Expected results in the prepared workspace are 32 passing core tests and 9
 passing BARO/RE2-support tests.
 
 ## Replay the supporting RE2 result

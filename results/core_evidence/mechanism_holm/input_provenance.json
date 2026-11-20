@@ -1,0 +1,39 @@
+{
+  "base_artifact_commit": "ae1c567104b56bbe37a4c4e93d1e404860497e6d",
+  "preparation": "Frozen case-level outputs with CRLF normalized to LF for stable cross-platform hashes; numeric text is preserved. Random controls are already averaged within each case.",
+  "sources": [
+    {
+      "snapshot": "results/core_evidence/relation_mechanism_cases.csv",
+      "snapshot_sha256": "42a84373c472277a500c455246c7da5e4464106f0b04deca9639f1d835531f34",
+      "upstream_case_sha256": "1e972353e1d4e4587a6dcba21753f5ab2c89c849b422074540cb39cc9fab2908",
+      "generator": "code/ls_baro/tools/evaluate_relation_evidence_mechanisms.py",
+      "upstream_generator_sha256": "0ed025f7c82471815f85d2c6ad738adce62eb6b81ebb99bda0a72d89a7375904",
+      "git_generator_sha256": "0ed025f7c82471815f85d2c6ad738adce62eb6b81ebb99bda0a72d89a7375904",
+      "upstream_run": "output/relation_evidence_mechanisms_20261028",
+      "upstream_verification_sha256": "2ae1f5b50421e7c508ab0a24e48e232778e0534e40278a321754488929e18570",
+      "upstream_complete": true
+    },
+    {
+      "snapshot": "results/core_evidence/microcercl_relation_cases.csv",
+      "snapshot_sha256": "8bad948b658e3eb2a121250390e66587a028a527c3d10cfc3c07b2365779c2ab",
+      "upstream_case_sha256": "2718bb010509108438e4f8ee1d55d8ee90445472c1a994c37151d755022ad86e",
+      "generator": "code/ls_baro/tools/evaluate_microcercl_relation_mechanisms.py",
+      "upstream_generator_sha256": "95b22dadec3e7ad4eddab84595cf98e31af3d751fa42dd1874eed460c410a19e",
+      "git_generator_sha256": "95b22dadec3e7ad4eddab84595cf98e31af3d751fa42dd1874eed460c410a19e",
+      "upstream_run": "final_git_rerun_microcercl_v101_20261118",
+      "upstream_verification_sha256": "a8636dd68f1550896ca790b7c49f001652e0183a6e0484160d707fc0a12e72ef",
+      "upstream_complete": true
+    },
+    {
+      "snapshot": "results/core_evidence/microcercl_shared_source_case_results.csv",
+      "snapshot_sha256": "786422051a6cdfefc42a4e4648eb9389bc69d512a94393d2c7b2f433265d7504",
+      "upstream_case_sha256": "ce4697c42bd97bca6a1d7ab73affc50a471901cbefdde60590965a810ba45cbe",
+      "generator": "code/ls_baro/tools/evaluate_microcercl_shared_source_sensitivity.py",
+      "upstream_generator_sha256": "52d45d29349f8e5e37acb227ba45a9baf97eb4629624e08fa72a7f7468b83f6a",
+      "git_generator_sha256": "52d45d29349f8e5e37acb227ba45a9baf97eb4629624e08fa72a7f7468b83f6a",
+      "upstream_run": "output/microcercl_shared_source_sensitivity_20261103",
+      "upstream_verification_sha256": "49439d88cd909f93494cb1e28cee1a17b2c0fd25dc307d5606ba5370c6723ddb",
+      "upstream_complete": true
+    }
+  ]
+}

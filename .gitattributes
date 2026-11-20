@@ -1,0 +1,7 @@
+code/ls_baro/tools/evaluate_mechanism_holm.py text eol=lf
+code/ls_baro/tests/test_mechanism_holm.py text eol=lf
+code/ls_baro/requirements-holm.txt text eol=lf
+results/core_evidence/relation_mechanism_cases.csv text eol=lf
+results/core_evidence/microcercl_relation_cases.csv text eol=lf
+results/core_evidence/microcercl_shared_source_case_results.csv text eol=lf
+results/core_evidence/mechanism_holm/* text eol=lf

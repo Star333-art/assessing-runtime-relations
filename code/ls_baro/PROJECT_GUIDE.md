@@ -67,6 +67,7 @@ RE2 重放覆盖 90 个 Online Boutique Service 根因案例。图中包含 Metr
 
 - `tools/evaluate_relation_evidence_mechanisms.py`：LSDB 与 AIOps2025 的统一机制矩阵。
 - `tools/evaluate_lambda_mask_sensitivity.py`：原始、部分屏蔽和完全屏蔽条件下的 λ 检查。
+- `tools/evaluate_mechanism_holm.py`：50 项配对比较的原始及全局 Holm 校正后 p 值、任务级支持数量和输入哈希。
 - `run_aiops2022_ablation.py`、`run_aiops2022_native.py`：AIOps2022 边界实验。
 - `run_relation_supplements.py`、`tools/analyze_relation_supplements.py`：LSDB 与 MicroCERCL 的补充传播和固定参考分母实验。
 - `tools/audit_extended_dataset_roles.py`：AIOps2022 与 RE2 的配对汇总。
@@ -79,12 +80,23 @@ RE2 重放覆盖 90 个 Online Boutique Service 根因案例。图中包含 Metr
 ```powershell
 python -m pip install -r requirements.txt
 python -m pip install -e code/ls_baro
-python -m pytest -q code/ls_baro/tests
+Set-Location code/ls_baro
+python -m pytest -q
+Set-Location ../..
 ```
 
 原始遥测的项目来源和获取说明见 [THIRD_PARTY.md](../../THIRD_PARTY.md)。核验结果时，可查阅[核心实验快照](../../results/core_evidence/)和[补充审计文件](../../results/core_evidence/final_requirements/)。证据来源和文件哈希见 [provenance](../../provenance/) 与 [MANIFEST_SHA256.csv](../../MANIFEST_SHA256.csv)。
 
 ## 5. 复现口径
+
+多重比较复算从仓库根目录运行，Python 版本要求为 3.11 或更高：
+
+```powershell
+python -m pip install -r code/ls_baro/requirements-holm.txt
+python code/ls_baro/tools/evaluate_mechanism_holm.py
+```
+
+输入采用 `results/core_evidence/` 中的逐案例快照，输出位于 `reproduced/mechanism_holm/`。参考结果、计算协议和输入来源位于 `results/core_evidence/mechanism_holm/`。全部 50 项比较统一进行 Holm 校正，原始 p 值低于 0.05 的有 29 项，校正后有 16 项。
 
 - 已知公开故障发生时间和根因所在层，只在原生根因层内排序；
 - 核心实验按并列分数下的期望排名计算指标；
