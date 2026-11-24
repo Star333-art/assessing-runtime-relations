@@ -1,10 +1,10 @@
 # Open Science Artifact
 
 Public repository: https://github.com/Star333-art/assessing-runtime-relations
-Artifact release: `v1.0.2`
+Artifact release: `v1.0.3`
 
-This artifact accompanies *Assessing Runtime Relations under Incomplete Entity
-Observations*. It contains the active analysis code, tests, processed evidence,
+This artifact accompanies *When Do Runtime Relations Help Localize Root Causes?
+A Controlled Study of Missing Entity Scores and Structural Priors*. It contains the active analysis code, tests, processed evidence,
 protocol metadata, and supporting-result replay material used by the paper.
 
 ## Scope
@@ -22,7 +22,7 @@ can be reproduced by the specified score and structural controls.
 - `results/re2/`: 90-case, five-component frozen RE2 results and configuration.
 - `results/extended_roles/`: paired summaries assigning conservative evidence
   roles to AIOps2022 and RE2.
-- `provenance/`: source paths, hashes, and manuscript-quality audit records.
+- `provenance/`: public evidence identities, input transformations, and hashes.
 
 Third-party raw telemetry is not redistributed. The original projects and data
 must be obtained from the sources listed in `THIRD_PARTY.md`.
@@ -31,12 +31,24 @@ must be obtained from the sources listed in `THIRD_PARTY.md`.
 
 Python 3.11 or later is required for the complete replay workflow.
 
-```bash
+```powershell
 python -m venv .venv
-.venv/Scripts/python -m pip install -r requirements.txt
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python -m pip install -r code/ls_baro/requirements-holm.txt
 ```
 
-On Linux or macOS, replace `.venv/Scripts/python` with `.venv/bin/python`.
+On Linux or macOS:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m pip install -r code/ls_baro/requirements-holm.txt
+```
+
+Run all remaining commands in that activated environment. After opening a new
+shell, activate it again before using `python`.
 
 ## Replay multiple-comparison sensitivity
 
@@ -81,7 +93,7 @@ cd ../re2_support
 python -m pytest -q
 ```
 
-Expected results in the prepared workspace are 47 passing core tests and 9
+Expected results in the prepared workspace are 48 passing core tests and 12
 passing BARO/RE2-support tests.
 
 ## Replay the supporting RE2 result
@@ -90,17 +102,14 @@ The command below rebuilds the component case table and historical summary from
 the 450 frozen case-component JSON records without loading raw RCAEval data.
 
 ```bash
-cd code/re2_support
-python run_heterogeneous_graph_component_ablation.py \
-  --output ../../results/re2 \
-  --lambda 0.05 \
-  --direction forward \
-  --replay-existing \
-  --force
+python code/re2_support/run_heterogeneous_graph_component_ablation.py --input results/re2 --output reproduced/re2 --lambda 0.05 --direction forward --replay-existing
 ```
 
-The replay has been checked against the original 450-row table with maximum
-absolute numeric difference 0.
+Run from the repository root. The replay has been checked against the original
+450-row table with maximum absolute numeric difference 0. Frozen inputs are
+read-only; regenerated tables and configuration go under `reproduced/re2/`.
+The runner rejects overlapping input/output locations and outputs within
+`results/`, including when `--force` is provided.
 
 The historical raw-telemetry Route-B generator is not claimed as reproducible:
 its graph-builder module was absent from the final workspace. RE2 is a
@@ -120,7 +129,8 @@ python code/ls_baro/tools/audit_extended_dataset_roles.py \
 ```
 
 This step recomputes Avg@5 from each saved RE2 rank. The historical `avg5`
-field was reciprocal rank and is not used as the paper's Avg@5 definition.
+field was reciprocal rank truncated at rank 5 (zero beyond rank 5) and is not
+used as the paper's Avg@5 definition.
 
 ## Full raw-data experiments
 
@@ -159,8 +169,7 @@ genuine zero-swap replicates but excluding no-edge placeholders. Its ten-task
 audit uses the same case IDs as the mechanism comparisons. Full-cohort relation
 and observation-gradient diagnostics are saved separately as `full_cohort_*.csv`.
 Reference outputs are in `results/core_evidence/mechanism_controls/` and
-`results/core_evidence/final_requirements/`. The former audit filename
-`audit_paper_final_requirements.py` remains a compatibility entry point.
+`results/core_evidence/final_requirements/`.
 
 ## Verify artifact integrity
 
@@ -175,6 +184,8 @@ python code/ls_baro/tools/artifact_manifest.py
 
 To verify committed blob bytes directly, add `--revision HEAD`. Maintainers can
 stage new files and run `--write`, then stage the regenerated manifest. Current
-evidence is indexed by `provenance/evidence_index.csv`; older provenance records
-are identified separately in `provenance/README.md`.
+evidence is indexed by `provenance/evidence_index.csv`. The package contains
+reproduction inputs, protocols and checksums; document-layout audits,
+bibliography audits, superseded screening plans and duplicate replay outputs
+are excluded.
 

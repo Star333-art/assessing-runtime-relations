@@ -8,7 +8,7 @@ from __future__ import annotations
 import sys as _path_sys
 from pathlib import Path as _Path
 _path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
-from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY, source_key
 
 
 from collections import Counter
@@ -262,7 +262,7 @@ def main():
 
     code_paths = [Path(__file__), ROOT / "tools/evaluate_aiops2025_observability_and_rewire.py",
                   *[ROOT / "src/ls_baro" / n for n in ("canonical_core.py", "topology.py", "scoring.py")]]
-    sources = {str(p): sha(p) for p in [*source_paths, *code_paths, AI_SOURCE / "observation_gradient_cases.csv"]}
+    sources = {source_key(p): sha(p) for p in [*source_paths, *code_paths, AI_SOURCE / "observation_gradient_cases.csv"]}
     verification = dict(complete=True, cases={"lsdb": 88, "aiops2025": 272},
         historical_checks=len(validation), all_historical_ranks_equal=True,
         max_historical_score_error=max(r["max_score_error"] for r in validation),

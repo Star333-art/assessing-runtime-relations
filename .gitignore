@@ -4,6 +4,5 @@ __pycache__/
 pytest_tmp/
 .venv/
 *.egg-info/
-reproduced/*
-!reproduced/extended_roles/
+reproduced/
 data/

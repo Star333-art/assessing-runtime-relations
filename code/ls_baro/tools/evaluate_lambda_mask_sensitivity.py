@@ -8,7 +8,7 @@ from __future__ import annotations
 import sys as _path_sys
 from pathlib import Path as _Path
 _path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
-from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY, source_key
 
 
 import hashlib
@@ -127,8 +127,8 @@ def main():
         conditions="native all cases; 50% and 100% masking only when root layer equals the masked layer",
         propagation="fixed one-step bidirectional row-normalized graph; only lambda varies",
         primary_metrics="tie-expected Top-k and Avg@5; deterministic metrics retained per case",
-        source_paths=[str(p) for p in source_paths],
-        source_sha256={str(p): hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in source_paths},
+        source_paths=[source_key(p) for p in source_paths],
+        source_sha256={source_key(p): hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in source_paths},
         replay_checks=len(replay),
         complete_mask_rank_changes=int(rank_check_df.changed_rank_seeds.sum()) if not rank_check_df.empty else 0,
     )

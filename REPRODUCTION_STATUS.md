@@ -1,6 +1,6 @@
 # Reproduction status: 2026-11-24
 
-Current artifact release: `v1.0.2`. Earlier release `v1.0.1` is retained unchanged
+Current artifact release: `v1.0.3`. Earlier release `v1.0.1` is retained unchanged
 and does not contain the comparison-level Holm replay. The current release
 includes the 50-test generator, complete-mask label replay, eligible-cohort
 rewiring audit, explicit raw-data execution plan, and byte-level integrity tool.
@@ -46,7 +46,7 @@ Neither grouping establishes deployment independence.
 
 ## Validation and limits
 
-The core regression suite has 47 passing tests; RE2 support has 9. RE2 frozen
+The core regression suite has 48 passing tests; RE2 support has 12. RE2 frozen
 replay reconstructs 450 case-component records with numerical difference zero.
 AIOps2022 and RE2 paired summaries reproduce the committed reference numbers.
 RE2 still supports frozen-rank replay, not historical raw graph regeneration.
@@ -60,6 +60,8 @@ Original third-party telemetry remains separately distributed.
 
 Text distribution uses LF endings. `MANIFEST_SHA256.csv` records actual release
 bytes, and `artifact_manifest.py` verifies checkouts, archives, or committed Git
-blobs. Historical provenance is clearly separated from current evidence in
-`provenance/README.md`; old bibliography/layout checks are not current
-reproducibility verification.
+blobs. The artifact excludes obsolete screening plans, bibliography/layout
+checks, duplicate replay outputs and machine-specific paths. Required evidence
+and protocols use public file identities, as described in `provenance/README.md`.
+RE2 replay writes only to a separate output directory; the frozen inputs and
+their manifest hashes remain unchanged after replay.

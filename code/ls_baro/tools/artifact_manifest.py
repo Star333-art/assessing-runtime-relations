@@ -6,7 +6,6 @@ import hashlib
 import io
 from pathlib import Path
 import subprocess
-import json
 
 REPOSITORY = Path(__file__).resolve().parents[3]
 MANIFEST = "MANIFEST_SHA256.csv"
@@ -52,8 +51,6 @@ def main():
         with (root/"provenance/evidence_index.csv").open("w",encoding="utf-8",newline="") as stream:
             writer=csv.DictWriter(stream,fieldnames=["snapshot","bytes","sha256"],lineterminator="\n")
             writer.writeheader(); writer.writerows(evidence)
-        (root/"provenance/figure_table_sources.json").write_text(
-            json.dumps({r["snapshot"]:r["sha256"] for r in evidence},indent=2)+"\n",encoding="utf-8",newline="\n")
         names = sorted(p.decode() for p in git("ls-files", "-z").split(b"\0") if p and p.decode() != MANIFEST)
         rows = []
         for name in names:

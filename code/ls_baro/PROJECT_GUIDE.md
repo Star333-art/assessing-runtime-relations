@@ -59,7 +59,7 @@ RE2 重放覆盖 90 个 Online Boutique Service 根因案例。图中包含 Metr
 - `tools/audit_extended_dataset_roles.py`：从冻结逐案例排名重新计算 Top-1/3/5 与 Avg@5，并生成配对差值和探索性置信区间。
 - [补充实验结果](../../results/extended_roles/)：AIOps2022 与 RE2 的配对汇总。
 
-冻结组件文件中的 `avg5` 字段保存的是倒数排名。复算脚本从逐案例 `rank` 计算 Avg@5。重放的输入与限制见 [ARTIFACT_LIMITATIONS.md](../../ARTIFACT_LIMITATIONS.md)。
+冻结组件文件中的 `avg5` 字段保存的是 Top-5 截断倒数排名：排名不大于5时为排名倒数，否则为0。复算脚本从逐案例 `rank` 计算 Avg@5。重放的输入与限制见 [ARTIFACT_LIMITATIONS.md](../../ARTIFACT_LIMITATIONS.md)。
 
 从仓库根目录按 README 的说明[重放 RE2](../../README.md#replay-the-supporting-re2-result)。
 

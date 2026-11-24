@@ -20,3 +20,14 @@ def dataset_path(dataset):
                 "microcercl": "abnormal_20240615/abnormal"}
     return Path(os.environ.get(f"LS_BARO_{dataset.upper()}_ROOT",
         REPOSITORY / "data" / defaults[dataset])).expanduser().resolve()
+
+
+def source_key(path):
+    """Serialize source locations without recording the machine's directories."""
+    path = Path(path).resolve()
+    roots = [(output_path(), "reproduced/raw"), (REPOSITORY, "")]
+    roots.extend((dataset_path(name), "data/"+name) for name in ("lsdb", "aiops2025", "microcercl"))
+    for root, prefix in roots:
+        if path.is_relative_to(root):
+            return (Path(prefix)/path.relative_to(root)).as_posix()
+    return "external/"+path.name

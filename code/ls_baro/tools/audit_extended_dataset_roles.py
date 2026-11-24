@@ -58,9 +58,9 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     ai = pd.read_csv(ai_dir / "cases.csv")
     re2 = pd.read_csv(re2_dir / "component_ablation_cases.csv")
-    # The historical component runner stored reciprocal rank in its `avg5`
-    # field. Recompute the declared Avg@5 definition from the saved rank.
+    # The saved `avg5` is reciprocal rank truncated at rank 5, not Avg@5.
     saved_re2_avg5_is_rr = bool(np.allclose(re2["avg5"], 1.0 / re2["rank"]))
+    saved_re2_avg5_is_rr5 = bool(np.allclose(re2["avg5"], np.where(re2["rank"] <= 5, 1.0 / re2["rank"], 0.0)))
     re2["avg5_recomputed"] = np.where(re2["rank"] <= 5, (6.0 - re2["rank"]) / 5.0, 0.0)
     ai_records = []
     for scope, group in ai.groupby("scope"):
@@ -75,7 +75,7 @@ def main():
                     right_mean=float(pivot[metric][right].mean()),
                     **interval(values, "aiops2022", scope, left, right, metric)))
     ai_paired = pd.DataFrame(ai_records)
-    ai_paired.to_csv(out / "aiops2022_paired_ci.csv", index=False)
+    ai_paired.to_csv(out / "aiops2022_paired_ci.csv", index=False, lineterminator="\n")
 
     re2_records = []
     for component in ("ownership", "ownership_service_calls",
@@ -91,7 +91,7 @@ def main():
                 baro_mean=float(pivot[metric]["baro_only"].mean()),
                 **interval(values, "re2", component, metric)))
     re2_paired = pd.DataFrame(re2_records)
-    re2_paired.to_csv(out / "re2_component_paired_ci.csv", index=False)
+    re2_paired.to_csv(out / "re2_component_paired_ci.csv", index=False, lineterminator="\n")
 
     roles = [
         dict(dataset="AIOps2022", cases=51, role="adapter applicability boundary",
@@ -101,18 +101,23 @@ def main():
              usable_for_core_mechanism=False,
              reason="Complete case-level component ablation exists, but the graph has Metric/LogSource/Operation/Service entities and no native Host-Pod Deployment; scoring, direction, lambda, and propagation steps differ from the core protocol."),
     ]
-    pd.DataFrame(roles).to_csv(out / "dataset_roles.csv", index=False)
+    pd.DataFrame(roles).to_csv(out / "dataset_roles.csv", index=False, lineterminator="\n")
 
     verification = dict(complete=True,
         aiops2022=dict(available_labels=300, evaluated_isolated_cases=51,
                        subsets_evaluated=1, saved_rows=len(ai)),
         re2=dict(cases=90, components=sorted(re2.component.unique().tolist()), saved_rows=len(re2),
                  historical_avg5_field_equals_reciprocal_rank=saved_re2_avg5_is_rr,
+                 saved_avg5_field_equals_top5_truncated_reciprocal_rank=saved_re2_avg5_is_rr5,
                  avg5_used_in_this_audit="recomputed from rank as mean Top-1 through Top-5"),
-        source_sha256={str(path): sha(path) for path in [
-            Path(__file__), ai_dir / "cases.csv", ai_dir / "summary.json",
-            re2_dir / "component_ablation_cases.csv", re2_dir / "run_config.json"]})
-    (out / "verification.json").write_text(json.dumps(verification, indent=2), encoding="utf-8")
+        source_sha256={label: sha(path) for label,path in {
+            "code/ls_baro/tools/audit_extended_dataset_roles.py": Path(__file__),
+            "results/aiops2022/cases.csv": ai_dir/"cases.csv",
+            "results/aiops2022/summary.json": ai_dir/"summary.json",
+            "results/re2/component_ablation_cases.csv": re2_dir/"component_ablation_cases.csv",
+            "results/re2/run_config.json": re2_dir/"run_config.json"}.items()},
+        path_convention="repository-relative logical input names; CLI overrides may supply equivalent input locations")
+    (out / "verification.json").write_text(json.dumps(verification, indent=2)+"\n", encoding="utf-8", newline="\n")
 
     lines = ["# Extended-dataset evidence roles", "",
         "These saved experiments remain useful, but they do not satisfy the full evidence-versus-structure protocol and are therefore supporting or boundary analyses rather than core mechanism evidence.", "",
@@ -123,7 +128,7 @@ def main():
     for row in ai_paired.itertuples():
         lines.append(f"| {row.scope} | {row.comparison} | {row.metric} | {row.right_mean:.4f} | {row.left_mean:.4f} | {row.difference_pp:.2f} | [{row.ci95_low_pp:.2f}, {row.ci95_high_pp:.2f}] |")
     lines += ["", "## RCAEval RE2 heterogeneous component ablation", "",
-        "The 90-case saved experiment compares BARO-only Service rankings with LogSource/Operation ownership and call relations. It uses forward two-step propagation with lambda=0.05, so it is not pooled with the one-step bidirectional core protocol. The historical case file's `avg5` field equals reciprocal rank; the table below recomputes Avg@5 from the saved rank as the mean of Top-1 through Top-5.", "",
+        "The 90-case saved experiment compares BARO-only Service rankings with LogSource/Operation ownership and call relations. It uses forward two-step propagation with lambda=0.05, so it is not pooled with the one-step bidirectional core protocol. The saved `avg5` field is reciprocal rank truncated at rank 5 (zero beyond rank 5); the table below recomputes Avg@5 from the saved rank as the mean of Top-1 through Top-5.", "",
         "| Component vs BARO only | Metric | BARO | Component | Difference pp | Paired 95% CI pp |",
         "|---|---|---:|---:|---:|---|"]
     for row in re2_paired.itertuples():
@@ -132,7 +137,7 @@ def main():
         "AIOps2022 is an applicability-boundary result: the partial adapter run did not reproduce a stable containment gain and lacks the controls needed for mechanism classification.",
         "RE2 is a supporting relation-ablation result: adding heterogeneous ownership/call relations changes little relative to a strong BARO ranking and cannot answer the Host/Pod/Service observation-masking question.",
         "Neither result is discarded, but neither is used to claim transferable evidence compensation. Their role is to delimit when the core protocol can and cannot be instantiated from the available graph and labels."]
-    (out / "REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (out / "REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print(ai_paired.to_string(index=False), flush=True)
     print(re2_paired.to_string(index=False), flush=True)
 

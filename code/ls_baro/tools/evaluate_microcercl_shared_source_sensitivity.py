@@ -12,7 +12,7 @@ from __future__ import annotations
 import sys as _path_sys
 from pathlib import Path as _Path
 _path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
-from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY, source_key
 
 
 from collections import Counter, defaultdict
@@ -320,7 +320,7 @@ def main():
             validation.max_original_base_reconstruction_error.max()),
         "all_rewirings_preserve_degrees": bool(integrity.exact_degrees.all()),
         "all_rewirings_duplicate_free": bool(integrity.duplicate_free.all()),
-        "source_sha256": {str(path): sha(path) for path in
+        "source_sha256": {source_key(path): sha(path) for path in
             [Path(__file__), SOURCE, AUDIT, ORIGINAL,
              ROOT / "src/ls_baro/microcercl_adapter.py",
              ROOT / "tools/evaluate_microcercl_relation_mechanisms.py"]},

@@ -22,6 +22,7 @@ DEFAULT_COMPONENTS = (
     "baro_only,ownership,ownership_service_calls,"
     "ownership_operation_calls,full"
 )
+REPOSITORY = Path(__file__).resolve().parents[2]
 
 
 def parse_csv_list(value: str) -> list[str]:
@@ -34,8 +35,8 @@ def write_csv(path: Path, rows: list[dict]) -> None:
         path.write_text("", encoding="utf-8")
         return
     fields = list(rows[0])
-    with path.open("w", encoding="utf-8-sig", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields)
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -60,6 +61,7 @@ def aggregate(rows: list[dict]) -> list[dict]:
 
 
 def replay_existing(
+    input_root: Path,
     output_root: Path,
     components: list[str],
     direction: str,
@@ -69,7 +71,7 @@ def replay_existing(
     case_rows: list[dict] = []
     summary_rows: list[dict] = []
     for component in components:
-        run_dir = output_root / component
+        run_dir = input_root / component
         case_files = sorted(run_dir.glob("*.json"))
         if not case_files:
             raise SystemExit(f"No frozen case JSON files found in {run_dir}")
@@ -101,7 +103,7 @@ def replay_existing(
     (output_root / "component_ablation_summary.json").write_text(
         json.dumps(summary_rows, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    print(f"Replayed {len(case_rows)} case-component rows from {output_root}")
+    print(f"Replayed {len(case_rows)} case-component rows from {input_root} into {output_root}")
 
 
 def relation_weights(component: str, args: argparse.Namespace) -> dict[str, float]:
@@ -143,9 +145,11 @@ def main() -> None:
         description="Run relation-component ablation for deduplicated Route-B."
     )
     parser.add_argument("--data-path", default="../rcaeval-data")
+    parser.add_argument("--input", type=Path, default=REPOSITORY / "results/re2",
+        help="Frozen per-component case JSON directory used by --replay-existing")
     parser.add_argument(
         "--output",
-        default="output/re2_heterogeneous_dedup_components",
+        default=str(REPOSITORY / "reproduced/re2"),
     )
     parser.add_argument("--filter", default="re2ob")
     parser.add_argument("--components", default=DEFAULT_COMPONENTS)
@@ -174,9 +178,13 @@ def main() -> None:
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
-    output_root = Path(args.output)
-    if not output_root.is_absolute():
-        output_root = Path(__file__).resolve().parent / output_root
+    output_root = Path(args.output).resolve()
+    input_root = args.input.resolve()
+    if args.replay_existing:
+        if (input_root == output_root or output_root.is_relative_to(input_root)
+                or input_root.is_relative_to(output_root)
+                or output_root.is_relative_to(REPOSITORY / "results")):
+            parser.error("Replay output must be separate from frozen inputs and the results/ tree.")
     output_root.mkdir(parents=True, exist_ok=True)
 
     components = parse_csv_list(args.components)
@@ -186,7 +194,8 @@ def main() -> None:
     }
     config = {
         "variant": VARIANT,
-        "data_path": args.data_path,
+        "data_path": None if args.replay_existing else args.data_path,
+        "frozen_input": "results/re2" if input_root == (REPOSITORY / "results/re2").resolve() else "CLI --input",
         "filter": filters,
         "components": components,
         "topology_lambda": args.propagation_lambda,
@@ -222,6 +231,7 @@ def main() -> None:
 
     if args.replay_existing:
         replay_existing(
+            input_root,
             output_root,
             components,
             args.direction,

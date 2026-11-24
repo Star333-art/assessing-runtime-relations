@@ -1,7 +1,6 @@
 [build-system]
 requires = [
          "setuptools>=42",
-         "setuptools_scm[toml]",
          "wheel",
 ]
 build-backend = "setuptools.build_meta"
@@ -9,6 +8,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "fse-baro"
 description = "BARO: Robust Root Cause Analysis for Microservices via Multivariate Bayesian Online Change Point Detection"
+version = "0.1.0"
 authors = [{name = "Luan Pham", email = "phamquiluan@gmail.com"}]
 license = {file = "LICENSE"}
 dependencies = [
@@ -20,7 +20,6 @@ dependencies = [
     "requests",
     "matplotlib",
 ]
-dynamic = ["version"]
 
 [project.readme]
 file = "README.md"
@@ -39,9 +38,6 @@ baro = "baro"
 
 [tool.setuptools.packages.find]
 namespaces = false
-
-[tool.setuptools_scm]
-version_scheme = "no-guess-dev"
 
 [tool.black]
 line-length = 88
@@ -62,4 +58,4 @@ exclude = '''
 
 [tool.pytest.ini_options]
 addopts = "--basetemp=.pytest-tmp"
-norecursedirs = ["wasted", "output", ".git", ".ruff_cache", ".pytest-tmp", ".pytest_cache", "pytest_tmp_run"]
+norecursedirs = ["output", ".git", ".ruff_cache", ".pytest-tmp", ".pytest_cache", "pytest_tmp_run"]

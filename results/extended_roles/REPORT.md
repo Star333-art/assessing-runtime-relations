@@ -27,7 +27,7 @@ The source contains 300 labels, while the saved isolated experiment evaluates 51
 
 ## RCAEval RE2 heterogeneous component ablation
 
-The 90-case saved experiment compares BARO-only Service rankings with LogSource/Operation ownership and call relations. It uses forward two-step propagation with lambda=0.05, so it is not pooled with the one-step bidirectional core protocol. The historical case file's `avg5` field equals reciprocal rank; the table below recomputes Avg@5 from the saved rank as the mean of Top-1 through Top-5.
+The 90-case saved experiment compares BARO-only Service rankings with LogSource/Operation ownership and call relations. It uses forward two-step propagation with lambda=0.05, so it is not pooled with the one-step bidirectional core protocol. The saved `avg5` field is reciprocal rank truncated at rank 5 (zero beyond rank 5); the table below recomputes Avg@5 from the saved rank as the mean of Top-1 through Top-5.
 
 | Component vs BARO only | Metric | BARO | Component | Difference pp | Paired 95% CI pp |
 |---|---|---:|---:|---:|---|
