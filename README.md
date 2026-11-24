@@ -1,7 +1,7 @@
 # Open Science Artifact
 
 Public repository: https://github.com/Star333-art/assessing-runtime-relations
-Manuscript release: `v1.0.1`
+Artifact release: `v1.0.2`
 
 This artifact accompanies *Assessing Runtime Relations under Incomplete Entity
 Observations*. It contains the active analysis code, tests, processed evidence,
@@ -29,7 +29,7 @@ must be obtained from the sources listed in `THIRD_PARTY.md`.
 
 ## Environment
 
-Python 3.10 or later is recommended.
+Python 3.11 or later is required for the complete replay workflow.
 
 ```bash
 python -m venv .venv
@@ -81,7 +81,7 @@ cd ../re2_support
 python -m pytest -q
 ```
 
-Expected results in the prepared workspace are 32 passing core tests and 9
+Expected results in the prepared workspace are 47 passing core tests and 9
 passing BARO/RE2-support tests.
 
 ## Replay the supporting RE2 result
@@ -125,8 +125,9 @@ field was reciprocal rank and is not used as the paper's Avg@5 definition.
 ## Full raw-data experiments
 
 The LSDB, AIOps2025, MicroCERCL, and AIOps2022 runners are included under
-`code/ls_baro/`. Their dataset-specific commands and expected directory layout
-are documented in `code/ls_baro/PROJECT_GUIDE.md`. Raw datasets are excluded
+`code/ls_baro/`. Explicit data/output arguments, ordered stages, optional
+historical checks and smoke commands are documented in
+[`RAW_REPRODUCTION.md`](code/ls_baro/RAW_REPRODUCTION.md). Raw datasets are excluded
 because they are third-party releases and substantially larger than the code
 artifact. The paper's processed evidence and protocol/hash records remain in
 this package so that reported tables can be audited without redistributing the
@@ -139,4 +140,41 @@ the additional advantage is not established; it does not establish equivalence.
 The experiments assume a known failure time and root layer and rank candidates
 within that layer. Masking is applied to post-scoring direct entity scores, not
 to arbitrary raw telemetry or topology collection.
+
+## Replay the complete mechanism and audit tables
+
+```bash
+python code/ls_baro/tools/replay_mechanism_controls.py
+python code/ls_baro/tools/audit_final_requirements.py
+```
+
+The first command computes all ten task summaries, paired intervals, and labels
+using the original generators and seeds. Alignment-dependent recovery requires
+positive interval lower bounds against Mapping and all four controls; uncertain
+and no recovery are reported separately. MicroCERCL Deployment-to-Pod retains
+Real–Mapping +3.27 [2.18, 4.39] percentage points and is not separable from controls.
+
+The second command validates exactly 20 rewires for each eligible case, including
+genuine zero-swap replicates but excluding no-edge placeholders. Its ten-task
+audit uses the same case IDs as the mechanism comparisons. Full-cohort relation
+and observation-gradient diagnostics are saved separately as `full_cohort_*.csv`.
+Reference outputs are in `results/core_evidence/mechanism_controls/` and
+`results/core_evidence/final_requirements/`. The former audit filename
+`audit_paper_final_requirements.py` remains a compatibility entry point.
+
+## Verify artifact integrity
+
+Text is distributed with LF line endings on every platform. The manifest lists
+repository-relative paths, byte lengths and SHA-256 hashes of every distributed
+file except the manifest itself. It works in both Git checkouts and unpacked
+archives:
+
+```bash
+python code/ls_baro/tools/artifact_manifest.py
+```
+
+To verify committed blob bytes directly, add `--revision HEAD`. Maintainers can
+stage new files and run `--write`, then stage the regenerated manifest. Current
+evidence is indexed by `provenance/evidence_index.csv`; older provenance records
+are identified separately in `provenance/README.md`.
 

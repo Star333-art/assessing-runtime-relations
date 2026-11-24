@@ -1,0 +1,25 @@
+{
+  "metric": "tie_avg5",
+  "bootstrap_repeats": 5000,
+  "classification_rules": {
+    "Alignment-dependent recovery": "Real-Mapping and all four Real-Control interval lower bounds > 0",
+    "Recovery not separable from controls": "Real-Mapping lower bound > 0; any Real-Control lower bound <= 0",
+    "Uncertain recovery": "Real-Mapping interval contains zero and its point estimate > 0",
+    "No recovery": "Real-Mapping interval contains zero and its point estimate <= 0",
+    "Harmful": "Real-Mapping interval upper bound < 0"
+  },
+  "interpretation": "exploratory nominal paired case-bootstrap labels; separate from Holm sensitivity",
+  "source_policy": "MicroCERCL Ownership excludes instance-aggregated Service resources; other tasks use original sources",
+  "inputs": {
+    "relation_mechanism_cases.csv": "42a84373c472277a500c455246c7da5e4464106f0b04deca9639f1d835531f34",
+    "microcercl_relation_cases.csv": "8bad948b658e3eb2a121250390e66587a028a527c3d10cfc3c07b2365779c2ab",
+    "microcercl_shared_source_case_results.csv": "786422051a6cdfefc42a4e4648eb9389bc69d512a94393d2c7b2f433265d7504"
+  },
+  "sources": {
+    "code/ls_baro/tools/replay_mechanism_controls.py": "71dbe45426799fcff5c92c17ceec74a28288a33816648c4b4d88ac59f3bc1757",
+    "code/ls_baro/tools/evaluate_relation_evidence_mechanisms.py": "c1964d7cea0ef39a14739b9732d2a40fe4e0e762aa0de52897bb0241818a8095",
+    "code/ls_baro/tools/evaluate_microcercl_relation_mechanisms.py": "b74d52a37280ab47308cc315738c14eaf97b0588a185703c14016089834fc011",
+    "code/ls_baro/tools/evaluate_microcercl_shared_source_sensitivity.py": "7b3dbe85fe4936b0bde3198060bcfd5321126325e09dedbfba4147e368ad4fc2",
+    "code/ls_baro/src/ls_baro/mechanism_labels.py": "159b6b6cbb05b2be1428079f3e62061a493a4af51e463d45eae341f4bc8a1e49"
+  }
+}

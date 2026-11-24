@@ -4,6 +4,12 @@ This isolates drop_near_constant(threshold=0.1) from BARO's optional domain
 knowledge preprocessing. It is NOT the full dk_select_useful pipeline.
 Adapters' missing-value policies are retained; no imputation is claimed.
 """
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
 import argparse
 import hashlib
 import json
@@ -126,21 +132,22 @@ def run(args):
         completed+=1
         if completed%10==0:print(ds,'completed',completed,flush=True)
     if args.dataset in ['all','lsdb']:
-        historical=pd.read_csv(ROOT/'output/lsdb_relation_split_l0p1/relation_cases.csv',dtype={'case_id':str})
+        historical=pd.read_csv(output_path('lsdb_relation_split_l0p1/relation_cases.csv'),dtype={'case_id':str})
         adapter=LSDBAdapter()
         cases=sorted(historical.case_id.unique(),key=int)
         for cid in cases[:args.limit or None]:
             h=historical[historical.case_id==cid]
             names={'Mapping-only':'mapping','Deployment':'deployment','Ownership':'ownership','Containment':'containment'}
             expected={names[r.experiment]:r.baro_rank for r in h.itertuples() if r.experiment in names}
-            process('LSDB',cid,adapter.load(ROOT.parent/'LatentScope/data/dataset_b',cid),expected)
+            process('LSDB',cid,adapter.load(dataset_path("lsdb"),cid),expected)
     if args.dataset in ['all','microcercl']:
-        historical=pd.read_csv(ROOT.parent/'paper/AIOps_Journal_SMR_revision/evidence/microcercl_case_ranks.csv')
-        # Historical compact ranks are checked below after identifying schema.
+        with output_path('microcercl_full/results.jsonl').open(encoding='utf-8') as stream:
+            historical=pd.DataFrame([{key:r[key] for key in ('case_id','arm','service_rank')}
+                for r in map(json.loads,stream)])
         adapter=MicroCERCLAdapter()
         errors=[]
-        for path in case_paths(ROOT.parent/'data/abnormal_20240615/abnormal'):
-            cid=str(path.relative_to(ROOT.parent/'data/abnormal_20240615/abnormal'))
+        for path in case_paths(dataset_path("microcercl")):
+            cid=str(path.relative_to(dataset_path("microcercl")))
             if ('MicroCERCL',cid) in done:continue
             try:req=adapter.load(path)
             except ValueError as e:
@@ -152,8 +159,9 @@ def run(args):
             if args.limit and completed>=args.limit:break
         (out/'microcercl_exclusions.json').write_text(json.dumps(errors,indent=2),encoding='utf-8')
     if args.dataset in ['all','aiops2022']:
-        adapter=AIOps2022Adapter(ROOT.parent/'data/aiops2022')
-        source=ROOT/'output/aiops2022-20220321-cloudbed2'
+        import os
+        adapter=AIOps2022Adapter(Path(os.environ.get('LS_BARO_AIOPS2022_ROOT', REPOSITORY/'data/aiops2022')))
+        source=output_path('aiops2022-20220321-cloudbed2')
         old=pd.read_csv(source/'cases.csv')
         for spec in adapter.cases():
             if spec.subset!='2022-03-21-cloudbed2':continue
@@ -164,8 +172,8 @@ def run(args):
             if args.limit and completed>=args.limit:break
     if args.dataset in ['all','aiops2025']:
         from evaluate_aiops2025_ownership import load_day,epoch
-        root=ROOT.parent/'data/AgenticOpsEval/AIOps2025'
-        source=ROOT/'output/aiops2025_ownership_pilot'
+        root=dataset_path("aiops2025")
+        source=output_path('aiops2025_ownership_pilot')
         labels=[json.loads(l) for l in (root/'groundtruth.jsonl').read_text(encoding='utf-8').splitlines()]
         audits=pd.read_csv(source/'case_audit.csv').set_index('case_id')
         old=pd.read_csv(source/'case_results.csv')

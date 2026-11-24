@@ -1,0 +1,33 @@
+{
+  "inputs": [
+    {
+      "file": "relation_rewiring_integrity.csv",
+      "source_stage": "relation_evidence_mechanisms_20261028/rewiring_integrity.csv",
+      "source_sha256": "73038e6bf8d182a97d3b572462d0f8e720775d957a5df4b0cf130ec9daf2b280",
+      "distributed_sha256": "64b8ce123be46022e6bb092dcc2ab27300e69c2344e82c86fa569c232ac2e35a",
+      "transformation": "CRLF to LF only"
+    },
+    {
+      "file": "microcercl_deployment_rewiring_integrity.csv",
+      "source_stage": "microcercl_relation_mechanisms_20261028/rewiring_integrity.csv",
+      "source_sha256": "e1c0d3a3671ae60e395332f15cd2849978f6cff0e9f47ffd42ab79a17e5e877d",
+      "distributed_sha256": "ad8510f3a32ae752d704b90aed9d1d9cf640796a68fbab4a21b16426624b9b62",
+      "transformation": "Deployment rows only; CSV LF"
+    },
+    {
+      "file": "aiops2025_observation_rewiring_integrity.csv",
+      "source_stage": "aiops2025_observability_rewire_20261026/rewiring_integrity.csv",
+      "source_sha256": "60a6109a16657b99496c891a347112313d6008cb945d4d3fbc158460b8807c86",
+      "distributed_sha256": "2e3a7de4587bcf5d836d48d0841c354dccc5cbcd725f47e46940910e313ce5ce",
+      "transformation": "CRLF to LF only"
+    },
+    {
+      "file": "microcercl_case_metadata.csv",
+      "source_stage": "microcercl_layer_evaluation_20261023/label_audit.csv",
+      "source_sha256": "b145955b142a56d063d5207fc837cc21d5dddab64bdd980d53c47754e26f2c9b",
+      "distributed_sha256": "3896eeb198a9708191fe1efff8585b39282aff50b3b2cd8ac318b6f6bb598f29",
+      "transformation": "615 directory-exact cases; case ID, application, Pod reference and recorded host placement only"
+    }
+  ],
+  "note": "Saved experimental diagnostics; no raw telemetry or new experimental outcomes are introduced."
+}

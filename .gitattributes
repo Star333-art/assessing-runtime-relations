@@ -5,3 +5,4 @@ results/core_evidence/relation_mechanism_cases.csv text eol=lf
 results/core_evidence/microcercl_relation_cases.csv text eol=lf
 results/core_evidence/microcercl_shared_source_case_results.csv text eol=lf
 results/core_evidence/mechanism_holm/* text eol=lf
+* text=auto eol=lf

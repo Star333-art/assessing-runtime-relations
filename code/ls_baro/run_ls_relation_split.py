@@ -6,6 +6,12 @@ selectors. Labels are consulted only after the engine returns.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parent / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 import argparse
 from collections import Counter, defaultdict
 from dataclasses import asdict
@@ -297,10 +303,10 @@ def run(dataset_root, output, case_ids, historical_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--dataset-root", type=Path, default=Path(__file__).resolve().parent.parent / "LatentScope/data/dataset_b")
-    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "output/lsdb_relation_split_l0p1")
+    parser.add_argument("--dataset-root", type=Path, default=dataset_path("lsdb"))
+    parser.add_argument("--output", type=Path, default=output_path("lsdb_relation_split_l0p1"))
     parser.add_argument("--case", action="append")
-    parser.add_argument("--historical-cases", type=Path, default=Path(__file__).resolve().parent / "output/scheme_c_l0p1_bidirectional/ablation_cases.csv")
+    parser.add_argument("--historical-cases", type=Path, default=None, help="Optional prior four-arm CSV; omitted for a fresh raw-data run")
     args = parser.parse_args()
     labels = json.loads((args.dataset_root / "labels/label.json").read_text(encoding="utf-8"))
     run(args.dataset_root, args.output, args.case or sorted(labels, key=int), args.historical_cases)

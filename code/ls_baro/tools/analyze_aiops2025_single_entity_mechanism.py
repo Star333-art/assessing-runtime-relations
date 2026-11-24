@@ -1,15 +1,21 @@
 """Arithmetic mechanism audit on the fixed 272-case single-entity cohort."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
 import json
 from pathlib import Path
 import pandas as pd
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'output/aiops2025_lsdb_protocol_20261023'
+OUT=output_path('aiops2025_lsdb_protocol_20261023')
 def main():
     a=pd.read_csv(OUT/'label_audit.csv');a=a[a.status=='single_entity_main']
     r=pd.read_csv(OUT/'case_results.csv')
-    ranks=pd.read_csv(ROOT/'output/aiops2025_ownership_pilot/rankings.csv')
-    edge=pd.read_csv(ROOT/'output/aiops2025_ownership_pilot/ownership_evidence.csv')
+    ranks=pd.read_csv(output_path('aiops2025_ownership_pilot/rankings.csv'))
+    edge=pd.read_csv(output_path('aiops2025_ownership_pilot/ownership_evidence.csv'))
     transitions=[];losses=[]
     for level,g in r.groupby('level'):
         p=g.pivot(index='case_id',columns='arm',values='rank')
@@ -35,7 +41,7 @@ def main():
     assert (loss.winner_message.abs()>loss.winner_base.abs()).all()
     loss.to_csv(OUT/'top1_loss_messages.csv',index=False)
     transition.to_csv(OUT/'top1_transitions.csv',index=False)
-    pre=pd.read_json(ROOT/'output/preprocessing_aiops2025_20261023/cases.jsonl',lines=True)
+    pre=pd.read_json(output_path('preprocessing_aiops2025_20261023/cases.jsonl'),lines=True)
     pre=pre[pre.case_id.isin(a.case_id)&pre.arm.isin(['mapping','containment'])]
     preprocessing=[]
     for (variant,arm),g in pre.groupby(['variant','arm']):

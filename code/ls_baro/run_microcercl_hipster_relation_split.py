@@ -1,6 +1,12 @@
 """Eight-arm deployment/ownership split on the MicroCERCL Hipster subset."""
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parent / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 import argparse
 import csv
 import hashlib
@@ -17,7 +23,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from ls_baro.contracts import RCAConfig
 from ls_baro.engine import RCAEngine
-from ls_baro.microcercl_adapter import MicroCERCLAdapter, case_paths
+from ls_baro.microcercl_adapter import MicroCERCLAdapter, case_paths, case_identifier
 
 
 ARMS = {
@@ -165,7 +171,7 @@ def run(dataset_root: Path, output: Path, historical_path: Path, limit: int = 0)
     cases = [p for p in case_paths(dataset_root) if p.parent.parent.name == "hipster_chaos"]
     if limit:
         cases = cases[:limit]
-    case_ids = {str(p.relative_to(dataset_root)) for p in cases}
+    case_ids = {case_identifier(p) for p in cases}
     historical = load_historical(historical_path, case_ids)
     rows, validations, audits = [], [], []
     started = time.time()
@@ -276,9 +282,9 @@ def run(dataset_root: Path, output: Path, historical_path: Path, limit: int = 0)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--root", type=Path, default=Path("D:/AIOps/data/abnormal_20240615/abnormal"))
-    parser.add_argument("--historical", type=Path, default=ROOT / "output/microcercl_full/results.jsonl")
-    parser.add_argument("--output", type=Path, default=ROOT / "output/microcercl_hipster_relation_split_l0p1")
+    parser.add_argument("--root", type=Path, default=dataset_path("microcercl"))
+    parser.add_argument("--historical", type=Path, default=output_path('microcercl_full/results.jsonl'))
+    parser.add_argument("--output", type=Path, default=output_path('microcercl_hipster_relation_split_l0p1'))
     parser.add_argument("--limit", type=int, default=0)
     args = parser.parse_args()
     run(args.root, args.output, args.historical, args.limit)

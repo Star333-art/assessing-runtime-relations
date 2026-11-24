@@ -7,6 +7,12 @@ relation provenance than LSDB/AIOps2025.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 from collections import Counter
 import hashlib
 import json
@@ -21,12 +27,13 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "tools"))
 
 from complete_entity_observation_controls import prepare, measure, apply
+from ls_baro.mechanism_labels import mechanism_label
 from evaluate_aiops2025_observability_and_rewire import _metric_seed, _rewire
 from evaluate_relation_evidence_mechanisms import apply_pairs, paired_interval
 
-OUT = ROOT / "output/microcercl_relation_mechanisms_20261028"
-SOURCE = ROOT / "output/microcercl_full/results.jsonl"
-AUDIT = ROOT / "output/microcercl_layer_evaluation_20261023/label_audit.csv"
+OUT = output_path('microcercl_relation_mechanisms_20261028')
+SOURCE = output_path('microcercl_full/results.jsonl')
+AUDIT = output_path('microcercl_layer_evaluation_20261023/label_audit.csv')
 RELATIONS = {"deployment": "host", "ownership": "service"}
 PERMUTATIONS = 100
 REWIRES = 20
@@ -114,14 +121,7 @@ def classifications(table):
         get = {r.interpretation: r for r in group.itertuples()}
         native, total = get["native-total"], get["masked-total"]
         permuted, uniform = get["evidence-alignment"], get["uniform-structure"]
-        if total.ci95_low_pp > 0 and permuted.ci95_low_pp > 0 and uniform.ci95_low_pp > 0:
-            mechanism = "evidence-supported compensation"
-        elif total.ci95_low_pp > 0:
-            mechanism = "recovery not separable from controls"
-        elif total.ci95_high_pp < 0:
-            mechanism = "harmful under complete target-layer masking"
-        else:
-            mechanism = "unsupported or uncertain recovery"
+        mechanism = mechanism_label(total, (permuted, uniform, get["degree-prior"], get["relation-semantics"]))
         native_label = ("harmful under native evidence" if native.ci95_high_pp < 0 else
                         "beneficial under native evidence" if native.ci95_low_pp > 0 else
                         "native effect uncertain")

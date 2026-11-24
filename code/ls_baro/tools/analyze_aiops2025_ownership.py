@@ -4,12 +4,23 @@ import json
 from pathlib import Path
 import numpy as np
 import pandas as pd
+import argparse
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path
 
-ROOT=Path('D:/AIOps/LS-baro/output/aiops2025_ownership_pilot')
-OLD=Path('D:/AIOps/LS-baro/output/aiops2025_deployment_pilot')
-DATA=Path('D:/AIOps/data/AgenticOpsEval/AIOps2025')
+PACKAGE=Path(__file__).resolve().parents[1]
+ROOT=output_path('aiops2025_ownership_pilot')
+DATA=dataset_path('aiops2025')
 
 def main():
+    global ROOT, DATA
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--input-dir',type=Path,default=ROOT)
+    parser.add_argument('--dataset-root',type=Path,default=DATA)
+    parser.add_argument('--historical-deployment-dir',type=Path,help='Optional saved two-arm experiment')
+    args=parser.parse_args()
+    ROOT,DATA=args.input_dir.resolve(),args.dataset_root.resolve()
     a=pd.read_csv(ROOT/'case_audit.csv').fillna(0)
     r=pd.read_csv(ROOT/'case_results.csv')
     k=pd.read_csv(ROOT/'rankings.csv')
@@ -17,11 +28,13 @@ def main():
     dep=pd.read_csv(ROOT/'deployment_evidence.csv')
     assert len(a)==400 and len(r)==1600 and not r.duplicated(['case_id','arm']).any()
     keys=['case_id','arm','level','entity']
-    old=pd.read_csv(OLD/'rankings.csv').sort_values(keys).reset_index(drop=True)
-    new=k[k.arm.isin(['mapping','deployment'])].sort_values(keys).reset_index(drop=True)
-    pd.testing.assert_frame_equal(old.drop(columns=['base','score']),new.drop(columns=['base','score']),check_exact=True)
-    max_reproduction_error=float(np.max(np.abs(old[['base','score']].to_numpy()-new[['base','score']].to_numpy())))
-    np.testing.assert_allclose(old[['base','score']],new[['base','score']],rtol=1e-12,atol=1e-10)
+    max_reproduction_error=None
+    if args.historical_deployment_dir:
+        old=pd.read_csv(args.historical_deployment_dir/'rankings.csv').sort_values(keys).reset_index(drop=True)
+        new=k[k.arm.isin(['mapping','deployment'])].sort_values(keys).reset_index(drop=True)
+        pd.testing.assert_frame_equal(old.drop(columns=['base','score']),new.drop(columns=['base','score']),check_exact=True)
+        max_reproduction_error=float(np.max(np.abs(old[['base','score']].to_numpy()-new[['base','score']].to_numpy())))
+        np.testing.assert_allclose(old[['base','score']],new[['base','score']],rtol=1e-12,atol=1e-10)
     base=k.pivot(index=['case_id','level','entity'],columns='arm',values='base')
     assert all((base[c]==base.mapping).all() for c in base)
     counts=r.pivot(index='case_id',columns='arm',values='candidate_count')
@@ -68,15 +81,13 @@ def main():
     rc=covered[covered.case_id.map(connected).fillna(False).astype(bool)]
     rc.groupby(['level','arm']).agg(cases=('case_id','size'),top1=('top1','mean'),
         top3=('top3','mean'),top5=('top5','mean')).to_csv(ROOT/'root_connected_summary.csv')
-    paths=[Path('D:/AIOps/LS-baro')/s for s in ['tools/evaluate_aiops2025_ownership.py',
+    paths=[PACKAGE/s for s in ['tools/evaluate_aiops2025_ownership.py',
         'tools/analyze_aiops2025_ownership.py','src/ls_baro/scoring.py',
         'src/ls_baro/canonical_core.py','src/ls_baro/topology.py']]
-    old_prov=json.loads((OLD/'provenance.json').read_text())
-    for path in paths[2:]:
-        assert hashlib.sha256(path.read_bytes()).hexdigest()==old_prov['sha256'][str(path)]
     verify=dict(cases=400,arms=4,covered_cases=len(covered_ids),
-        mapping_deployment_ranks_exactly_reproduced=True,maximum_csv_score_difference=max_reproduction_error,
-        reproduction_rtol=1e-12,reproduction_atol=1e-10,score_and_propagation_source_unchanged=True,
+        mapping_deployment_ranks_exactly_reproduced=True if args.historical_deployment_dir else None,maximum_csv_score_difference=max_reproduction_error,
+        historical_comparison_performed=bool(args.historical_deployment_dir),
+        reproduction_rtol=1e-12,reproduction_atol=1e-10,
         candidate_sets_identical=True,base_scores_identical=True,baseline_only_edges=True,
         ownership_host_invariance=True,deployment_service_invariance=True,
         containment_service_message_equals_half_ownership=True,half_message_maximum_residual=half_error,
@@ -87,7 +98,7 @@ def main():
         'Original formula and parameters unchanged: signed BARO maximum RobustScaler; raw scores; max entity aggregation; lambda 0.1; one immutable-base-score pass; bidirectional; selected outgoing-degree row normalization.',
         'Ownership edges are observed from pre-onset trace process.serviceName and process.tags[name], with namespace hipstershop. Latest baseline mapping is retained; conflicting latest service names are omitted. No root-label ownership or Pod-name heuristic is used. Missing trace ownership remains missing; graph coverage is incomplete.',
         'All 400 cases audited. Main accuracy table covers 345 cases with at least one acceptable annotated identifier in candidate set: 82 host, 68 business Pod, 195 service cases. 55 database Pod cases remain outside the current metric adapter. Identifier lists may contain aliases, not necessarily simultaneous root causes. Rank is best among acceptable identifiers.',
-        f'Mapping and Deployment ranks exactly reproduce the previous pilot. Maximum CSV score difference is {max_reproduction_error}; numerical reproduction was checked at rtol=1e-12, atol=1e-10 (CSV checkpoint round trips). Score and propagation source hashes are unchanged; candidate sets/base scores are identical across arms.',
+        f'Historical Mapping/Deployment comparison performed: {bool(args.historical_deployment_dir)}. Maximum CSV score difference: {max_reproduction_error}. Candidate sets and base scores are identical across current arms; source hashes record the current implementation.',
         '## Covered-case accuracy\n\n'+summary.to_string(index=False),
         '## Rank changes relative to Mapping\n\n'+pd.DataFrame(changes).to_string(index=False),
         '## Observed ownership coverage\n\n'+pd.DataFrame(coverage).to_string(index=False),

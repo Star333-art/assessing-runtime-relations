@@ -7,6 +7,12 @@ typed bipartite relation while preserving every source and target degree.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 import hashlib
 import json
 import pickle
@@ -29,10 +35,10 @@ from ls_baro.canonical_core import aggregate
 from ls_baro.scoring import score_with_baro_dataframe_equivalent
 from evaluate_aiops2025_ownership import load_day, epoch
 
-SOURCE = ROOT / "output/aiops2025_ownership_pilot"
-MAIN = ROOT / "output/aiops2025_lsdb_protocol_20261023"
-OUT = ROOT / "output/aiops2025_observability_rewire_20261026"
-DATA = ROOT.parent / "data/AgenticOpsEval/AIOps2025"
+SOURCE = output_path('aiops2025_ownership_pilot')
+MAIN = output_path('aiops2025_lsdb_protocol_20261023')
+OUT = output_path('aiops2025_observability_rewire_20261026')
+DATA = dataset_path("aiops2025")
 ARMS = {"mapping": (), "deployment": ("deployment",),
         "ownership": ("ownership",), "containment": ("deployment", "ownership")}
 FRACTIONS = (0.0, 0.25, 0.50, 0.75, 1.0)

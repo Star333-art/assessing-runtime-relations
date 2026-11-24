@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "ls-baro"
 version = "0.1.0"
 description = "BARO mapping and topology propagation for LatentScope Dataset B"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 
 [project.scripts]
 ls-baro = "ls_baro.cli:main"

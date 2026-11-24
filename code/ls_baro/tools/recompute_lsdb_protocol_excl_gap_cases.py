@@ -21,13 +21,19 @@ check, not a replacement.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 import json
 from pathlib import Path
 
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "output/aiops2025_lsdb_protocol_20261023"
+OUT = output_path('aiops2025_lsdb_protocol_20261023')
 ARMS = ["mapping", "deployment", "ownership", "containment"]
 EXCLUDED = {"29f88351-232", "0718e0f9-92", "d32bcd36-104"}
 

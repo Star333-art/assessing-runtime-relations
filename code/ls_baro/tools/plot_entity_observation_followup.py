@@ -1,4 +1,10 @@
 """Publication-oriented figures for the observation-control follow-up."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
 from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
@@ -6,8 +12,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "output/entity_observation_followup_20261026"
-AI = ROOT / "output/aiops2025_observability_rewire_20261026"
+OUT = output_path('entity_observation_followup_20261026')
+AI = output_path('aiops2025_observability_rewire_20261026')
 
 
 def main():

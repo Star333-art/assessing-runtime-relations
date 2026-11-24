@@ -1,12 +1,18 @@
 """One case, one annotated entity layer: LSDB-style MicroCERCL evaluation."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
 import hashlib
 import json
 from pathlib import Path
 import pandas as pd
 
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE=ROOT/'output/microcercl_layer_evaluation_20261023'
-OUT=ROOT/'output/microcercl_lsdb_protocol_20261023'
+SOURCE=output_path('microcercl_layer_evaluation_20261023')
+OUT=output_path('microcercl_lsdb_protocol_20261023')
 ORDER=['Mapping-only','Deployment','Ownership','Dependency','Containment',
        'Deployment+Dependency','Ownership+Dependency','Full']
 

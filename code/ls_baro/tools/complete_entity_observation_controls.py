@@ -5,6 +5,12 @@ No changes to the scorer, graph, mapping, propagation rule, or lambda.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 from collections import Counter
 import hashlib
 import json
@@ -23,9 +29,9 @@ from ls_baro.canonical_core import propagation
 from ls_baro.topology import propagate_once
 from evaluate_aiops2025_observability_and_rewire import _stats, _metric_seed
 
-OUT = ROOT / "output/entity_observation_followup_20261026"
-AI_SOURCE = ROOT / "output/aiops2025_observability_rewire_20261026"
-LS_SOURCE = ROOT / "output/lsdb_relation_split_l0p1"
+OUT = output_path('entity_observation_followup_20261026')
+AI_SOURCE = output_path('aiops2025_observability_rewire_20261026')
+LS_SOURCE = output_path('lsdb_relation_split_l0p1')
 AI_ARMS = {"mapping": (), "deployment": ("deployment",),
            "ownership": ("ownership",), "containment": ("deployment", "ownership")}
 ARMS = {**AI_ARMS, "dependency": ("dependency",),
@@ -113,7 +119,7 @@ def load_cases():
             checks.append(dict(dataset="lsdb", case_id=path.stem, arm=arm,
                                rank_equal=True, max_score_error=max_error))
         cases.append(c); sources.append(path)
-    saved = pd.read_csv(ROOT / "output/aiops2025_ownership_pilot/rankings.csv")
+    saved = pd.read_csv(output_path('aiops2025_ownership_pilot/rankings.csv'))
     for path in sorted(AI_SOURCE.glob("mapped_case_bases_*.pkl")):
         with path.open("rb") as stream:
             batch = pickle.load(stream)

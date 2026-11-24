@@ -1,12 +1,20 @@
+param(
+    [Parameter(Mandatory = $true)][string]$Repository,
+    [string]$LogDirectory,
+    [string]$GitExecutable = 'git'
+)
 $ErrorActionPreference = 'Stop'
-$repo = 'D:\AIOps\data\AgenticOpsEval'
-$logDir = 'D:\AIOps\output\aiops2025_download'
+$repo = (Resolve-Path -LiteralPath $Repository).Path
+if (-not $LogDirectory) { $LogDirectory = Join-Path $repo 'download_logs' }
+New-Item -ItemType Directory -Path $LogDirectory -Force | Out-Null
+$logDir = (Resolve-Path -LiteralPath $LogDirectory).Path
+Get-Command $GitExecutable -ErrorAction Stop | Out-Null
 $env:GIT_TERMINAL_PROMPT = '0'
 try {
     Set-Content -LiteralPath "$logDir\status.txt" -Value "RUNNING $(Get-Date -Format o)"
-    & 'D:\Git\cmd\git.exe' -c safe.directory=D:/AIOps/data/AgenticOpsEval -C $repo -c lfs.dialtimeout=30 -c lfs.tlstimeout=30 -c lfs.activitytimeout=60 -c lfs.transfer.maxretries=3 lfs pull '--include=AIOps2025/**' '--exclude=' 1>> "$logDir\download.log" 2>> "$logDir\download.err.log"
+    & $GitExecutable -C $repo -c lfs.dialtimeout=30 -c lfs.tlstimeout=30 -c lfs.activitytimeout=60 -c lfs.transfer.maxretries=3 lfs pull '--include=AIOps2025/**' '--exclude=' 1>> "$logDir\download.log" 2>> "$logDir\download.err.log"
     if ($LASTEXITCODE -ne 0) { throw "LFS download exit=$LASTEXITCODE" }
-    & 'D:\Git\cmd\git.exe' -c safe.directory=D:/AIOps/data/AgenticOpsEval -C $repo lfs fsck 1>> "$logDir\download.log" 2>> "$logDir\download.err.log"
+    & $GitExecutable -C $repo lfs fsck 1>> "$logDir\download.log" 2>> "$logDir\download.err.log"
     if ($LASTEXITCODE -ne 0) { throw 'LFS fsck failed' }
     $dataDir = Join-Path $repo 'AIOps2025'
     $archives = @(Get-ChildItem -LiteralPath $dataDir -Filter '*.tar.gz')

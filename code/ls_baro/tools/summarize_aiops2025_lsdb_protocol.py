@@ -1,13 +1,19 @@
 """Audit native AIOps2025 fault scope; one labelled entity per main case."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
 import hashlib,json
 from collections import Counter
 from pathlib import Path
 import pandas as pd
 
 ROOT=Path(__file__).resolve().parents[1]
-DATA=ROOT.parent/'data/AgenticOpsEval/AIOps2025'
-SOURCE=ROOT/'output/aiops2025_ownership_pilot'
-OUT=ROOT/'output/aiops2025_lsdb_protocol_20261023'
+DATA=dataset_path("aiops2025")
+SOURCE=output_path('aiops2025_ownership_pilot')
+OUT=output_path('aiops2025_lsdb_protocol_20261023')
 ARMS=['mapping','deployment','ownership','containment']
 
 def summarize(df,scope):

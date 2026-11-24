@@ -1,19 +1,65 @@
-# Reproduction status: 2026-11-06
+# Reproduction status: 2026-11-24
 
-Local review revision: requirements-audit-20261106. Public repository: https://github.com/Star333-art/assessing-runtime-relations. The manuscript is pinned to release `v1.0.1`; the release tag must remain attached to the artifact commit when the repository is updated.
+Current artifact release: `v1.0.2`. Earlier release `v1.0.1` is retained unchanged
+and does not contain the comparison-level Holm replay. The current release
+includes the 50-test generator, complete-mask label replay, eligible-cohort
+rewiring audit, explicit raw-data execution plan, and byte-level integrity tool.
 
-## Windows and randomness
+## Processed evidence
 
-- MicroCERCL: baseline [trigger-300, trigger-1], detection [trigger, trigger+299], inclusive timestamps, as implemented in microcercl_adapter.py.
-- AIOps2025: 600 seconds before and after injection; consult the frozen runner configuration for timestamp boundary conventions.
-- LSDB: released case-series start to trigger-1 for baseline, trigger to released series end for detection; no invented common duration.
-- Complete controls: 100 source permutations and 20 rewires per case; masking uses ten deterministic repeats. Existing generators derive seeds through SHA-256 keys; preserve the generator source and protocol together.
-- New Pod/placement cluster sensitivity: seed 20261106, 5,000 resamples, case-weighted cluster sums divided by resampled cluster sizes. Groups are application-specific.
+The bundled case snapshots support 50 complete-mask contrasts across ten tasks.
+All point differences and displayed bootstrap endpoints reproduce the current
+contrast matrix. All ten mechanism categories are preserved. Alignment-dependent
+recovery requires Mapping and all four controls to have positive interval lower
+bounds; uncertain recovery and no recovery are separate labels.
 
-## Added evidence
+The pinned Wilcoxon/Holm calculation uses 50 unrounded one-sided comparisons:
+29 unadjusted and 16 globally Holm-adjusted p-values are below 0.05. LSDB
+Ownership-to-Service and filtered MicroCERCL Ownership-to-Pod each retain all
+five comparisons. LSDB Ownership-to-Pod retains none after global adjustment;
+its bootstrap classification is exploratory. Pinned versions and input hashes
+are recorded in `results/core_evidence/mechanism_holm/`.
 
-evidence/final_requirements contains matched case IDs, Pod references, recorded host-placement groups, all five paired cluster contrasts, leave-one-group-out ranges, and actual swap-count summaries. Host placement is not proof of independent deployment.
+The audit under `results/core_evidence/final_requirements/` uses the same
+task-specific eligible IDs as the mechanism contrasts and exactly 20 rewires
+per eligible case. Genuine zero-swap replicates remain included; no-edge
+placeholder rows do not count as rewires. The AIOps2025 eligible totals are
+D→Host 81/1620, D→Pod 68/1360, O→Pod 62/1240, O→Service 100/2000
+(cases/replicates). MicroCERCL Deployment and Ownership each have 615/12300.
+Full-cohort diagnostics are separately named `full_cohort_*.csv`.
 
-RE2 supports replay of frozen ranks only, not raw-telemetry regeneration or reconstructed tie expectations. Raw datasets remain separately distributed by their original providers.
+Pod/placement bootstrap seed is 20261106 with 5000 case-weighted cluster
+resamples. Those sensitivity intervals are unchanged by cohort-audit cleanup.
+Neither grouping establishes deployment independence.
 
-The original reference_audit.md describes an earlier bibliography. The current bibliography has 27 entries. Added entries must not be represented as covered by the older Crossref verification record without checking their verification provenance.
+## Time boundaries and controls
+
+- MicroCERCL baseline `[trigger-300, trigger-1]`, detection `[trigger, trigger+299]`.
+- AIOps2025 baseline `[onset-600, onset)`, detection `[onset, onset+600)`.
+- LSDB baseline from released series start through `trigger-1`, detection from
+  `trigger` through released series end, with inclusive stored endpoints.
+- The trigger belongs only to detection. Masking changes direct entity bases
+  after scoring; known target layer and candidate restrictions are explicit.
+- Controls use 100 source permutations and 20 rewires per eligible case;
+  requested masking fractions use ten deterministic repeats. Seeds and ordering
+  remain defined by the original generators.
+
+## Validation and limits
+
+The core regression suite has 47 passing tests; RE2 support has 9. RE2 frozen
+replay reconstructs 450 case-component records with numerical difference zero.
+AIOps2022 and RE2 paired summaries reproduce the committed reference numbers.
+RE2 still supports frozen-rank replay, not historical raw graph regeneration.
+
+The revised raw entry point provides explicit data/output locations and ordered
+intermediate dependencies; historical CSV validation is optional for a fresh
+LSDB run. Smoke checks and processed-evidence replay do not constitute a new
+full raw-telemetry rerun of every dataset. Follow
+`code/ls_baro/RAW_REPRODUCTION.md` for the complete commands and input requirements.
+Original third-party telemetry remains separately distributed.
+
+Text distribution uses LF endings. `MANIFEST_SHA256.csv` records actual release
+bytes, and `artifact_manifest.py` verifies checkouts, archives, or committed Git
+blobs. Historical provenance is clearly separated from current evidence in
+`provenance/README.md`; old bibliography/layout checks are not current
+reproducibility verification.

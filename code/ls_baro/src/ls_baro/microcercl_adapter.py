@@ -22,6 +22,10 @@ def case_paths(root):
                   for owner in app.iterdir() if owner.is_dir()
                   for p in owner.iterdir() if p.is_dir())
 
+def case_identifier(case):
+    """Keep the frozen case/seed keys identical on Windows and POSIX systems."""
+    return "\\".join(case.relative_to(case.parents[2]).parts)
+
 def label_for(case):
     match = re.search(r'_(cpu|mem|net)_(\d+)$', case.name)
     if not match:
@@ -156,7 +160,7 @@ class MicroCERCLAdapter:
         exact=[e for e in candidates if e.name.split('/',1)[1]==root]
         candidates=exact or candidates
         roots=tuple({'kind':'service','id':e.id,'name':e.name} for e in candidates) if len(candidates)==1 else ()
-        audit={'case_id':str(case.relative_to(case.parents[2])),'application':case.parent.parent.name,'fault':fault,
+        audit={'case_id':case_identifier(case),'application':case.parent.parent.name,'fault':fault,
                'label_heading':label_heading,'label_file':label_path,'label_offset_hours':offset_hours,
                'trigger_epoch':trigger,'window_seconds':300,'root_match_count':len(candidates),
                'entities':dict(Counter(e.kind for e in entities.values())),

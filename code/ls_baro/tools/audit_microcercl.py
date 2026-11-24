@@ -1,4 +1,10 @@
 """Audit MicroCERCL and run frozen four-arm ablations (no downloads)."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
 import argparse, json, sys, time
 from collections import Counter, defaultdict
 from dataclasses import asdict
@@ -11,8 +17,8 @@ from ls_baro.scoring import score_with_official_baro
 
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('--root',type=Path,default=Path('D:/AIOps/data/abnormal_20240615/abnormal'))
-    ap.add_argument('--output',type=Path,default=Path('D:/AIOps/LS-baro/output/microcercl'))
+    ap.add_argument('--root',type=Path,default=dataset_path("microcercl"))
+    ap.add_argument('--output',type=Path,default=output_path("microcercl_full"))
     ap.add_argument('--limit',type=int,default=0)
     ap.add_argument('--run',action='store_true')
     ap.add_argument('--application',default='all')

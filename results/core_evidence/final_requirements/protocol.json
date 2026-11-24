@@ -3,5 +3,45 @@
   "repeats": 5000,
   "cluster": "native Pod identity within application",
   "weighting": "case-weighted ratio of resampled cluster sums to sizes",
-  "limitation": "Pod clusters do not establish independent deployments; exploratory only"
+  "limitation": "Pod clusters do not establish independent deployments; exploratory only",
+  "rewiring_cohort": "same task-specific eligible case IDs as the mechanism contrasts",
+  "rewiring_replicates_per_eligible_case": 20,
+  "includes_genuine_zero_swap_replicates": true,
+  "excludes_no_edge_placeholders": true,
+  "full_cohort_diagnostics": "separate full_cohort_*.csv outputs",
+  "source_sha256": "3cf7991e39b60dd632db4733439f1f56f7fd2f80ad9557a9faee18ea3cbd11ce",
+  "inputs": {
+    "core_cases": {
+      "filename": "relation_mechanism_cases.csv",
+      "sha256": "42a84373c472277a500c455246c7da5e4464106f0b04deca9639f1d835531f34"
+    },
+    "microcercl_cases": {
+      "filename": "microcercl_relation_cases.csv",
+      "sha256": "8bad948b658e3eb2a121250390e66587a028a527c3d10cfc3c07b2365779c2ab"
+    },
+    "filtered_cases": {
+      "filename": "microcercl_shared_source_case_results.csv",
+      "sha256": "786422051a6cdfefc42a4e4648eb9389bc69d512a94393d2c7b2f433265d7504"
+    },
+    "core_integrity": {
+      "filename": "relation_rewiring_integrity.csv",
+      "sha256": "64b8ce123be46022e6bb092dcc2ab27300e69c2344e82c86fa569c232ac2e35a"
+    },
+    "micro_deployment_integrity": {
+      "filename": "microcercl_deployment_rewiring_integrity.csv",
+      "sha256": "ad8510f3a32ae752d704b90aed9d1d9cf640796a68fbab4a21b16426624b9b62"
+    },
+    "micro_ownership_integrity": {
+      "filename": "microcercl_rewiring_integrity.csv",
+      "sha256": "628aed452b10ab9b020f1ff9526f9e887943614e3245b43ba3e0c89a93504987"
+    },
+    "labels": {
+      "filename": "microcercl_case_metadata.csv",
+      "sha256": "3896eeb198a9708191fe1efff8585b39282aff50b3b2cd8ac318b6f6bb598f29"
+    },
+    "observation_integrity": {
+      "filename": "aiops2025_observation_rewiring_integrity.csv",
+      "sha256": "2e3a7de4587bcf5d836d48d0841c354dccc5cbcd725f47e46940910e313ce5ce"
+    }
+  }
 }

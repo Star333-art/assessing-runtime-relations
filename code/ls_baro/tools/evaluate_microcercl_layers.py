@@ -4,6 +4,12 @@ No Host root is inferred from a Pod placement. Service roots remain the original
 service attribution task. Bookinfo's directory lacks an exact Pod name, so any
 uniquely resolved ownership target is reported as an auxiliary derived reference.
 """
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
 import hashlib
 import json
 import re
@@ -19,7 +25,7 @@ from ls_baro.contracts import RuntimeEntity,RuntimeGraph,Relation,RCAConfig
 from ls_baro.canonical_core import propagation
 from ls_baro.topology import propagate_once
 
-OUT=ROOT/'output/microcercl_layer_evaluation_20261023'
+OUT=output_path('microcercl_layer_evaluation_20261023')
 ARMS={'Mapping-only':(), 'Deployment':('deployment',), 'Ownership':('ownership',),
       'Dependency':('dependency',), 'Containment':('deployment','ownership'),
       'Deployment+Dependency':('deployment','dependency'),
@@ -42,8 +48,8 @@ def rank_metrics(ids,truth,final,names):
 def main():
     OUT.mkdir(exist_ok=True)
     rows=[];audits=[];replayed={};validation_count=0;max_error=0.0
-    source=ROOT/'output/microcercl_full/results.jsonl'
-    compact=pd.read_csv(ROOT/'output/microcercl_hipster_relation_split_l0p1/relation_cases.csv')
+    source=output_path('microcercl_full/results.jsonl')
+    compact=pd.read_csv(output_path('microcercl_hipster_relation_split_l0p1/relation_cases.csv'))
     hip_checks=0
     with source.open(encoding='utf-8') as f:
         for line in f:

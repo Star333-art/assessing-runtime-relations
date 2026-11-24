@@ -6,6 +6,12 @@ assigns conservative evidence roles relative to the new mechanism protocol.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 import argparse
 import hashlib
 import json
@@ -15,9 +21,9 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUT = ROOT / "output/extended_dataset_roles_20261028"
-DEFAULT_AI_DIR = ROOT / "output/aiops2022-native-20220321-cloudbed2"
-DEFAULT_RE2_DIR = ROOT.parent / "baro-main/output/re2_heterogeneous_dedup_components_l0p05_forward"
+DEFAULT_OUT = REPOSITORY / "reproduced/extended_roles"
+DEFAULT_AI_DIR = REPOSITORY / "results/aiops2022"
+DEFAULT_RE2_DIR = REPOSITORY / "results/re2"
 
 
 def seed(*parts):

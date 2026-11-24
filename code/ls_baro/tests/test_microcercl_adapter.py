@@ -2,6 +2,13 @@ import csv
 from pathlib import Path
 from ls_baro.microcercl_adapter import MicroCERCLAdapter
 
+def test_case_identifiers_preserve_frozen_seed_keys_across_platforms():
+    from pathlib import PurePosixPath, PureWindowsPath
+    from ls_baro.microcercl_adapter import case_identifier
+    expected=r'hipster_chaos\service\cloud_pod_service_pod_cpu_1'
+    assert case_identifier(PurePosixPath('/data/hipster_chaos/service/cloud_pod_service_pod_cpu_1'))==expected
+    assert case_identifier(PureWindowsPath('C:/data/hipster_chaos/service/cloud_pod_service_pod_cpu_1'))==expected
+
 def fixture_case(tmp_path):
     case=tmp_path/'bookinfo_chaos'/'details'/'cloud_pod_details_cpu_1'
     metrics=case/'bookinfo'/'metrics'; metrics.mkdir(parents=True)

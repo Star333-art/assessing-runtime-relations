@@ -50,11 +50,12 @@ No pickle payload is required. A 500,000-row trace probe recovered 14 observed
 non-self Service-to-Service edges, so the dependency arm also has real graph
 evidence.
 
-Machine-readable evidence is stored in
-`output/dataset_audit/aiops2022_structural_audit.json`; the reproducible checker
-is archived at `wasted/tools/audit_aiops2022_candidate.py`. This structural
-screening utility is retained for provenance but is not part of the current
-paper reproduction path.
+The early structural screening was performed before the retained experiment.
+Its standalone exploratory checker is not part of this release. Current
+supported-data checks live in `src/ls_baro/aiops2022_adapter.py` and its tests;
+the retained 51-case boundary analysis is replayed by
+`tools/audit_extended_dataset_roles.py`. See `RAW_REPRODUCTION.md` for current
+entry points rather than treating the early screening as a complete run.
 
 Important caveats before integration:
 

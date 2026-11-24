@@ -1,4 +1,10 @@
 """Summarize the split ablation and verify its normalization mechanism."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
 import argparse
 import csv
 import json
@@ -8,7 +14,7 @@ from pathlib import Path
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parents[1] / "output/lsdb_relation_split_l0p1")
+    parser.add_argument("--output", type=Path, default=output_path("lsdb_relation_split_l0p1"))
     args = parser.parse_args()
     output = args.output
     with (output / "relation_summary.csv").open(encoding="utf-8-sig", newline="") as stream:

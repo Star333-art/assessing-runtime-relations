@@ -1,46 +1,64 @@
-# MicroCERCL reproducible run
+# MicroCERCL reproducible protocol
 
-Data root: D:/AIOps/data/abnormal_20240615/abnormal
+The fixed scorer is BARO DataFrame-equivalent signed maximum RobustScaler with
+constant-window filtering, `exclude_last_seen`, most-specific metric binding,
+raw/max entity aggregation, lambda 0.1, one-step bidirectional propagation and
+source-row normalization. Every arm shares the scored values and candidates.
 
-Run with D:/anaconda3/python.exe tools/audit_microcercl.py --run --output output/microcercl_full.
-Without --run, only audit is performed. --limit N and --application sock_shop_chaos restrict a smoke run.
+The public injection timestamp is converted by the adapter's fixed eight-hour
+offset. Inclusive baseline timestamps are `[trigger-300, trigger-1]`; inclusive
+detection timestamps are `[trigger, trigger+299]`. The trigger belongs only to
+the detection window. These are known-onset experiments. The target layer is
+specified by the experimental design; root entity identity is evaluation-only.
 
-Policy frozen before the full run: BARO dataframe-equivalent, raw/max, most_specific, lambda=0.1, bidirectional, row-normalized; four arms share cached native metric scores. Root labels never contribute to graph or scoring. Public injection times minus 8 hours determine five-minute baseline and detection windows; this is an evaluation convention, not deployable anomaly detection.
+All monitored namespaces are retained. `node.csv` supplies Host measurements,
+`instance.csv` supplies Pod resource measurements, and native Service files
+supply Service measurements. No cross-file deduplication or unit conversion is
+introduced. `resource.csv`, `call.csv` and `instances_num.csv` remain outside the
+frozen scoring scope. Nonfinite samples are omitted and audited; duplicate
+timestamps fail rather than being silently merged.
 
-Scope is ALL monitored namespaces, including other applications under the same injection. Do not count namespace metric folders as independent failures. Node metrics have direct host owners; instance metrics have pod owners (Kubernetes instance names); native service metrics have service owners. No cross-file metric deduplication or unit conversion is performed. Namespace aggregate resource.csv, edge-specific call.csv and instances_num.csv are not scored in this version; their semantics require separate policy. Therefore this is a declared supported-metric experiment, not all-modality replication of MicroCERCL.
+Topology is the latest per-namespace snapshot at or before injection. Deployment
+requires known endpoints. Ownership is derived by matching known service names
+after removing Kubernetes instance suffixes; it is not a native observed
+Ownership relation. Unknown endpoints and unmatched relations are reported and
+excluded from propagation.
 
-Topology is the latest per-namespace graph snapshot at or before injection. Deployment rows are accepted only when both endpoints have known native identities. Ownership is DERIVED from an exact known service/deployment name after removing Kubernetes ReplicaSet/pod suffix, not directly observed ownership. Unknown endpoints and unmatched ownership are retained in audit/metadata and excluded from propagation; check their coverage before paper claims.
+## Cases and source sensitivity
 
-CSV rows are sorted by timestamp; duplicate timestamps fail rather than being silently merged. Non-numeric/non-finite observations are omitted and counted. BARO constant-window metrics are audited. Uniquely matched service labels alone enter quantitative evaluation; ambiguous labels are excluded from summaries with root_match_count reported. No Host or Pod accuracy is claimed from service-directory labels.
+The full adapter audit contains 882 cases across three applications. The main
+native-layer scope is 615 directory-exact Pod cases: 269 Hipster cases from 18
+Pod identities and 346 SockShop cases from 12 Pod identities. No separate Host
+root is inferred from a Pod placement. Auxiliary Service attribution and
+Bookinfo derived references are reported separately.
 
-Artifacts: audit.jsonl (all accepted/excluded cases), results.jsonl (four-arm rankings/scores/contributions/run configuration), summary.json (per-application aggregate metrics). Results are exploratory until time alignment, label aliases and dependency-edge coverage have been reviewed. Existing AIOps negative results remain part of the study.
+The release defines `svc_metric.csv` resource measurements as instance averages.
+The filtered Ownership analysis removes every scored mapping from that file,
+retaining Service `latency.csv`, `success_rate.csv` and `svc_qps.csv` measurements.
+Retained metric scores, entities, candidates, relations and windows stay fixed.
+Deployment uses the original source set. Both directions have 100 within-case
+source permutations and 20 typed degree-preserving rewires per eligible case.
 
-## Metric-source audit and shared-source sensitivity
+## Execution
 
-The public MicroCERCL documentation defines `instance.csv` as per-instance CPU,
-memory and network measurements, while `svc_metric.csv` contains service
-resource measurements formed by averaging the service's instances.  Therefore
-the latter is not an independent source from Pod/instance resource metrics.
-The remaining scored Service files are `latency.csv`, `success_rate.csv`, and
-`svc_qps.csv`; Host measurements are read from `node.csv`.  `call.csv`,
-`resource.csv`, and `instances_num.csv` remain outside the frozen scoring scope.
+From the repository root, first inspect the ordered plan:
 
-Run the predeclared exclusion sensitivity with:
-
+```bash
+python code/ls_baro/tools/reproduce_raw.py --datasets microcercl --microcercl-root data/abnormal_20240615/abnormal --output reproduced/raw --dry-run
 ```
-D:/anaconda3/python.exe tools/evaluate_microcercl_shared_source_sensitivity.py
+
+Remove `--dry-run` for the complete run. The stages generate the native four-arm
+records, Hipster cross-check, layer references, 615-case summaries, original
+mechanism controls and shared-source-excluded Ownership controls in that order.
+Use [RAW_REPRODUCTION.md](RAW_REPRODUCTION.md) for stage selection, input layout,
+environment overrides and limited smoke runs. Processed-evidence replay is:
+
+```bash
+python code/ls_baro/tools/replay_mechanism_controls.py
+python code/ls_baro/tools/audit_final_requirements.py
 ```
 
-The script replays the 615 directory-exact Pod cases, removes every scored
-mapping whose provenance is `svc_metric.csv`, recomputes the signed-maximum
-entity bases from the retained metric scores, and reruns Ownership against
-Mapping, source-score permutation, uniform-source, incident-degree, and typed
-degree-preserving rewiring controls.  Entities, candidate sets, relations,
-labels, retained metric scores, one-step propagation, lambda, and the
-tie-expected evaluation are frozen.  Outputs are written to
-`output/microcercl_shared_source_sensitivity_20261103/`.
-
-This sensitivity removes the documented instance-average resource source.  It
-does not establish statistical independence between retained Service series
-and Pod behavior, nor does alignment-dependent recovery identify causal fault
-propagation.
+Pod/recorded-placement clusters do not establish independent deployments. Small
+numbers of Pod identities, shared measurements, adapter-derived Ownership and
+finite endpoint swaps limit interpretation. Nominal bootstrap labels are
+exploratory and do not identify physical fault propagation.

@@ -7,6 +7,12 @@ arms: Host final becomes its incoming increment; Pod D becomes Mapping, Pod C
 becomes Ownership; Service scores do not change. Six native cases additionally
 validate this replay against direct execution of the unchanged shared core.
 """
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
 import hashlib,json
 from pathlib import Path
 from collections import Counter
@@ -22,10 +28,10 @@ from ls_baro.topology import propagate_once
 from ls_baro.scoring import score_with_baro_dataframe_equivalent
 from evaluate_aiops2025_ownership import load_day,epoch
 
-SOURCE=ROOT/'output/aiops2025_ownership_pilot'
-MAIN=ROOT/'output/aiops2025_lsdb_protocol_20261023'
-OUT=ROOT/'output/aiops2025_host_zero_20261023'
-DATA=ROOT.parent/'data/AgenticOpsEval/AIOps2025'
+SOURCE=output_path('aiops2025_ownership_pilot')
+MAIN=output_path('aiops2025_lsdb_protocol_20261023')
+OUT=output_path('aiops2025_host_zero_20261023')
+DATA=dataset_path("aiops2025")
 ARMS={'mapping':(), 'deployment':('deployment',),'ownership':('ownership',),
       'containment':('deployment','ownership')}
 EXCLUDED={'29f88351-232','0718e0f9-92','d32bcd36-104'}

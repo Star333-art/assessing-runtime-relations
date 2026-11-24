@@ -5,6 +5,12 @@ fixed. Only the positive one-step propagation coefficient is changed.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 import hashlib
 import json
 from pathlib import Path
@@ -12,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "output" / "lambda_sensitivity_20261103"
+OUT = output_path('lambda_sensitivity_20261103')
 LAMBDAS = (0.05, 0.1, 0.2)
 SEEDS = tuple(range(10))
 RATES = {"native": None, "partial": 0.5, "complete": 1.0}

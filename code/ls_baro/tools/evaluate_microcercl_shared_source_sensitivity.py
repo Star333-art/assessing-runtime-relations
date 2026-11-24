@@ -9,6 +9,12 @@ all retained metrics, one-step propagation rule, lambda, and Pod labels.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 from collections import Counter, defaultdict
 import hashlib
 import json
@@ -23,14 +29,15 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "tools"))
 
 from complete_entity_observation_controls import prepare, measure, apply
+from ls_baro.mechanism_labels import mechanism_label, RULES
 from evaluate_aiops2025_observability_and_rewire import _metric_seed, _rewire
 from evaluate_relation_evidence_mechanisms import apply_pairs, paired_interval
 
 
-SOURCE = ROOT / "output/microcercl_full/results.jsonl"
-AUDIT = ROOT / "output/microcercl_layer_evaluation_20261023/label_audit.csv"
-ORIGINAL = ROOT / "output/microcercl_relation_mechanisms_20261028/mechanism_control_cases.csv"
-OUT = ROOT / "output/microcercl_shared_source_sensitivity_20261103"
+SOURCE = output_path('microcercl_full/results.jsonl')
+AUDIT = output_path('microcercl_layer_evaluation_20261023/label_audit.csv')
+ORIGINAL = output_path('microcercl_relation_mechanisms_20261028/mechanism_control_cases.csv')
+OUT = output_path('microcercl_shared_source_sensitivity_20261103')
 REMOVED_FILE = "svc_metric.csv"
 PERMUTATIONS = 100
 REWIRES = 20
@@ -279,14 +286,13 @@ def main():
     lookup = {row.interpretation: row for row in avg.itertuples()}
     alignment = lookup["score-endpoint-alignment"]
     endpoint = lookup["endpoint-association"]
-    mechanism = ("alignment-dependent recovery"
-                 if all(lookup[name].ci95_low_pp > 0 for name in
-                        ("masked-total", "score-endpoint-alignment", "uniform-score-structure",
-                         "degree-prior", "endpoint-association"))
-                 else "additional advantage not established against all specified controls")
+    mechanism = mechanism_label(lookup["masked-total"],
+        (lookup[name] for name in ("score-endpoint-alignment", "uniform-score-structure",
+                                   "degree-prior", "endpoint-association")))
 
     protocol = {
         "experiment": "MicroCERCL shared-source metric exclusion sensitivity",
+        "classification_rules": RULES,
         "cases": 615,
         "applications": {"Hipster": 269, "SockShop": 346},
         "root_layer": "pod",

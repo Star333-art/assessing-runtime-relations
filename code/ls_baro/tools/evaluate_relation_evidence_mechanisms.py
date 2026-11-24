@@ -16,6 +16,12 @@ decomposition of graph effects.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 from collections import Counter
 import hashlib
 import json
@@ -30,11 +36,12 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "tools"))
 
 from ls_baro.topology import Edge, propagate_once
+from ls_baro.mechanism_labels import mechanism_label, RULES
 from complete_entity_observation_controls import load_cases, measure, apply
 from evaluate_aiops2025_observability_and_rewire import _metric_seed, _rewire
 
 
-OUT = ROOT / "output/relation_evidence_mechanisms_20261028"
+OUT = output_path('relation_evidence_mechanisms_20261028')
 RELATIONS = {
     "deployment": ("host", "pod"),
     "ownership": ("service", "pod"),
@@ -139,18 +146,8 @@ def classify(contrasts: pd.DataFrame) -> pd.DataFrame:
         uniform = lookup["uniform-structure"]
         degree = lookup["degree-prior"]
         rewired = lookup["relation-semantics"]
-        if total.ci95_low_pp > 0 and evidence.ci95_low_pp > 0 and uniform.ci95_low_pp > 0:
-            label = "evidence-supported compensation"
-            reason = "masked real relation exceeds mapping, permuted-source, and uniform-source controls"
-        elif total.ci95_low_pp > 0:
-            label = "recovery not separable from controls"
-            reason = "masked real relation improves on mapping, but at least one evidence/structure contrast is uncertain"
-        elif total.ci95_high_pp < 0:
-            label = "harmful under complete target-layer masking"
-            reason = "masked real relation is below masked mapping"
-        else:
-            label = "unsupported or uncertain recovery"
-            reason = "masked real relation has no clear improvement on mapping"
+        label = mechanism_label(total, (evidence, uniform, degree, rewired))
+        reason = RULES[label]
         native_label = ("harmful under native evidence" if native.ci95_high_pp < 0 else
                         "beneficial under native evidence" if native.ci95_low_pp > 0 else
                         "native effect uncertain")
@@ -316,12 +313,7 @@ def main():
         "degree_prior": "incident count of selected typed relation; no telemetry or label input",
         "rewiring": f"{REWIRE_REPLICATES} typed directed bipartite 2-switch replicates; exact source/target degrees and edge count preserved",
         "uncertainty": "5000 paired case bootstrap replicates after averaging random controls within case",
-        "classification": {
-            "evidence-supported compensation": "masked real > mapping, permuted-source, and uniform-source with Avg@5 CI lower bounds > 0",
-            "recovery not separable from controls": "masked real > mapping, but at least one evidence/structure contrast remains uncertain",
-            "harmful": "masked real - mapping Avg@5 CI upper bound < 0",
-            "unsupported_or_uncertain": "all other cases",
-        },
+        "classification": RULES,
         "interpretation_limit": "operational contrasts, not an identified causal decomposition",
     }
     dump(OUT / "protocol.json", protocol)
@@ -340,7 +332,7 @@ def main():
         "all_rewirings_preserve_target_degree": bool(audit.exact_target_degree.all()),
         "all_rewirings_duplicate_free": bool(audit.duplicate_free.all()),
         "source_sha256": source_hashes,
-        "root_labels_used_for": "native-layer evaluation only; not score permutation, uniform control, degree prior, or rewiring",
+        "root_labels_used_for": "the experimental design specifies the target layer for masking and candidate restriction; root entity identity is used only for evaluation",
         "mechanism_cohort": "cases with at least one selected typed relation edge; total and excluded no-edge counts reported",
     }
     dump(OUT / "verification.json", verification)
@@ -373,7 +365,7 @@ def main():
         exact = bool(row.all_source_degrees_exact and row.all_target_degrees_exact)
         lines.append(f"| {row.dataset} | {row.relation} | {row.root_layer} | {row.total_cases} | {row.usable_cases} | {row.excluded_no_edge} | {row.mean_edges:.1f} | {row.swap_success_rate:.2%} | {row.mean_fraction_edges_changed:.2%} | {exact} | {bool(row.all_duplicate_free)} |")
     lines += ["", "## Interpretation rule", "",
-        "Evidence-supported compensation requires a positive complete-mask gain over Mapping and positive real-minus-permuted and real-minus-uniform Avg@5 intervals. A positive gain over Mapping without those controls is reported as recovery not separable from controls. A native or masked decrease is reported only when the paired interval lies wholly below zero.", "",
+        "Alignment-dependent recovery requires positive Real-minus-Mapping and all four Real-minus-Control Avg@5 interval lower bounds. Positive recovery over Mapping with any control lower bound at or below zero is not separable. When the Mapping interval contains zero, a positive estimate is uncertain recovery and a nonpositive estimate is no recovery. A wholly negative Mapping interval is harmful. These are exploratory bootstrap labels, separate from global Holm sensitivity.", "",
         "## Limits", "",
         "The controls identify whether recovery exceeds specific null models. They do not prove physical fault propagation, universal dataset transfer, or medical-domain accuracy. A confidence interval crossing zero is uncertainty, not equivalence."]
     (OUT / "REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

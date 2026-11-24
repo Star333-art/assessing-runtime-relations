@@ -21,9 +21,13 @@ from __future__ import annotations
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+import argparse
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from ls_baro.experiment_paths import dataset_path, output_path
 
-DATASET_ROOT = Path(r"D:\AIOps\LatentScope\data\dataset_b")
-OUTPUT = Path(r"D:\AIOps\LS-baro\output\lsdb_relation_split_l0p1")
+DATASET_ROOT = dataset_path("lsdb")
+OUTPUT = output_path("lsdb_relation_split_l0p1")
 
 
 def load_raw_case(case_id: str):
@@ -34,6 +38,12 @@ def load_raw_case(case_id: str):
 
 
 def main():
+    global DATASET_ROOT, OUTPUT
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dataset-root", type=Path, default=DATASET_ROOT)
+    parser.add_argument("--output", type=Path, default=OUTPUT)
+    args = parser.parse_args()
+    DATASET_ROOT, OUTPUT = args.dataset_root.resolve(), args.output.resolve()
     labels = json.loads((DATASET_ROOT / "labels" / "label.json").read_text(encoding="utf-8"))
     case_ids = sorted(labels, key=int)
 

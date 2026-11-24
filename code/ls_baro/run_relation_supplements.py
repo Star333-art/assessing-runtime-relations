@@ -1,6 +1,12 @@
 """Frozen relation-sensitivity experiments; no target-data parameter selection."""
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parent / "src"))
+from ls_baro.experiment_paths import output_path, dataset_path, REPOSITORY
+
+
 import argparse
 from collections import Counter
 from dataclasses import asdict
@@ -27,7 +33,7 @@ ARMS = {
     "Full": ("deployment", "ownership", "dependency"),
 }
 SENSITIVITY_ARMS = ("Ownership", "Containment", "Dependency", "Full")
-DEFAULT_OUTPUT = ROOT / "output/relation_supplements_20261015"
+DEFAULT_OUTPUT = output_path('relation_supplements_20261015')
 PROTOCOL = {
     "primary_metric": "deterministic known-root-type Top-3",
     "primary_comparisons": [["Mapping-only", "Containment"], ["Dependency", "Containment"]],
@@ -115,8 +121,8 @@ def evaluate(dataset, case_id, request, result, norm, arm, weight):
 
 def historical_index():
     old = {}
-    for dataset, file in (("LSDB", ROOT / "output/lsdb_relation_split_l0p1/relation_cases.csv"),
-                          ("Hipster", ROOT / "output/microcercl_hipster_relation_split_l0p1/relation_cases.csv")):
+    for dataset, file in (("LSDB", output_path('lsdb_relation_split_l0p1/relation_cases.csv')),
+                          ("Hipster", output_path('microcercl_hipster_relation_split_l0p1/relation_cases.csv'))):
         with file.open(encoding="utf-8-sig", newline="") as f:
             for row in csv.DictReader(f):
                 old[(dataset, row["case_id"], row.get("experiment", row.get("arm")))] = row
@@ -200,8 +206,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     ap.add_argument("--dataset", choices=("both", "LSDB", "Hipster"), default="both")
-    ap.add_argument("--lsdb-root", type=Path, default=ROOT.parent / "LatentScope/data/dataset_b")
-    ap.add_argument("--micro-root", type=Path, default=ROOT.parent / "data/abnormal_20240615/abnormal")
+    ap.add_argument("--lsdb-root", type=Path, default=dataset_path("lsdb"))
+    ap.add_argument("--micro-root", type=Path, default=dataset_path("microcercl"))
     ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)

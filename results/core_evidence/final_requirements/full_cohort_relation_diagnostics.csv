@@ -1,0 +1,9 @@
+dataset,relation,root_layer,cases,rows,actual_replicates,no_edge_placeholders
+aiops2025,deployment,host,82,1621,1620,1
+aiops2025,deployment,pod,68,1360,1360,0
+aiops2025,ownership,pod,68,1246,1240,6
+aiops2025,ownership,service,122,2022,2000,22
+lsdb,deployment,host,12,240,240,0
+lsdb,deployment,pod,26,520,520,0
+lsdb,ownership,pod,26,520,520,0
+lsdb,ownership,service,50,1000,1000,0
