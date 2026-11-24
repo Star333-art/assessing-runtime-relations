@@ -1,7 +1,7 @@
 # Open Science Artifact
 
 Public repository: https://github.com/Star333-art/assessing-runtime-relations
-Artifact release: `v1.0.3`
+Artifact release: `v1.0.1`
 
 This artifact accompanies *When Do Runtime Relations Help Localize Root Causes?
 A Controlled Study of Missing Entity Scores and Structural Priors*. It contains the active analysis code, tests, processed evidence,

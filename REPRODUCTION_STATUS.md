@@ -1,9 +1,10 @@
 # Reproduction status: 2026-11-24
 
-Current artifact release: `v1.0.3`. Earlier release `v1.0.1` is retained unchanged
-and does not contain the comparison-level Holm replay. The current release
-includes the 50-test generator, complete-mask label replay, eligible-cohort
-rewiring audit, explicit raw-data execution plan, and byte-level integrity tool.
+Current artifact release: `v1.0.1`. This pre-submission artifact label identifies
+the final verified implementation and evidence. Record its resolved full Git
+commit when identifying a reproduction snapshot. This release includes the
+50-test generator, complete-mask label replay, eligible-cohort rewiring audit,
+explicit raw-data execution plan, and byte-level integrity tool.
 
 ## Processed evidence
 
